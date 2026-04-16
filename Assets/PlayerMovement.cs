@@ -11,7 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower = 7f;
     public float gravity = 10f;
     public float lookSpeed = 2f;
-    public float lookXLimit = 45f;
+
+    [Tooltip("Maximum vertical look angle in degrees (90 = straight up/down).")]
+    public float lookXLimit = 90f;
+
     public float defaultHeight = 2f;
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
@@ -22,25 +25,32 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canMove = true;
 
+    // True when the cursor is locked and camera look is active.
+    private bool isCursorLocked = true;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        ApplyCursorState();
     }
 
     void Update()
     {
+        HandleCursorToggle();
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
+
+        // Block movement input while cursor is unlocked so the player
+        // doesn't drift when clicking UI elements.
+        float curSpeedX = (canMove && isCursorLocked) ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
+        float curSpeedY = (canMove && isCursorLocked) ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (Input.GetButton("Jump") && canMove && isCursorLocked && characterController.isGrounded)
         {
             moveDirection.y = jumpPower;
         }
@@ -54,12 +64,11 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.R) && canMove)
+        if (Input.GetKey(KeyCode.R) && canMove && isCursorLocked)
         {
             characterController.height = crouchHeight;
             walkSpeed = crouchSpeed;
             runSpeed = crouchSpeed;
-
         }
         else
         {
@@ -70,12 +79,30 @@ public class PlayerMovement : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (canMove)
+        // Only rotate the camera when the cursor is locked.
+        if (canMove && isCursorLocked)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+    }
+
+    /// <summary>Toggles cursor lock state when the player presses Tab.</summary>
+    private void HandleCursorToggle()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            isCursorLocked = !isCursorLocked;
+            ApplyCursorState();
+        }
+    }
+
+    /// <summary>Applies the current isCursorLocked value to the Unity cursor API.</summary>
+    private void ApplyCursorState()
+    {
+        Cursor.lockState = isCursorLocked ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !isCursorLocked;
     }
 }

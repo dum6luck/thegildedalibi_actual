@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.bezi.sidekick": {
+      "version": "file:com.bezi.sidekick",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      }
+    },
     "com.unity.burst": {
       "version": "1.7.3",
       "depth": 1,
@@ -58,8 +66,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "3.0.2",
-      "depth": 2,
+      "version": "3.2.1",
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
