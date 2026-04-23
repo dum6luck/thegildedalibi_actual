@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement; // Added for scene switching
 
 public class Talking_Manager : MonoBehaviour
 {
@@ -49,7 +50,7 @@ public class Talking_Manager : MonoBehaviour
             dialoguePanel.SetActive(true);
         }
 
-        DisplayLine(); // Now this will find the method below!
+        DisplayLine();
     }
 
     public void AdvanceDialogue()
@@ -71,19 +72,45 @@ public class Talking_Manager : MonoBehaviour
         }
         else
         {
-            if (uiFader != null)
+            // --- SCENE TRIGGER CHECK ---
+            // We check if the line that just finished is your specific trigger line
+            string lastLine = dialogueLines[index].sentence;
+            string triggerLine = "Everyone in this room just got some kind of bad news. And now we're all supposed to have a nice time together. Great party, Max.";
+
+            if (lastLine.Trim() == triggerLine.Trim())
             {
-                uiFader.FadeOut();
-                Invoke("DisableManager", 0.6f);
+                if (uiFader != null)
+                {
+                    uiFader.FadeOut();
+                    Invoke("LoadMingleScene", 0.8f);
+                }
+                else
+                {
+                    LoadMingleScene();
+                }
             }
             else
             {
-                DisableManager();
+                // Normal behavior: just close the dialogue
+                if (uiFader != null)
+                {
+                    uiFader.FadeOut();
+                    Invoke("DisableManager", 0.6f);
+                }
+                else
+                {
+                    DisableManager();
+                }
             }
         }
     }
 
-    // --- THE MISSING METHOD ---
+    void LoadMingleScene()
+    {
+        // Make sure "MingleScene" matches the name in your Build Settings exactly!
+        SceneManager.LoadScene("Act1_1");
+    }
+
     void DisplayLine()
     {
         if (dialogueLines.Count == 0) return;

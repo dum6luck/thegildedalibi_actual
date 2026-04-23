@@ -4160,6 +4160,16 @@ PrefabInstance:
       objectReference: {fileID: 1426160319}
     - target: {fileID: 6503508758408610296, guid: 3ceac75e40d30a341aed584c3dca4f1b,
         type: 3}
+      propertyPath: nextSceneName
+      value: Act1_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503508758408610296, guid: 3ceac75e40d30a341aed584c3dca4f1b,
+        type: 3}
+      propertyPath: loadSceneOnEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503508758408610296, guid: 3ceac75e40d30a341aed584c3dca4f1b,
+        type: 3}
       propertyPath: dialogueDisplay
       value: 
       objectReference: {fileID: 1662962461}
