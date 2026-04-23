@@ -2290,6 +2290,7 @@ GameObject:
   - component: {fileID: 1676032470}
   - component: {fileID: 1676032469}
   - component: {fileID: 1676032468}
+  - component: {fileID: 1676032467}
   m_Layer: 0
   m_Name: Julian
   m_TagString: Untagged
@@ -2297,6 +2298,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1676032467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676032466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d659b9d2e35f4f24a87e9e918e5ef52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickedUpMG: {fileID: 0}
+  textComponent: {fileID: 0}
+  lines: []
+  textSpeed: 0
 --- !u!114 &1676032468
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Required for changing scenes
 using System.Collections;
 
 public class CutsceneController : MonoBehaviour
@@ -11,28 +10,18 @@ public class CutsceneController : MonoBehaviour
     public Image fadeImage;
     public float fadeDuration = 2.0f;
 
-    [Header("Scene Settings")]
-    public string nextSceneName = "PrologueScene"; // Name of your 2nd scene
-    public float waitTimeInBlack = 1.0f; // How long to stay in black before loading
-
     void Awake()
     {
+        // This allows the InvitationCard script to find this one easily
         Instance = this;
-
-        // Ensure the fade image is invisible at the start
-        if (fadeImage != null)
-        {
-            Color c = fadeImage.color;
-            c.a = 0;
-            fadeImage.color = c;
-        }
     }
 
+    // This is the specific method the error is complaining about
     public void StartFadeOut()
     {
         if (fadeImage != null)
         {
-            StartCoroutine(FadeToBlackAndLoad());
+            StartCoroutine(FadeToBlack());
         }
         else
         {
@@ -40,12 +29,11 @@ public class CutsceneController : MonoBehaviour
         }
     }
 
-    IEnumerator FadeToBlackAndLoad()
+    IEnumerator FadeToBlack()
     {
         float elapsed = 0;
         Color tempColor = fadeImage.color;
 
-        // 1. Gradually Fade to Black
         while (elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
@@ -54,11 +42,6 @@ public class CutsceneController : MonoBehaviour
             yield return null;
         }
 
-        // 2. Stay in black for a moment (Improves pacing)
-        yield return new WaitForSeconds(waitTimeInBlack);
-
-        // 3. Load the Second Scene
-        Debug.Log("Loading Scene: " + nextSceneName);
-        SceneManager.LoadScene(nextSceneName);
+        Debug.Log("Sequence Complete.");
     }
 }
