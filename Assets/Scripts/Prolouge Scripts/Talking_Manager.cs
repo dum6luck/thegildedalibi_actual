@@ -2,7 +2,6 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEngine.UI;
 
 public class Talking_Manager : MonoBehaviour
 {
@@ -10,7 +9,11 @@ public class Talking_Manager : MonoBehaviour
     public TextMeshProUGUI nameDisplay;
     public TextMeshProUGUI dialogueDisplay;
     public GameObject nextArrow;
-    public GameObject dialoguePanel; // The main UI box containing the text
+    public GameObject dialoguePanel;
+
+    [Header("Danganronpa Transition")]
+    public UIFader uiFader;
+    public MingleTracker mingleTracker;
 
     [Header("Settings")]
     [Range(0.01f, 0.1f)]
@@ -29,44 +32,37 @@ public class Talking_Manager : MonoBehaviour
     private int index = 0;
     private Coroutine typingCoroutine;
     private bool isTyping = false;
+    private bool isFirstTimeTalking = false;
 
-    void Start()
+    public void StartDialogueSequence(bool isFirstTime)
     {
-        // Setup initial cursor state (MingleSceneManager will override this)
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        if (nextArrow != null) nextArrow.SetActive(false);
-
-        if (nameDisplay != null) nameDisplay.text = "";
-        if (dialogueDisplay != null) dialogueDisplay.text = "";
-    }
-
-    public void StartDialogueSequence()
-    {
-        // Force mouse to be free when dialogue starts
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
+        isFirstTimeTalking = isFirstTime;
         index = 0;
-        if (dialoguePanel != null) dialoguePanel.SetActive(true);
-        DisplayLine();
+
+        if (uiFader != null)
+        {
+            dialoguePanel.SetActive(true);
+            uiFader.FadeIn();
+        }
+        else if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(true);
+        }
+
+        DisplayLine(); // Now this will find the method below!
     }
 
     public void AdvanceDialogue()
     {
         if (isTyping)
         {
-            // SKIP: Finish the text instantly
             StopCoroutine(typingCoroutine);
             isTyping = false;
             dialogueDisplay.text = FormatText(dialogueLines[index].sentence, dialogueLines[index].isItalic);
-
             if (nextArrow != null) nextArrow.SetActive(true);
             return;
         }
 
-        // NEXT LINE: Advance if there are more sentences
         if (index < dialogueLines.Count - 1)
         {
             index++;
@@ -75,25 +71,29 @@ public class Talking_Manager : MonoBehaviour
         }
         else
         {
-            // --- THE UPDATED ELSE BLOCK ---
-            Debug.Log("End of dialogue. Closing panel and signaling Scene Manager.");
-
-            if (nextArrow != null) nextArrow.SetActive(false);
-
-            // Hide the UI so the player can see the world
-            if (dialoguePanel != null) dialoguePanel.SetActive(false);
-
-            // Disable this object. MingleSceneManager sees this and unlocks the player.
-            this.gameObject.SetActive(false);
+            if (uiFader != null)
+            {
+                uiFader.FadeOut();
+                Invoke("DisableManager", 0.6f);
+            }
+            else
+            {
+                DisableManager();
+            }
         }
     }
 
+    // --- THE MISSING METHOD ---
     void DisplayLine()
     {
         if (dialogueLines.Count == 0) return;
 
-        nameDisplay.text = dialogueLines[index].characterName;
-        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+        if (nameDisplay != null)
+            nameDisplay.text = dialogueLines[index].characterName;
+
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
         typingCoroutine = StartCoroutine(TypeText(dialogueLines[index].sentence, dialogueLines[index].isItalic));
     }
 
@@ -112,6 +112,18 @@ public class Talking_Manager : MonoBehaviour
 
         isTyping = false;
         if (nextArrow != null) nextArrow.SetActive(true);
+    }
+
+    void DisableManager()
+    {
+        if (dialoguePanel != null) dialoguePanel.SetActive(false);
+
+        if (isFirstTimeTalking && mingleTracker != null)
+        {
+            mingleTracker.CheckProgression();
+        }
+
+        this.gameObject.SetActive(false);
     }
 
     string FormatText(string text, bool useItalics)

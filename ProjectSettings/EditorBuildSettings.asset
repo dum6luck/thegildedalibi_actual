@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prolouge_Scenes/Prolouge_Cutscene.unity
     guid: 4be6e8ae6671c1c4092b321dc738ea86
+  - enabled: 1
+    path: Assets/Scenes/Act1_Scenes/BathroomScene.unity
+    guid: fa72c61fa2d1bc841ad8618c78c7adc4
   m_configObjects: {}

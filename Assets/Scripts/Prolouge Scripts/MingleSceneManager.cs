@@ -4,57 +4,69 @@ public class MingleSceneManager : MonoBehaviour
 {
     [Header("References")]
     public Talking_Manager talkingManager;
-
-    [Tooltip("Drag your Player object (with the FPSController script) here")]
     public FPSController playerController;
+
+    [Header("Initial Setup")]
+    public bool startWithDialogue = true;
 
     void Start()
     {
-        // 1. Initial Setup: Freeze the player and camera
-        if (playerController != null)
+        if (startWithDialogue && talkingManager != null)
         {
-            playerController.canMove = false;
-            playerController.canLook = false;
-
-            // Unlock the cursor so the player can click the dialogue/next arrow
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-
-        // 2. Start the intro monologue
-        if (talkingManager != null)
-        {
-            talkingManager.StartDialogueSequence();
+            LockPlayer(true);
+            talkingManager.gameObject.SetActive(true);
+            // ADDED 'false' HERE
+            talkingManager.StartDialogueSequence(false);
         }
         else
         {
-            Debug.LogError("MingleSceneManager: Talking Manager is not assigned!");
+            LockPlayer(false);
         }
     }
 
     void Update()
     {
-        // 3. Check if the dialogue is finished
-        // We know it's finished because Talking_Manager disables its own object at the end
-        if (talkingManager != null && !talkingManager.gameObject.activeSelf)
+        // Check every frame if the dialogue UI is active to freeze/unfreeze player
+        if (talkingManager != null)
         {
-            // Only run this if the player is still frozen
-            if (playerController != null && !playerController.canMove)
+            bool isDialogueActive = talkingManager.gameObject.activeSelf;
+
+            // If UI is open but player is NOT locked, lock them
+            if (isDialogueActive && (playerController.canMove || playerController.canLook))
             {
-                UnlockExploration();
+                LockPlayer(true);
+            }
+            // If UI is closed but player IS still locked, unlock them
+            else if (!isDialogueActive && (!playerController.canMove || !playerController.canLook))
+            {
+                LockPlayer(false);
             }
         }
     }
 
-    void UnlockExploration()
+    public void LockPlayer(bool isLocked)
     {
-        playerController.canMove = true;
-        playerController.canLook = true;
+        if (playerController == null) return;
 
-        // Re-lock the cursor for first-person movement
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (isLocked)
+        {
+            // Disable movement and camera rotation
+            playerController.canMove = false;
+            playerController.canLook = false;
 
-        Debug.Log("Mingle Phase: Detective is finished thinking. Exploration enabled.");
+            // Show cursor for clicking the dialogue
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            // Enable movement and camera rotation
+            playerController.canMove = true;
+            playerController.canLook = true;
+
+            // Lock cursor back to center for FPS mode
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }

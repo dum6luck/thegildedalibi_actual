@@ -87,7 +87,9 @@ public class PrologueIntroController : MonoBehaviour
         // 2. Tell the Talking_Manager to start the first line
         if (talkingManager != null)
         {
-            talkingManager.StartDialogueSequence();
+            // FIXED: Added 'false' as the argument so the script compiles.
+            // This ensures the opening monologue doesn't count toward the 5 NPC goal.
+            talkingManager.StartDialogueSequence(false);
         }
         else
         {
