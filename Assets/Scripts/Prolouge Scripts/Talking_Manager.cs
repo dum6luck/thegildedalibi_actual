@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEngine.SceneManagement; // Added for scene switching
+using UnityEngine.SceneManagement;
 
 public class Talking_Manager : MonoBehaviour
 {
@@ -20,6 +20,12 @@ public class Talking_Manager : MonoBehaviour
     [Range(0.01f, 0.1f)]
     public float typingSpeed = 0.05f;
 
+    [Header("Reusable Scene Transition")]
+    [Tooltip("If the last line matches this EXACTLY, the scene will change.")]
+    public string triggerSentence;
+    [Tooltip("The name of the scene to load.")]
+    public string sceneToLoad;
+
     [System.Serializable]
     public struct DialogueLine
     {
@@ -35,19 +41,28 @@ public class Talking_Manager : MonoBehaviour
     private bool isTyping = false;
     private bool isFirstTimeTalking = false;
 
+    // --- ADDED UPDATE LOOP FOR CLICKS ---
+    void Update()
+    {
+        // If the dialogue is active, allow clicking or pressing Space/Enter to advance
+        if (dialoguePanel != null && dialoguePanel.activeSelf)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            {
+                AdvanceDialogue();
+            }
+        }
+    }
+
     public void StartDialogueSequence(bool isFirstTime)
     {
         isFirstTimeTalking = isFirstTime;
         index = 0;
 
-        if (uiFader != null)
+        if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(true);
-            uiFader.FadeIn();
-        }
-        else if (dialoguePanel != null)
-        {
-            dialoguePanel.SetActive(true);
+            if (uiFader != null) uiFader.FadeIn();
         }
 
         DisplayLine();
@@ -72,26 +87,23 @@ public class Talking_Manager : MonoBehaviour
         }
         else
         {
-            // --- SCENE TRIGGER CHECK ---
-            // We check if the line that just finished is your specific trigger line
-            string lastLine = dialogueLines[index].sentence;
-            string triggerLine = "Everyone in this room just got some kind of bad news. And now we're all supposed to have a nice time together. Great party, Max.";
+            string lastLine = dialogueLines[index].sentence.Trim();
 
-            if (lastLine.Trim() == triggerLine.Trim())
+            if (!string.IsNullOrEmpty(triggerSentence) && lastLine == triggerSentence.Trim())
             {
                 if (uiFader != null)
                 {
                     uiFader.FadeOut();
-                    Invoke("LoadMingleScene", 0.8f);
+                    Invoke("LoadNextScene", 0.8f);
                 }
                 else
                 {
-                    LoadMingleScene();
+                    LoadNextScene();
                 }
             }
             else
             {
-                // Normal behavior: just close the dialogue
+                // This is where "Hmm... Not seeing anything" finishes
                 if (uiFader != null)
                 {
                     uiFader.FadeOut();
@@ -105,10 +117,10 @@ public class Talking_Manager : MonoBehaviour
         }
     }
 
-    void LoadMingleScene()
+    void LoadNextScene()
     {
-        // Make sure "MingleScene" matches the name in your Build Settings exactly!
-        SceneManager.LoadScene("Act1_1");
+        if (!string.IsNullOrEmpty(sceneToLoad))
+            SceneManager.LoadScene(sceneToLoad);
     }
 
     void DisplayLine()
@@ -141,15 +153,22 @@ public class Talking_Manager : MonoBehaviour
         if (nextArrow != null) nextArrow.SetActive(true);
     }
 
+    // --- REFINED DISABLE MANAGER ---
     void DisableManager()
     {
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
 
+        // Safety check for other scenes
         if (isFirstTimeTalking && mingleTracker != null)
         {
             mingleTracker.CheckProgression();
         }
 
+        // Hide and lock the cursor so it doesn't stay on screen
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        // Turn off the manager so the tutorial script continues
         this.gameObject.SetActive(false);
     }
 

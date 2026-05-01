@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Act1_Scenes/Act1_1.unity
     guid: b4bcb5f273674c34ebe9f0d313727bdd
+  - enabled: 1
+    path: Assets/Scenes/Act1_Scenes/BathroomScene.unity
+    guid: fa72c61fa2d1bc841ad8618c78c7adc4
+  - enabled: 1
+    path: Assets/Scenes/Act1_Scenes/Murder_Cutscene.unity
+    guid: 6659d553004c1c04abe31493d2f612a7
   m_configObjects: {}

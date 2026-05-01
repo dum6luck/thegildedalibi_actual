@@ -1769,7 +1769,12 @@ MonoBehaviour:
   dialogueDisplay: {fileID: 1662962461}
   nextArrow: {fileID: 936985709}
   dialoguePanel: {fileID: 0}
+  uiFader: {fileID: 0}
+  mingleTracker: {fileID: 0}
   typingSpeed: 0.0333
+  triggerSentence: "One of you turned this gala into a crime scene\u2026 and I\u2019m
+    going to find out who."
+  sceneToLoad: 
   dialogueLines:
   - characterName: DETECTIVE
     sentence: "I didn\u2019t need to be a detective to know someone was dead. I could
@@ -1779,31 +1784,110 @@ MonoBehaviour:
     sentence: "No\u2026"
     isItalic: 0
   - characterName: JULIAN VANE
-    sentence: "He was \u2014 we came back from the bar and he was just..."
+    sentence: "He was\u2014 the lights went out and he just\u2014"
     isItalic: 0
   - characterName: PENNY STERLING
-    sentence: Nobody has touched anything. Nobody left the room!
+    sentence: "How could this happen\u2014 nobody touched anything!"
     isItalic: 0
   - characterName: DR. HARLOW
-    sentence: I don't understand. I was just speaking with him.
+    sentence: "I don\u2019t understand. I was speaking with him only moments before
+      the lights went out."
     isItalic: 0
   - characterName: IRIS GABLE
-    sentence: "The lights went out and then \u2014 we heard something fall and when
-      they came back on he was just\u2026"
+    sentence: The alarm went off and then... the lights went off...
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: I was gone for maybe five minutes. Five minutes, and Maximilian Midas,
+      the man who just announced he was taking everything and leaving, is dead on
+      the floor of his own museum.
+    isItalic: 1
+  - characterName: DETECTIVE
+    sentence: "One of them did it. And  I\u2019m the only person in this room who
+      can prove it."
+    isItalic: 1
+  - characterName: DETECTIVE
+    sentence: "\u2026Nobody leaves this room."
+    isItalic: 0
+  - characterName: JULIAN VANE
+    sentence: 'Excuse me?
+
+'
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: 'Whoever did this is still here. Which means walking out that door
+      is not an option.
+
+'
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: "Okay. We should call someone... Police, ambulance... something\u2014"
+    isItalic: 0
+  - characterName: 
+    sentence: 'Penny digs into her phone, tapping rapidly.
+
+'
+    isItalic: 1
+  - characterName: PENNY STERLING
+    sentence: '...No signal?
+
+'
+    isItalic: 0
+  - characterName: DR. HARLOW
+    sentence: "That\u2019s not unusual in this building. The reception is\u2026 unreliable
+      at best.\n"
     isItalic: 0
   - characterName: IRIS GABLE
-    sentence: "The lights went out and then \u2014 we heard something fall and when
-      they came back on he was just\u2026"
+    sentence: 'So what, we just wait here with a dead body?
+
+'
+    isItalic: 0
+  - characterName: 'IRIS GABLE '
+    sentence: "We\u2019re locked in with no signal, a dead man, and five people who
+      just found out they were fired.\n"
+    isItalic: 0
+  - characterName: 'DETECTIVE '
+    sentence: "We\u2019re locked in with five people who all had a reason to hate
+      him."
+    isItalic: 0
+  - characterName: 'DR. HARLOW '
+    sentence: "You speak as though you\u2019ve already decided this was murder!\u201D"
     isItalic: 0
   - characterName: DETECTIVE
-    sentence: "I was gone for maybe five minutes. Five minutes and Maximilian Midas,
-      who had just fired all of them, who had just announced he was taking everything
-      and leaving \u2014 is dead on the floor of his own museum."
-    isItalic: 1
-  - characterName: DETECTIVE
-    sentence: "One of these people just killed him. And they all know I'm the only
-      one in this room who can figure out which one.\r"
-    isItalic: 1
+    sentence: "I haven\u2019t decided anything. I\u2019m a Detective, it's my job."
+    isItalic: 0
+  - characterName: 'JULIAN VANE '
+    sentence: '!!'
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: '!!'
+    isItalic: 0
+  - characterName: IRIS GABLE
+    sentence: '!!'
+    isItalic: 0
+  - characterName: 'DR. HARLOW '
+    sentence: '!!'
+    isItalic: 0
+  - characterName: JULIAN VANE
+    sentence: "Of course he invited a detective. That\u2019s very on brand for Max.
+      Maybe he even wanted this!"
+    isItalic: 0
+  - characterName: 'IRIS GABLE '
+    sentence: "If he did\u2026 then we\u2019re already inside his game."
+    isItalic: 0
+  - characterName: 'DR. HARLOW '
+    sentence: Then I assume you intend to determine what happened here.
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: Yes. Please. Just figure it out.
+    isItalic: 0
+  - characterName: 'DETECTIVE '
+    sentence: "Here\u2019s what\u2019s going to happen. No one leaves. No one touches
+      anything. And no one lies to me."
+    isItalic: 0
+  - characterName: 'DETECTIVE '
+    sentence: "One of you turned this gala into a crime scene\u2026 and I\u2019m
+      going to find out who."
+    isItalic: 0
 --- !u!4 &950092906
 Transform:
   m_ObjectHideFlags: 0
