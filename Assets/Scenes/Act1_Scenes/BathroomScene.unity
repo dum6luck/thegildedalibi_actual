@@ -428,7 +428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a177f839a2a54a9299f489ef020a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkingManager: {fileID: 1564423113}
 --- !u!114 &340922830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,6 +2156,11 @@ PrefabInstance:
       objectReference: {fileID: 1053247944}
     - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
         type: 3}
+      propertyPath: sceneToLoad
+      value: Murder_Cutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1823378585}
@@ -2165,6 +2169,198 @@ PrefabInstance:
       propertyPath: dialogueDisplay
       value: 
       objectReference: {fileID: 753949480}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: triggerSentence
+      value: Wha?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[0].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[0].sentence
+      value: One bathroom break. That's all I need. Two minutes to splash some water
+        on my face and figure out what's actually bothering me about tonight.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[1].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[1].sentence
+      value: I need a cigarette.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[2].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[2].sentence
+      value: You light a cigarette and inhale the smoke a few times.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[3].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[3].sentence
+      value: Something bothers you as you smoke, there was just something about the
+        way Max talked tonight.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[4].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[4].sentence
+      value: It felt off.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[5].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[5].sentence
+      value: Before you can take another drag, the fire alarm starts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[6].isItalic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[6].sentence
+      value: '!?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[7].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[7].sentence
+      value: Ugh, so loud. Probably sensed the smoke.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[8].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[8].sentence
+      value: "What the\u2026 great."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[9].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[9].sentence
+      value: First he fires the staff, then he stops paying the electric bill.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[10].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[10].sentence
+      value: You decide to stay put until the lights turn on.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[11].isItalic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[11].sentence
+      value: But after they do, you hear something.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[12].isItalic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[12].sentence
+      value: Wha?!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[0].characterName
+      value: DETECTIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[1].characterName
+      value: DETECTIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[2].characterName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[3].characterName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[6].characterName
+      value: DETECTIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[7].characterName
+      value: DETECTIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[8].characterName
+      value: DETECTIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[9].characterName
+      value: DETECTIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[10].characterName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
+        type: 3}
+      propertyPath: dialogueLines.Array.data[12].characterName
+      value: DETECTIVE
+      objectReference: {fileID: 0}
     - target: {fileID: 7034042857094365891, guid: f23a2ba0bca3e60438d34278cfe61e8d,
         type: 3}
       propertyPath: m_Name

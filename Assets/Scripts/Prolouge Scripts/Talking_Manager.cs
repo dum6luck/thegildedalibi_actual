@@ -21,9 +21,7 @@ public class Talking_Manager : MonoBehaviour
     public float typingSpeed = 0.05f;
 
     [Header("Reusable Scene Transition")]
-    [Tooltip("If the last line matches this EXACTLY, the scene will change.")]
     public string triggerSentence;
-    [Tooltip("The name of the scene to load.")]
     public string sceneToLoad;
 
     [System.Serializable]
@@ -35,29 +33,46 @@ public class Talking_Manager : MonoBehaviour
         public bool isItalic;
     }
 
-    public List<DialogueLine> dialogueLines;
+    public List<DialogueLine> dialogueLines = new List<DialogueLine>();
     private int index = 0;
     private Coroutine typingCoroutine;
     private bool isTyping = false;
     private bool isFirstTimeTalking = false;
+    private string currentInteractingNPC; // Stores the name passed from NPCData
 
-    // --- ADDED UPDATE LOOP FOR CLICKS ---
+    private float lineStartTime;
+    private float lastInputTime;
+    private readonly float inputDelay = 0.15f;
+
     void Update()
     {
-        // If the dialogue is active, allow clicking or pressing Space/Enter to advance
         if (dialoguePanel != null && dialoguePanel.activeSelf)
         {
-            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            if (Time.time - lineStartTime < 0.15f) return;
+
+            if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && Time.time - lastInputTime > inputDelay)
             {
+                lastInputTime = Time.time;
                 AdvanceDialogue();
             }
         }
     }
 
+    // NEW: Call this from NPCData before starting the sequence to set the target NPC's name
+    public void SetCurrentNPC(string name)
+    {
+        currentInteractingNPC = name;
+    }
+
     public void StartDialogueSequence(bool isFirstTime)
     {
+        this.gameObject.SetActive(true);
+
         isFirstTimeTalking = isFirstTime;
         index = 0;
+
+        // Note: currentInteractingNPC should now be set via SetCurrentNPC() 
+        // prior to this call to avoid counting the Detective.
 
         if (dialoguePanel != null)
         {
@@ -72,7 +87,7 @@ public class Talking_Manager : MonoBehaviour
     {
         if (isTyping)
         {
-            StopCoroutine(typingCoroutine);
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
             isTyping = false;
             dialogueDisplay.text = FormatText(dialogueLines[index].sentence, dialogueLines[index].isItalic);
             if (nextArrow != null) nextArrow.SetActive(true);
@@ -82,70 +97,37 @@ public class Talking_Manager : MonoBehaviour
         if (index < dialogueLines.Count - 1)
         {
             index++;
-            if (nextArrow != null) nextArrow.SetActive(false);
             DisplayLine();
         }
         else
         {
-            string lastLine = dialogueLines[index].sentence.Trim();
-
-            if (!string.IsNullOrEmpty(triggerSentence) && lastLine == triggerSentence.Trim())
-            {
-                if (uiFader != null)
-                {
-                    uiFader.FadeOut();
-                    Invoke("LoadNextScene", 0.8f);
-                }
-                else
-                {
-                    LoadNextScene();
-                }
-            }
-            else
-            {
-                // This is where "Hmm... Not seeing anything" finishes
-                if (uiFader != null)
-                {
-                    uiFader.FadeOut();
-                    Invoke("DisableManager", 0.6f);
-                }
-                else
-                {
-                    DisableManager();
-                }
-            }
+            HandleDialogueEnd();
         }
-    }
-
-    void LoadNextScene()
-    {
-        if (!string.IsNullOrEmpty(sceneToLoad))
-            SceneManager.LoadScene(sceneToLoad);
     }
 
     void DisplayLine()
     {
-        if (dialogueLines.Count == 0) return;
+        lineStartTime = Time.time;
+        if (nextArrow != null) nextArrow.SetActive(false);
 
         if (nameDisplay != null)
             nameDisplay.text = dialogueLines[index].characterName;
 
-        if (typingCoroutine != null)
-            StopCoroutine(typingCoroutine);
-
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         typingCoroutine = StartCoroutine(TypeText(dialogueLines[index].sentence, dialogueLines[index].isItalic));
     }
+
 
     IEnumerator TypeText(string fullText, bool useItalics)
     {
         isTyping = true;
         dialogueDisplay.text = "";
-        string currentDisplayedText = "";
+        string currentText = "";
 
         foreach (char letter in fullText.ToCharArray())
         {
-            currentDisplayedText += letter;
-            dialogueDisplay.text = FormatText(currentDisplayedText, useItalics);
+            currentText += letter;
+            dialogueDisplay.text = FormatText(currentText, useItalics);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -153,27 +135,38 @@ public class Talking_Manager : MonoBehaviour
         if (nextArrow != null) nextArrow.SetActive(true);
     }
 
-    // --- REFINED DISABLE MANAGER ---
+    private void HandleDialogueEnd()
+    {
+        string lastLine = dialogueLines[index].sentence.Trim();
+
+        if (!string.IsNullOrEmpty(triggerSentence) && lastLine == triggerSentence.Trim())
+        {
+            if (uiFader != null) { uiFader.FadeOut(); Invoke(nameof(LoadNextScene), 0.8f); }
+            else LoadNextScene();
+        }
+        else
+        {
+            if (uiFader != null) { uiFader.FadeOut(); Invoke(nameof(DisableManager), 0.6f); }
+            else DisableManager();
+        }
+    }
+
+    void LoadNextScene() => SceneManager.LoadScene(sceneToLoad);
+
     void DisableManager()
     {
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
 
-        // Safety check for other scenes
         if (isFirstTimeTalking && mingleTracker != null)
         {
-            mingleTracker.CheckProgression();
+            // Now uses the name specifically passed from the NPCData script
+            mingleTracker.CheckProgression(currentInteractingNPC);
         }
 
-        // Hide and lock the cursor so it doesn't stay on screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        // Turn off the manager so the tutorial script continues
         this.gameObject.SetActive(false);
     }
 
-    string FormatText(string text, bool useItalics)
-    {
-        return useItalics ? $"<i>{text}</i>" : text;
-    }
+    string FormatText(string text, bool useItalics) => useItalics ? $"<i>{text}</i>" : text;
 }

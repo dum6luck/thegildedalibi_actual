@@ -525,11 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a6565bbdfee37408ff530eb3826c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: BathroomScene
-  requiredTag: Player
-  waitBeforeLoad: 1
-  mingleTracker: {fileID: 0}
-  screenFader: {fileID: 0}
 --- !u!1 &119478063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,18 +1129,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422077143}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &425558427 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1962320203625494333, guid: 9c86720cedd64ca488034055bdb83537,
-    type: 3}
-  m_PrefabInstance: {fileID: 1247169605}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b12d0ad4b0a67b844a9c6ff10634f302, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &431994299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1195,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438555807
 GameObject:
@@ -2228,7 +2211,7 @@ Transform:
   - {fileID: 1733065437}
   - {fileID: 254444435}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &771755735
 GameObject:
@@ -2786,7 +2769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 4
   npcTag: NPC
-  doorTag: Door
   interactPrompt: {fileID: 0}
   talkingManager: {fileID: 0}
   fpsController: {fileID: 0}
@@ -2890,192 +2872,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &887324626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 887324631}
-  - component: {fileID: 887324630}
-  - component: {fileID: 887324629}
-  - component: {fileID: 887324628}
-  - component: {fileID: 887324627}
-  m_Layer: 0
-  m_Name: Harlow
-  m_TagString: NPC
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &887324627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887324626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - characterName: DETECTIVE
-    sentence: Hey. You doing okay?
-    isItalic: 0
-  - characterName: DR. HARLOW
-    sentence: Ah, Hello. I'm the Institute's curator. Was the Institute's curator,
-      apparently.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: That announcement caught you off guard?
-    isItalic: 0
-  - characterName: 'DR. HARLOW '
-    sentence: Completely. Nineteen years overseeing this collection, and I find out
-      its fate alongside the others. Efficient, if nothing else. And you are?
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Just another guest.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: "I thought as much. Max has a habit of surrounding himself with people
-      who make him look credible. Scholars, artists\u2026 specialists."
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Is that what I am? Set dressing?
-    isItalic: 0
-  - characterName: DR. HARLOW
-    sentence: "I\u2019ve been dressing for nineteen years. Don\u2019t take it personally. "
-    isItalic: 0
-  - characterName: DR. HARLOW
-    sentence: "Max collects people the same way he collects artifacts. He finds something
-      impressive, acquires it, and puts it on display. And when he\u2019s finished
-      with it, he discards it on a Friday."
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: You really had no idea about the university?
-    isItalic: 0
-  - characterName: DR. HARLOW
-    sentence: "Found out the same time you did. Every piece in this building passed
-      through my hands\u2026 I\u2019ll be sorry to see it go."
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: What do you think he actually wants with the university?
-    isItalic: 0
-  - characterName: DR. HARLOW
-    sentence: His name on a building. That's all it's ever been. The collection was
-      never about history for Max. It was about ownership.
-    isItalic: 0
-  - characterName: DR. HARLOW
-    sentence: Anyway, lovely to meet you. I just wish it were under better circumstances.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Looks like hes done talking.
-    isItalic: 1
-  repeatLine:
-    characterName: DETECTIVE
-    sentence: Looks like hes done talking.
-    isItalic: 1
-  hasTalked: 0
---- !u!65 &887324628
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887324626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 18.9, y: 28.49, z: 11.79}
-  m_Center: {x: 0, y: -0.36, z: 0}
---- !u!114 &887324629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887324626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  billboardType: 0
-  lockX: 0
-  lockY: 0
-  lockZ: 0
---- !u!212 &887324630
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887324626}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7d7682552a50c214a90a1ae747a2420a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.67, y: 2.65}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &887324631
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887324626}
-  m_LocalRotation: {x: -0, y: 0.20150718, z: -0, w: 0.97948706}
-  m_LocalPosition: {x: 10.08, y: 2.09, z: -21.55}
-  m_LocalScale: {x: 0.1362591, y: 0.1362591, z: 0.1362591}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 23.25, z: 0}
 --- !u!1 &978062260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,7 +2922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 4
   npcTag: NPC
-  doorTag: Door
   interactPrompt: {fileID: 0}
   talkingManager: {fileID: 0}
   fpsController: {fileID: 0}
@@ -3704,7 +3499,7 @@ PrefabInstance:
     - target: {fileID: 7034042857094365889, guid: f23a2ba0bca3e60438d34278cfe61e8d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7034042857094365889, guid: f23a2ba0bca3e60438d34278cfe61e8d,
         type: 3}
@@ -3780,7 +3575,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mingleTracker
       value: 
-      objectReference: {fileID: 425558427}
+      objectReference: {fileID: 0}
     - target: {fileID: 7034042857094365890, guid: f23a2ba0bca3e60438d34278cfe61e8d,
         type: 3}
       propertyPath: dialogueDisplay
@@ -3825,181 +3620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45ffc7ebd05a6849a9ced81e0140741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1221704788
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1221704791}
-  - component: {fileID: 1221704790}
-  - component: {fileID: 1221704789}
-  - component: {fileID: 1221704793}
-  - component: {fileID: 1221704792}
-  m_Layer: 0
-  m_Name: Julian
-  m_TagString: NPC
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1221704789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221704788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  billboardType: 0
-  lockX: 0
-  lockY: 0
-  lockZ: 0
---- !u!212 &1221704790
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221704788}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 913485f85371795419648587ba22d280, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.67, y: 2.65}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1221704791
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221704788}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.39, y: 2.09, z: -18.95}
-  m_LocalScale: {x: 0.30146226, y: 0.30146226, z: 0.30146226}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1221704792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221704788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - characterName: DETECTIVE
-    sentence: Don't think we've met. Nice to meet you.
-    isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: Julian Vane. Artist. Max told me about the funding last week. Said
-      the Institute was restructuring. It's fine, I've survived worse.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: You don't seem fine.
-    isItalic: 0
-  - characterName: 'JULIAN VANE '
-    sentence: Because then he pulls out a university. A university with his name
-      on it.
-    isItalic: 0
-  - characterName: 'JULIAN VANE '
-    sentence: Max has been buying my work for fifteen years, all of it sitting in
-      this collection. That collection goes into a permanent institution and suddenly
-      my life's work is just his legacy.
-    isItalic: 0
-  - characterName: 'JULIAN VANE '
-    sentence: Forever. In his building.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Can he do that?
-    isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: He bought them fair and square so yeah. Technically.
-    isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: Max doesn't steal things. He just makes sure everything ends up being
-      his eventually.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Did you know what he was announcing tonight?
-    isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: I just had a feeling it wasn't going to be good.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: "It seems like he doesn't want to talk anymore.\r"
-    isItalic: 1
-  repeatLine:
-    characterName: DETECTIVE
-    sentence: "It seems like he doesn't want to talk anymore.\r"
-    isItalic: 1
-  hasTalked: 0
---- !u!65 &1221704793
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221704788}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.589999, y: 13.1, z: 7.68}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1224509133
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,95 +3717,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224509133}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1247169605
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 957.8667
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 175.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494332, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494333, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: talkingManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494333, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: totalNPCsToTalkTo
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494334, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: m_Name
-      value: MingleManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494335, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: talkingManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962320203625494335, guid: 9c86720cedd64ca488034055bdb83537,
-        type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9c86720cedd64ca488034055bdb83537, type: 3}
 --- !u!1 &1278823747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4418,177 +3949,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309311124}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1320931002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1320931007}
-  - component: {fileID: 1320931006}
-  - component: {fileID: 1320931005}
-  - component: {fileID: 1320931004}
-  - component: {fileID: 1320931003}
-  m_Layer: 0
-  m_Name: Iris
-  m_TagString: NPC
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1320931003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320931002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - characterName: DETECTIVE
-    sentence: Hey, don't think we've met.
-    isItalic: 0
-  - characterName: IRIS GABLE
-    sentence: I'm Iris. I have been doing photography for Max for four or four years
-      now.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Did you know what he was announcing tonight?
-    isItalic: 0
-  - characterName: IRIS GABLE
-    sentence: He said dress for a historic occasion. I thought it was another acquisition
-      thing. Didn't see all of this coming.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: How are you feeling about it?
-    isItalic: 0
-  - characterName: IRIS GABLE
-    sentence: I mean it is what it is. Clients come and go. It's just, Max is the
-      reason I don't really have other clients.
-    isItalic: 0
-  - characterName: IRIS GABLE
-    sentence: Four years of being basically on call for him, I never really built
-      anything else up. And he knew that.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: You think he took advantage of that?
-    isItalic: 0
-  - characterName: IRIS GABLE
-    sentence: I think Max likes having people who depend on him. Makes it easier.
-    isItalic: 0
-  - characterName: IRIS GABLE
-    sentence: Anyway, I'm sure he'll be fine. Guys like Max are always fine.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: She seems a bit mad. I should leave her alone.
-    isItalic: 1
-  repeatLine:
-    characterName: DETECTIVE
-    sentence: "She seems a bit mad. I should leave her alone.\r"
-    isItalic: 1
-  hasTalked: 0
---- !u!65 &1320931004
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320931002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.37, y: 29.5, z: 20.7}
-  m_Center: {x: 0, y: 0.27, z: 0}
---- !u!114 &1320931005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320931002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  billboardType: 0
-  lockX: 0
-  lockY: 0
-  lockZ: 0
---- !u!212 &1320931006
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320931002}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c2d356ce5a08dc4a8756ea40cabf276, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.67, y: 2.65}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1320931007
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320931002}
-  m_LocalRotation: {x: -0, y: 0.36485672, z: -0, w: 0.93106365}
-  m_LocalPosition: {x: 15.16, y: 1.56, z: -26.27}
-  m_LocalScale: {x: 0.13892286, y: 0.13892286, z: 0.13892286}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 42.798, z: 0}
 --- !u!1 &1343192364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,7 +4131,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362022612
 GameObject:
@@ -4870,6 +4230,178 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362022612}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1396279926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396279931}
+  - component: {fileID: 1396279930}
+  - component: {fileID: 1396279929}
+  - component: {fileID: 1396279928}
+  - component: {fileID: 1396279927}
+  m_Layer: 0
+  m_Name: Iris (1)
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1396279927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396279926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: IRIS GABLE
+  conversation:
+  - characterName: DETECTIVE
+    sentence: Hey, don't think we've met.
+    isItalic: 0
+  - characterName: IRIS GABLE
+    sentence: I'm Iris. I have been doing photography for Max for four or four years
+      now.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Did you know what he was announcing tonight?
+    isItalic: 0
+  - characterName: IRIS GABLE
+    sentence: He said dress for a historic occasion. I thought it was another acquisition
+      thing. Didn't see all of this coming.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: How are you feeling about it?
+    isItalic: 0
+  - characterName: IRIS GABLE
+    sentence: I mean it is what it is. Clients come and go. It's just, Max is the
+      reason I don't really have other clients.
+    isItalic: 0
+  - characterName: IRIS GABLE
+    sentence: Four years of being basically on call for him, I never really built
+      anything else up. And he knew that.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: You think he took advantage of that?
+    isItalic: 0
+  - characterName: IRIS GABLE
+    sentence: I think Max likes having people who depend on him. Makes it easier.
+    isItalic: 0
+  - characterName: IRIS GABLE
+    sentence: Anyway, I'm sure he'll be fine. Guys like Max are always fine.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: She seems a bit mad. I should leave her alone.
+    isItalic: 1
+  repeatLine:
+    characterName: DETECTIVE
+    sentence: "She seems a bit mad. I should leave her alone.\r"
+    isItalic: 1
+  hasTalked: 0
+--- !u!65 &1396279928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396279926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.8, y: 12, z: 6}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1396279929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396279926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardType: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
+--- !u!212 &1396279930
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396279926}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d49e23c132525144e952727be05e803d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.67, y: 2.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1396279931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396279926}
+  m_LocalRotation: {x: -0, y: 0.36485672, z: -0, w: 0.93106365}
+  m_LocalPosition: {x: 15.16, y: 1.1, z: -26.27}
+  m_LocalScale: {x: 0.39232293, y: 0.39232293, z: 0.39232293}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 42.798, z: 0}
 --- !u!1 &1456646102
 GameObject:
   m_ObjectHideFlags: 0
@@ -5181,7 +4713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a177f839a2a54a9299f489ef020a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkingManager: {fileID: 1217513608}
 --- !u!1 &1527038835
 GameObject:
   m_ObjectHideFlags: 0
@@ -5866,7 +5397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1674381776
 MonoBehaviour:
@@ -5882,6 +5413,182 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magnifyingGlassContainer: {fileID: 1950770298}
   blueLensCamera: {fileID: 0}
+--- !u!1 &1685258573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1685258578}
+  - component: {fileID: 1685258577}
+  - component: {fileID: 1685258576}
+  - component: {fileID: 1685258575}
+  - component: {fileID: 1685258574}
+  m_Layer: 0
+  m_Name: Julian (1)
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1685258574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685258573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: JULIAN VANE
+  conversation:
+  - characterName: DETECTIVE
+    sentence: Don't think we've met. Nice to meet you.
+    isItalic: 0
+  - characterName: JULIAN VANE
+    sentence: Julian Vane. Artist. Max told me about the funding last week. Said
+      the Institute was restructuring. It's fine, I've survived worse.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: You don't seem fine.
+    isItalic: 0
+  - characterName: 'JULIAN VANE '
+    sentence: Because then he pulls out a university. A university with his name
+      on it.
+    isItalic: 0
+  - characterName: 'JULIAN VANE '
+    sentence: Max has been buying my work for fifteen years, all of it sitting in
+      this collection. That collection goes into a permanent institution and suddenly
+      my life's work is just his legacy.
+    isItalic: 0
+  - characterName: 'JULIAN VANE '
+    sentence: Forever. In his building.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Can he do that?
+    isItalic: 0
+  - characterName: JULIAN VANE
+    sentence: He bought them fair and square so yeah. Technically.
+    isItalic: 0
+  - characterName: JULIAN VANE
+    sentence: Max doesn't steal things. He just makes sure everything ends up being
+      his eventually.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Did you know what he was announcing tonight?
+    isItalic: 0
+  - characterName: JULIAN VANE
+    sentence: I just had a feeling it wasn't going to be good.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: "It seems like he doesn't want to talk anymore.\r"
+    isItalic: 1
+  repeatLine:
+    characterName: DETECTIVE
+    sentence: "It seems like he doesn't want to talk anymore.\r"
+    isItalic: 1
+  hasTalked: 0
+--- !u!65 &1685258575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685258573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.589999, y: 13.1, z: 7.68}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1685258576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685258573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardType: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
+--- !u!212 &1685258577
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685258573}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b232aa2816123da46af764c0e1486082, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.67, y: 2.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1685258578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685258573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.39, y: 1.36, z: -18.95}
+  m_LocalScale: {x: 0.40550303, y: 0.40550303, z: 0.40550303}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733065436
 GameObject:
   m_ObjectHideFlags: 0
@@ -6092,180 +5799,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769564479}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1833747466
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1833747469}
-  - component: {fileID: 1833747468}
-  - component: {fileID: 1833747467}
-  - component: {fileID: 1833747470}
-  - component: {fileID: 1833747471}
-  m_Layer: 0
-  m_Name: Penny
-  m_TagString: NPC
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1833747467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833747466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  billboardType: 0
-  lockX: 0
-  lockY: 0
-  lockZ: 0
---- !u!212 &1833747468
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833747466}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9cecb861ff347cf4f9132ebaf7c5547a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.67, y: 2.65}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1833747469
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833747466}
-  m_LocalRotation: {x: -0, y: -0.34879574, z: -0, w: 0.9371988}
-  m_LocalPosition: {x: -17.46, y: 1.54, z: -26.42}
-  m_LocalScale: {x: 0.30146226, y: 0.30146226, z: 0.30146226}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: -40.827, z: 0}
---- !u!65 &1833747470
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833747466}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.589999, y: 12.819999, z: 8}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1833747471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833747466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation:
-  - characterName: DETECTIVE
-    sentence: Hi. Don't think we've been introduced.
-    isItalic: 0
-  - characterName: PENNY STERLING
-    sentence: "Penny. I work the front desk, greet guests, hold the door open \u2014
-      that kind of thing. I know a lot of people, but what I don't know is why you're
-      here."
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Max invited me. Something about honoring my contribution to his archives.
-    isItalic: 0
-  - characterName: PENNY STERLING
-    sentence: Max doesn't honor anyone unless there's something in it for Max. So
-      what does he want from you?
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: I genuinely don't know.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: "And judging by tonight, I\u2019m not the only one in the dark."
-    isItalic: 0
-  - characterName: PENNY STERLING
-    sentence: "Two years I've been working the front of this place. Not exactly a
-      career defining job but it paid the bills. And he couldn't even tell us beforehand.
-      Just\u2026 surprise! You\u2019re done!"
-    isItalic: 0
-  - characterName: PENNY STERLING
-    sentence: Now I'm not even sure how I'm going to pay my rent next week.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Are you going to be okay?
-    isItalic: 0
-  - characterName: PENNY STERLING
-    sentence: I'll find something else. It's just, I don't know.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: 'She seems upset. I should leave her alone.
-
-'
-    isItalic: 1
-  repeatLine:
-    characterName: DETECTIVE
-    sentence: "She seems upset. I should leave her alone.\r"
-    isItalic: 1
-  hasTalked: 0
 --- !u!1 &1843179402
 GameObject:
   m_ObjectHideFlags: 0
@@ -6782,6 +6315,193 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939654266}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1939806489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1939806494}
+  - component: {fileID: 1939806493}
+  - component: {fileID: 1939806492}
+  - component: {fileID: 1939806491}
+  - component: {fileID: 1939806490}
+  m_Layer: 0
+  m_Name: Harlow (1)
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1939806490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939806489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: DR. HARLOW
+  conversation:
+  - characterName: DETECTIVE
+    sentence: Hey. You doing okay?
+    isItalic: 0
+  - characterName: DR. HARLOW
+    sentence: Ah, Hello. I'm the Institute's curator. Was the Institute's curator,
+      apparently.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: That announcement caught you off guard?
+    isItalic: 0
+  - characterName: 'DR. HARLOW '
+    sentence: Completely. Nineteen years overseeing this collection, and I find out
+      its fate alongside the others. Efficient, if nothing else. And you are?
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Just another guest.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: "I thought as much. Max has a habit of surrounding himself with people
+      who make him look credible. Scholars, artists\u2026 specialists."
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Is that what I am? Set dressing?
+    isItalic: 0
+  - characterName: DR. HARLOW
+    sentence: "I\u2019ve been dressing for nineteen years. Don\u2019t take it personally. "
+    isItalic: 0
+  - characterName: DR. HARLOW
+    sentence: "Max collects people the same way he collects artifacts. He finds something
+      impressive, acquires it, and puts it on display. And when he\u2019s finished
+      with it, he discards it on a Friday."
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: You really had no idea about the university?
+    isItalic: 0
+  - characterName: DR. HARLOW
+    sentence: "Found out the same time you did. Every piece in this building passed
+      through my hands\u2026 I\u2019ll be sorry to see it go."
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: What do you think he actually wants with the university?
+    isItalic: 0
+  - characterName: DR. HARLOW
+    sentence: His name on a building. That's all it's ever been. The collection was
+      never about history for Max. It was about ownership.
+    isItalic: 0
+  - characterName: DR. HARLOW
+    sentence: Anyway, lovely to meet you. I just wish it were under better circumstances.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Looks like hes done talking.
+    isItalic: 1
+  repeatLine:
+    characterName: DETECTIVE
+    sentence: Looks like hes done talking.
+    isItalic: 1
+  hasTalked: 0
+--- !u!65 &1939806491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939806489}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -5.25, y: 28.49, z: 7.31}
+  m_Center: {x: 0, y: -9.26, z: 0}
+--- !u!114 &1939806492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939806489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardType: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
+--- !u!212 &1939806493
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939806489}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4389649dfc5e5bd4ea12ad44e17dd1c6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.67, y: 2.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1939806494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939806489}
+  m_LocalRotation: {x: -0, y: 0.20150718, z: -0, w: 0.97948706}
+  m_LocalPosition: {x: 10.08, y: 1.48, z: -21.55}
+  m_LocalScale: {x: 0.42049557, y: 0.42049557, z: 0.42049557}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 23.25, z: 0}
 --- !u!1 &1950770298
 GameObject:
   m_ObjectHideFlags: 0
@@ -6917,6 +6637,181 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953453233}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2064010849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064010854}
+  - component: {fileID: 2064010853}
+  - component: {fileID: 2064010852}
+  - component: {fileID: 2064010851}
+  - component: {fileID: 2064010850}
+  m_Layer: 0
+  m_Name: Penny (1)
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2064010850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064010849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3084848c5897dd41b9239769188f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: PENNY STERLING
+  conversation:
+  - characterName: DETECTIVE
+    sentence: Hi. Don't think we've been introduced.
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: "Penny. I work the front desk, greet guests, hold the door open \u2014
+      that kind of thing. I know a lot of people, but what I don't know is why you're
+      here."
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Max invited me. Something about honoring my contribution to his archives.
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: Max doesn't honor anyone unless there's something in it for Max. So
+      what does he want from you?
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: I genuinely don't know.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: "And judging by tonight, I\u2019m not the only one in the dark."
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: "Two years I've been working the front of this place. Not exactly a
+      career defining job but it paid the bills. And he couldn't even tell us beforehand.
+      Just\u2026 surprise! You\u2019re done!"
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: Now I'm not even sure how I'm going to pay my rent next week.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: Are you going to be okay?
+    isItalic: 0
+  - characterName: PENNY STERLING
+    sentence: I'll find something else. It's just, I don't know.
+    isItalic: 0
+  - characterName: DETECTIVE
+    sentence: 'She seems upset. I should leave her alone.
+
+'
+    isItalic: 1
+  repeatLine:
+    characterName: DETECTIVE
+    sentence: "She seems upset. I should leave her alone.\r"
+    isItalic: 1
+  hasTalked: 0
+--- !u!65 &2064010851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064010849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.589999, y: 12.819999, z: 8}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2064010852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064010849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4687353d29e8eec459f7bda914df7df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardType: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
+--- !u!212 &2064010853
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064010849}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b78b7589b7324ff4d843d2d970ed616a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.67, y: 2.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2064010854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064010849}
+  m_LocalRotation: {x: -0, y: -0.34879574, z: -0, w: 0.9371988}
+  m_LocalPosition: {x: -17.46, y: 1.15, z: -26.42}
+  m_LocalScale: {x: 0.37339115, y: 0.37339115, z: 0.37339115}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: -40.827, z: 0}
 --- !u!1 &2081100886
 GameObject:
   m_ObjectHideFlags: 0
