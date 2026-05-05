@@ -9,6 +9,34 @@ public class CaseFileUI : MonoBehaviour
     public TMP_Text clueTitle;
     public TMP_Text clueDescription;
 
+    [Header("Grid Setup")]
+    public GameObject clueButtonPrefab; // A button with an image
+    public Transform gridParent;       // The Content of your Scroll View
+
+    void OnEnable() // Runs every time you open the Case File
+    {
+        PopulateClueList();
+    }
+
+    public void PopulateClueList()
+    {
+        // Clear old buttons first
+        foreach (Transform child in gridParent) Destroy(child.gameObject);
+
+        // Create a button for every clue in the ClueManager
+        foreach (Clue c in ClueManager.Instance.collectedClues)
+        {
+            GameObject btn = Instantiate(clueButtonPrefab, gridParent);
+
+            // Set the icon on the button
+            Image icon = btn.GetComponentInChildren<Image>();
+            if (icon != null) icon.sprite = c.clueImage;
+
+            // Make the button show the details in your existing DisplayClue function
+            btn.GetComponent<Button>().onClick.AddListener(() => DisplayClue(c));
+        }
+    }
+
     void Start()
     {
         ClearUI();
