@@ -3,7 +3,17 @@ guid: 981fc73a32fe88b4b863b5a7ec00ca14
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_prop_int_displaycase1
+    second: {fileID: 2100000, guid: 6e194e13aab7227488fd4919122ee70f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_prop_int_displaycase1_plane1
+    second: {fileID: 2100000, guid: cc5313323749ef542a9a94e401a4679f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
