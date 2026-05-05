@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Act1_Scenes/Murder_Cutscene.unity
     guid: 6659d553004c1c04abe31493d2f612a7
   - enabled: 1
-    path: Assets/Scenes/Demo1 Scenes/ClueTutorial.unity
-    guid: b0cf0dc6e0148724ea1cb687689ae8e0
+    path: Assets/Scenes/Act1_Scenes/Main_Game.unity
+    guid: 8b0dddaf06a8fa341b876d6f2eb15e77
+  - enabled: 1
+    path: Assets/Scenes/Case_File_Scene.unity
+    guid: 736432b67a12f9f40b98005113b02a1d
   m_configObjects: {}

@@ -29,6 +29,9 @@ public class Talking_Manager : MonoBehaviour
     public string triggerSentence;
     public string sceneToLoad;
 
+    [Header("Case File Scene")]
+    public string caseFileSceneName = "CaseFile";
+
     [System.Serializable]
     public struct DialogueLine
     {
@@ -51,6 +54,12 @@ public class Talking_Manager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            OpenCaseFile();
+            return;
+        }
+
         if (dialoguePanel != null && dialoguePanel.activeSelf)
         {
             if (Time.time - lineStartTime < 0.15f) return;
@@ -218,6 +227,14 @@ public class Talking_Manager : MonoBehaviour
 
     void LoadNextScene() => SceneManager.LoadScene(sceneToLoad);
 
+    void OpenCaseFile()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene(caseFileSceneName);
+    }
+
     void DisableManager()
     {
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
@@ -255,6 +272,17 @@ public class Talking_Manager : MonoBehaviour
             {
                 vcam.Priority = 10;
             }
+        }
+
+        IEnumerator LoadCaseFile()
+        {
+            if (uiFader != null)
+                uiFader.FadeOut();
+
+            yield return new WaitForSeconds(0.8f);
+            caseFileSceneName = "Case_File_Scene";
+
+            SceneManager.LoadScene(caseFileSceneName);
         }
     }
 
