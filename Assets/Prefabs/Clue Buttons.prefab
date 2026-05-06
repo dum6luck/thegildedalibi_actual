@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 355192377170639150}
   - component: {fileID: 355192377170639137}
   - component: {fileID: 355192377170639136}
-  - component: {fileID: 355192377170639139}
   m_Layer: 0
-  m_Name: Stab Wounds
+  m_Name: Clue Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 355192377170639139}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ClueButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -135,20 +134,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &355192377170639139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355192377170639141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd73d8c13e5aa947bca0b1111a73082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clue: {fileID: 11400000, guid: 7a680e84dc139394d827c9113ebbd18e, type: 2}
-  uiManager: {fileID: 0}
 --- !u!1 &355192377645014177
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stab Wounds
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
