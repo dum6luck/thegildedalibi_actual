@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Door
+  - Clue
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Blue Light
+  - Red Light
+  - Black Light
+  - Interactable
   - 
   - 
   - 

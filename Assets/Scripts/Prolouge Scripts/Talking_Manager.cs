@@ -2,7 +2,8 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEngine.SceneManagement; // Added for scene switching
+using UnityEngine.SceneManagement;
+using Cinemachine; // Correct namespace for Unity 2021
 
 public class Talking_Manager : MonoBehaviour
 {
@@ -16,9 +17,20 @@ public class Talking_Manager : MonoBehaviour
     public UIFader uiFader;
     public MingleTracker mingleTracker;
 
+    [Header("Danganronpa Camera")]
+    [Tooltip("The parent object containing all your Virtual Cameras (Julian, Harlow, Detective, etc.)")]
+    public Transform cameraTargetGroup;
+
     [Header("Settings")]
     [Range(0.01f, 0.1f)]
     public float typingSpeed = 0.05f;
+
+    [Header("Reusable Scene Transition")]
+    public string triggerSentence;
+    public string sceneToLoad;
+
+    [Header("Case File Scene")]
+    public string caseFileSceneName = "CaseFile";
 
     [System.Serializable]
     public struct DialogueLine
@@ -29,25 +41,53 @@ public class Talking_Manager : MonoBehaviour
         public bool isItalic;
     }
 
-    public List<DialogueLine> dialogueLines;
+    public List<DialogueLine> dialogueLines = new List<DialogueLine>();
     private int index = 0;
     private Coroutine typingCoroutine;
     private bool isTyping = false;
     private bool isFirstTimeTalking = false;
+    private string currentInteractingNPC;
+
+    private float lineStartTime;
+    private float lastInputTime;
+    private readonly float inputDelay = 0.15f;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            OpenCaseFile();
+            return;
+        }
+
+        if (dialoguePanel != null && dialoguePanel.activeSelf)
+        {
+            if (Time.time - lineStartTime < 0.15f) return;
+
+            if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && Time.time - lastInputTime > inputDelay)
+            {
+                lastInputTime = Time.time;
+                AdvanceDialogue();
+            }
+        }
+    }
+
+    // Call this from NPCData before starting the sequence
+    public void SetCurrentNPC(string name)
+    {
+        currentInteractingNPC = name;
+    }
 
     public void StartDialogueSequence(bool isFirstTime)
     {
+        this.gameObject.SetActive(true);
         isFirstTimeTalking = isFirstTime;
         index = 0;
 
-        if (uiFader != null)
+        if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(true);
-            uiFader.FadeIn();
-        }
-        else if (dialoguePanel != null)
-        {
-            dialoguePanel.SetActive(true);
+            if (uiFader != null) uiFader.FadeIn();
         }
 
         DisplayLine();
@@ -57,7 +97,7 @@ public class Talking_Manager : MonoBehaviour
     {
         if (isTyping)
         {
-            StopCoroutine(typingCoroutine);
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
             isTyping = false;
             dialogueDisplay.text = FormatText(dialogueLines[index].sentence, dialogueLines[index].isItalic);
             if (nextArrow != null) nextArrow.SetActive(true);
@@ -67,73 +107,101 @@ public class Talking_Manager : MonoBehaviour
         if (index < dialogueLines.Count - 1)
         {
             index++;
-            if (nextArrow != null) nextArrow.SetActive(false);
             DisplayLine();
         }
         else
         {
-            // --- SCENE TRIGGER CHECK ---
-            // We check if the line that just finished is your specific trigger line
-            string lastLine = dialogueLines[index].sentence;
-            string triggerLine = "Everyone in this room just got some kind of bad news. And now we're all supposed to have a nice time together. Great party, Max.";
-
-            if (lastLine.Trim() == triggerLine.Trim())
-            {
-                if (uiFader != null)
-                {
-                    uiFader.FadeOut();
-                    Invoke("LoadMingleScene", 0.8f);
-                }
-                else
-                {
-                    LoadMingleScene();
-                }
-            }
-            else
-            {
-                // Normal behavior: just close the dialogue
-                if (uiFader != null)
-                {
-                    uiFader.FadeOut();
-                    Invoke("DisableManager", 0.6f);
-                }
-                else
-                {
-                    DisableManager();
-                }
-            }
+            HandleDialogueEnd();
         }
-    }
-
-    void LoadMingleScene()
-    {
-        // Make sure "MingleScene" matches the name in your Build Settings exactly!
-        SceneManager.LoadScene("Act1_1");
     }
 
     void DisplayLine()
     {
-        if (dialogueLines.Count == 0) return;
+        lineStartTime = Time.time;
+        if (nextArrow != null) nextArrow.SetActive(false);
 
-        if (nameDisplay != null)
-            nameDisplay.text = dialogueLines[index].characterName;
+        string speaker = dialogueLines[index].characterName;
+        if (nameDisplay != null) nameDisplay.text = speaker;
 
-        if (typingCoroutine != null)
-            StopCoroutine(typingCoroutine);
+        // Switches camera based on speaker name
+        SwitchCamera(speaker);
 
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         typingCoroutine = StartCoroutine(TypeText(dialogueLines[index].sentence, dialogueLines[index].isItalic));
+    }
+
+    void SwitchCamera(string characterName)
+    {
+        // SAFETY: If you didn't drag the Cameras into the 'Camera Target Group' slot, 
+        // this function stops immediately and won't mess up your other scenes.
+        if (cameraTargetGroup == null)
+        {
+            return;
+        }
+
+        string speaker = characterName.ToUpper().Trim();
+
+        // Reset to wide shot logic if keyword is used
+        if (speaker == "WIDE")
+        {
+            ForceWideShot();
+            return;
+        }
+
+        // Keep the current camera if the Detective is talking
+        if (speaker == "DETECTIVE")
+        {
+            return;
+        }
+
+        bool foundMatch = false;
+
+        foreach (Transform cam in cameraTargetGroup)
+        {
+            CinemachineVirtualCamera vcam = cam.GetComponent<CinemachineVirtualCamera>();
+            if (vcam == null) continue;
+
+            // Reset NPC cameras to 10
+            vcam.Priority = 10;
+
+            string camName = cam.name.ToUpper();
+
+            // Ensure the Wide shot stays as the baseline
+            if (camName.Contains("WIDE"))
+            {
+                vcam.Priority = 15;
+                continue;
+            }
+
+            // Match speaker to camera
+            if (speaker.Contains(camName.Replace("CAM_", "")) || camName.Contains(speaker))
+            {
+                vcam.Priority = 20;
+                foundMatch = true;
+            }
+        }
+    }
+
+    void ForceWideShot()
+    {
+        foreach (Transform cam in cameraTargetGroup)
+        {
+            CinemachineVirtualCamera vcam = cam.GetComponent<CinemachineVirtualCamera>();
+            if (vcam == null) continue;
+            vcam.Priority = (cam.name.ToUpper().Contains("WIDE")) ? 20 : 10;
+        }
     }
 
     IEnumerator TypeText(string fullText, bool useItalics)
     {
         isTyping = true;
         dialogueDisplay.text = "";
-        string currentDisplayedText = "";
+        string currentText = "";
 
         foreach (char letter in fullText.ToCharArray())
         {
-            currentDisplayedText += letter;
-            dialogueDisplay.text = FormatText(currentDisplayedText, useItalics);
+            currentText += letter;
+            dialogueDisplay.text = FormatText(currentText, useItalics);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -141,20 +209,82 @@ public class Talking_Manager : MonoBehaviour
         if (nextArrow != null) nextArrow.SetActive(true);
     }
 
+    private void HandleDialogueEnd()
+    {
+        string lastLine = dialogueLines[index].sentence.Trim();
+
+        if (!string.IsNullOrEmpty(triggerSentence) && lastLine == triggerSentence.Trim())
+        {
+            if (uiFader != null) { uiFader.FadeOut(); Invoke(nameof(LoadNextScene), 0.8f); }
+            else LoadNextScene();
+        }
+        else
+        {
+            if (uiFader != null) { uiFader.FadeOut(); Invoke(nameof(DisableManager), 0.6f); }
+            else DisableManager();
+        }
+    }
+
+    void LoadNextScene() => SceneManager.LoadScene(sceneToLoad);
+
+    void OpenCaseFile()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene(caseFileSceneName);
+    }
+
     void DisableManager()
     {
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
 
+        // NEW: Reset to Wide Shot when the dialogue ends
+        ResetToWideShot();
+
         if (isFirstTimeTalking && mingleTracker != null)
         {
-            mingleTracker.CheckProgression();
+            mingleTracker.CheckProgression(currentInteractingNPC);
         }
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         this.gameObject.SetActive(false);
     }
 
-    string FormatText(string text, bool useItalics)
+    // Helper function to force the Wide Shot to take priority again
+    void ResetToWideShot()
     {
-        return useItalics ? $"<i>{text}</i>" : text;
+        if (cameraTargetGroup == null) return;
+
+        foreach (Transform cam in cameraTargetGroup)
+        {
+            CinemachineVirtualCamera vcam = cam.GetComponent<CinemachineVirtualCamera>();
+            if (vcam == null) continue;
+
+            string camName = cam.name.ToUpper();
+
+            if (camName.Contains("WIDE"))
+            {
+                vcam.Priority = 25; // Set higher than NPC (20) and previous Wide (15)
+            }
+            else
+            {
+                vcam.Priority = 10;
+            }
+        }
+
+        IEnumerator LoadCaseFile()
+        {
+            if (uiFader != null)
+                uiFader.FadeOut();
+
+            yield return new WaitForSeconds(0.8f);
+            caseFileSceneName = "Case_File_Scene";
+
+            SceneManager.LoadScene(caseFileSceneName);
+        }
     }
+
+    string FormatText(string text, bool useItalics) => useItalics ? $"<i>{text}</i>" : text;
 }
