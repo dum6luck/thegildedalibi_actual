@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17303374, g: 0.21625733, b: 0.29825097, a: 1}
+  m_IndirectSpecularColor: {r: 0.1730333, g: 0.21625683, b: 0.29825014, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -525,11 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a6565bbdfee37408ff530eb3826c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: BathroomScene
-  requiredTag: Player
-  waitBeforeLoad: 1
-  mingleTracker: {fileID: 0}
-  screenFader: {fileID: 0}
 --- !u!1 &119478063
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +616,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 4
   npcTag: NPC
-  doorTag: Door
   interactPrompt: {fileID: 0}
   talkingManager: {fileID: 0}
   fpsController: {fileID: 0}
@@ -1896,7 +1890,6 @@ MonoBehaviour:
   jumpHeight: 1.2
   gravity: -20
   mouseSensitivity: 2
-  verticalLookLimit: 85
   canMove: 1
   canLook: 1
 --- !u!143 &849384301
@@ -2740,8 +2733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247b9a29dec7c6e4c9822435e82ec28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  blueLensCamera: {fileID: 0}
+  mainCamera: {fileID: 138306261}
+  blueLensCamera: {fileID: 2047562924}
 --- !u!136 &1337696369
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3994,7 +3987,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDistance: 4
   npcTag: NPC
-  doorTag: Door
   interactPrompt: {fileID: 0}
   talkingManager: {fileID: 0}
   fpsController: {fileID: 0}

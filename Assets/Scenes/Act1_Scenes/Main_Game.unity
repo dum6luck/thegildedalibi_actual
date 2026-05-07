@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17303374, g: 0.21625733, b: 0.29825097, a: 1}
+  m_IndirectSpecularColor: {r: 0.1730333, g: 0.21625683, b: 0.29825014, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1932,6 +1932,7 @@ MonoBehaviour:
   name_text: {fileID: 2067686585}
   dialogue_text: {fileID: 1632524275}
   floating_arrow: {fileID: 2076233250}
+  case_canvas: {fileID: 189528716}
   type_speed: 0.03
   bounce_speed: 5
   bounce_amplitude: 10
@@ -2904,6 +2905,7 @@ GameObject:
   - component: {fileID: 853506134}
   - component: {fileID: 853506133}
   - component: {fileID: 853506132}
+  - component: {fileID: 853506137}
   m_Layer: 0
   m_Name: Harlow (1)
   m_TagString: NPC
@@ -3078,6 +3080,19 @@ Transform:
   m_Father: {fileID: 1673269921}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 1.068, z: 0}
+--- !u!114 &853506137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853506131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6112415d972b4e6bbaae5d443be5a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 853506132}
 --- !u!1 &867229018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3106,7 @@ GameObject:
   - component: {fileID: 867229021}
   - component: {fileID: 867229020}
   - component: {fileID: 867229019}
+  - component: {fileID: 867229024}
   m_Layer: 0
   m_Name: Penny (1)
   m_TagString: NPC
@@ -3253,6 +3269,19 @@ Transform:
   m_Father: {fileID: 1673269921}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -25.599, z: 0}
+--- !u!114 &867229024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867229018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6112415d972b4e6bbaae5d443be5a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 867229019}
 --- !u!1 &868763939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +3880,7 @@ GameObject:
   - component: {fileID: 1082141156}
   - component: {fileID: 1082141155}
   - component: {fileID: 1082141154}
+  - component: {fileID: 1082141159}
   m_Layer: 0
   m_Name: Iris (1)
   m_TagString: NPC
@@ -4010,6 +4040,19 @@ Transform:
   m_Father: {fileID: 1673269921}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 10.513, z: 0}
+--- !u!114 &1082141159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082141153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6112415d972b4e6bbaae5d443be5a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 1082141154}
 --- !u!1 &1096387560
 GameObject:
   m_ObjectHideFlags: 0
@@ -6313,6 +6356,7 @@ GameObject:
   - component: {fileID: 1957190225}
   - component: {fileID: 1957190224}
   - component: {fileID: 1957190223}
+  - component: {fileID: 1957190228}
   m_Layer: 0
   m_Name: Julian (1)
   m_TagString: NPC
@@ -6337,44 +6381,6 @@ MonoBehaviour:
   - characterName: DETECTIVE
     sentence: Don't think we've met. Nice to meet you.
     isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: Julian Vane. Artist. Max told me about the funding last week. Said
-      the Institute was restructuring. It's fine, I've survived worse.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: You don't seem fine.
-    isItalic: 0
-  - characterName: 'JULIAN VANE '
-    sentence: Because then he pulls out a university. A university with his name
-      on it.
-    isItalic: 0
-  - characterName: 'JULIAN VANE '
-    sentence: Max has been buying my work for fifteen years, all of it sitting in
-      this collection. That collection goes into a permanent institution and suddenly
-      my life's work is just his legacy.
-    isItalic: 0
-  - characterName: 'JULIAN VANE '
-    sentence: Forever. In his building.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Can he do that?
-    isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: He bought them fair and square so yeah. Technically.
-    isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: Max doesn't steal things. He just makes sure everything ends up being
-      his eventually.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: Did you know what he was announcing tonight?
-    isItalic: 0
-  - characterName: JULIAN VANE
-    sentence: I just had a feeling it wasn't going to be good.
-    isItalic: 0
-  - characterName: DETECTIVE
-    sentence: "It seems like he doesn't want to talk anymore.\r"
-    isItalic: 1
   repeatLine:
     characterName: DETECTIVE
     sentence: "It seems like he doesn't want to talk anymore.\r"
@@ -6476,6 +6482,19 @@ Transform:
   m_Father: {fileID: 1673269921}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -3.015, z: 0}
+--- !u!114 &1957190228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957190222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6112415d972b4e6bbaae5d443be5a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 1957190223}
 --- !u!1001 &2042064017
 PrefabInstance:
   m_ObjectHideFlags: 0

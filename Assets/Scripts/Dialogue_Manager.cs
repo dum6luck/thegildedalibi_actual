@@ -16,6 +16,7 @@ public class Dialogue_Manager : MonoBehaviour
     public TextMeshProUGUI name_text;
     public TextMeshProUGUI dialogue_text;
     public GameObject floating_arrow;
+    public Case_File_UI case_canvas;
 
     [Header("Typewriter Settings")]
     public float type_speed = 0.05f;
@@ -26,6 +27,7 @@ public class Dialogue_Manager : MonoBehaviour
 
     private bool is_typing = false;
     private bool can_close = false;
+    private bool can_open_case_file = false;
     private string current_full_text; // Stores the full sentence for skipping
     private Vector3 arrow_start_pos;
     private Coroutine typing_coroutine;
@@ -65,18 +67,24 @@ public class Dialogue_Manager : MonoBehaviour
             }
             else if (can_close)
             {
+                if (can_open_case_file)
+                {
+                    case_canvas.Open_Case_File();
+                    can_open_case_file = false;
+                }
                 // Second click (when arrow is up): Close the panel
                 Hide_Dialogue();
             }
         }
     }
 
-    public void Show_Dialogue(string name, string text)
+    public void Show_Dialogue(string name, string text, bool case_buttons=false)
     {
         name_text.text = name;
         dialogue_text.text = "";
         current_full_text = text; // Cache the full sentence
         can_close = false;
+        can_open_case_file = case_buttons;
         is_typing = true;
 
         if (dialogue_canvas_group != null)
