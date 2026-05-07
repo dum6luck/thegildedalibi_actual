@@ -2495,10 +2495,12 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1613754594}
   uiFader: {fileID: 1613754599}
   mingleTracker: {fileID: 1925568599}
+  cameraTargetGroup: {fileID: 0}
   typingSpeed: 0.0338
   triggerSentence: Ugh, I need the bathroom. These bright lights are making my head
     hurt.
   sceneToLoad: BathroomScene
+  caseFileSceneName: CaseFile
   dialogueLines:
   - characterName: DETECTIVE
     sentence: "Might as well figure out who these people actually are.\r"
@@ -4941,7 +4943,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1b1b73b5da66e7942a236be298b6bace, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f7f742a5ffb5c1438cfd482f44a5d7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
