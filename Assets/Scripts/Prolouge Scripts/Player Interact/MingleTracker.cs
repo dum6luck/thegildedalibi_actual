@@ -1,38 +1,51 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class MingleTracker : MonoBehaviour
 {
+    [Header("Progression Settings")]
     public int totalNPCsToTalkTo = 5;
-    private HashSet<string> npcsTalkedTo = new HashSet<string>();
-    private bool finished = false;
+    private int npcsTalkedToCount = 0;
+    private bool hasTriggeredFinalThought = false;
+    private bool finishedMingle = false; // NEW: Track if the whole event is done
 
+    [Header("References")]
     public Talking_Manager talkingManager;
 
-    public void CheckProgression(string name)
+    public void CheckProgression()
     {
-        if (npcsTalkedTo.Add(name)) // Only true if name is new
-        {
-            Debug.Log($"Talked to {name}. Progress: {npcsTalkedTo.Count}/{totalNPCsToTalkTo}");
-        }
+        npcsTalkedToCount++;
+        Debug.Log("Mingle Progress: " + npcsTalkedToCount + "/" + totalNPCsToTalkTo);
 
-        if (npcsTalkedTo.Count >= totalNPCsToTalkTo && !finished)
+        // If we hit the goal and haven't played the headache line yet
+        if (npcsTalkedToCount >= totalNPCsToTalkTo && !hasTriggeredFinalThought)
         {
-            finished = true;
-            Invoke(nameof(TriggerFinalThought), 1.0f);
+            hasTriggeredFinalThought = true;
+            // Delay by 0.8 seconds to let the NPC dialogue UI fully fade out first
+            Invoke("TriggerFinalThought", 0.8f);
         }
     }
 
     void TriggerFinalThought()
     {
+        // Mark the mingle phase as officially finished
+        finishedMingle = true;
+
         talkingManager.dialogueLines.Clear();
-        talkingManager.dialogueLines.Add(new Talking_Manager.DialogueLine
-        {
-            characterName = "DETECTIVE",
-            sentence = "Ugh, I need the bathroom. These bright lights are making my head hurt.",
-            isItalic = true
-        });
+        Talking_Manager.DialogueLine thought = new Talking_Manager.DialogueLine();
+        thought.characterName = "DETECTIVE";
+        thought.sentence = "Ugh, I need the bathroom. These bright lights are making my head hurt.";
+        thought.isItalic = true;
+
+        talkingManager.dialogueLines.Add(thought);
         talkingManager.gameObject.SetActive(true);
-        talkingManager.StartDialogueSequence(false); // false so it doesn't loop
+
+        // 'false' ensures this monologue doesn't trigger the tracker again
+        talkingManager.StartDialogueSequence(false);
+    }
+
+    // NEW: The door script will call this to see if the player is allowed to leave
+    public bool HasFinishedMingle()
+    {
+        return finishedMingle;
     }
 }
