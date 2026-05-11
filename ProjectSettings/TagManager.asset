@@ -6,10 +6,8 @@ TagManager:
   tags:
   - NPC
   - Door
-<<<<<<< HEAD
   - Clue
-=======
->>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -17,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Blue Light
+  - Red Light
+  - Black Light
+  - Interactable
   - 
   - 
   - 
