@@ -250,11 +250,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -2.31
-=======
-      value: -0.4053383
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -264,20 +260,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: -1.39
-=======
-      value: -0.2716694
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -287,11 +275,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.y
-<<<<<<< HEAD
       value: -0.001042813
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -306,11 +290,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-<<<<<<< HEAD
       value: -359.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -1481,7 +1461,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317557065}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!1001 &357537944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1592,9 +1571,6 @@ BoxCollider:
   m_Size: {x: 66.92163, y: 105.93506, z: 53.10664}
   m_Center: {x: 0.00024795532, y: 53.3039, z: -0.00048828125}
 --- !u!1 &396390079
-=======
---- !u!1 &354695448
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1602,7 +1578,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 396390080}
   - component: {fileID: 396390085}
   - component: {fileID: 396390084}
@@ -1611,28 +1586,17 @@ GameObject:
   - component: {fileID: 396390081}
   m_Layer: 0
   m_Name: ClueNote
-=======
-  - component: {fileID: 354695449}
-  m_Layer: 0
-  m_Name: CaseLidPivot
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 0
 --- !u!4 &396390080
-=======
-  m_IsActive: 1
---- !u!4 &354695449
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 396390079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 16.289286, y: -19.945478, z: -24.093285}
@@ -1645,179 +1609,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &396390081
 MonoBehaviour:
-=======
-  m_GameObject: {fileID: 354695448}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.289286, y: -19.32548, z: -29.993286}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1002674606}
-  m_Father: {fileID: 1460058183}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &357537944
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 247435646}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.016186995
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.016187
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.016186995
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.44
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.034399
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 15.72
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0010398923
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.99999946
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.881
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 860538b355923cc4bafcd364f622a4cf,
-        type: 3}
-      propertyPath: m_Name
-      value: displaylabel (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 860538b355923cc4bafcd364f622a4cf, type: 3}
---- !u!4 &357537945 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 357537944}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &357537946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 860538b355923cc4bafcd364f622a4cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 357537944}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &357537947
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357537946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 66.92163, y: 105.93506, z: 53.10664}
-  m_Center: {x: 0.00024795532, y: 53.3039, z: -0.00048828125}
---- !u!1 &396390079
-GameObject:
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 396390079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ff6e85f272fff41bdcbd371acbcd23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!54 &396390082
-Rigidbody:
-=======
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 396390080}
-  - component: {fileID: 396390085}
-  - component: {fileID: 396390084}
-  - component: {fileID: 396390083}
-  - component: {fileID: 396390082}
-  - component: {fileID: 396390081}
-  m_Layer: 0
-  m_Name: ClueNote
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &396390080
-Transform:
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396390079}
-<<<<<<< HEAD
-=======
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.289286, y: -19.945478, z: -24.093285}
-  m_LocalScale: {x: 0.3, y: 0.02, z: 0.2}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1734502073}
-  m_Father: {fileID: 1460058183}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &396390081
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1835,7 +1626,6 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396390079}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   serializedVersion: 2
   m_Mass: 0.1
   m_Drag: 0
@@ -2085,11 +1875,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460058183}
-<<<<<<< HEAD
   m_RootOrder: 8
-=======
-  m_RootOrder: 11
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &549194443
 BoxCollider:
@@ -2316,20 +2102,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557871293}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-<<<<<<< HEAD
   m_LocalPosition: {x: -4.870714, y: -16.59, z: -34.243286}
-=======
-  m_LocalPosition: {x: -4.870714, y: -18.83, z: -34.243286}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalScale: {x: 3.0225966, y: 4.1449265, z: 0.20300794}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460058183}
-<<<<<<< HEAD
   m_RootOrder: 7
-=======
-  m_RootOrder: 10
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &557871295
 BoxCollider:
@@ -2577,11 +2355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611260686}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-<<<<<<< HEAD
   m_LocalPosition: {x: 12.7, y: 0.67560005, z: 19.06}
-=======
-  m_LocalPosition: {x: 12.692284, y: 0.67560005, z: 15.646004}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3573,40 +3347,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-<<<<<<< HEAD
-=======
---- !u!1 &805933847
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 805933848}
-  m_Layer: 0
-  m_Name: LidPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &805933848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805933847}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.289286, y: -19.420479, z: -24.843285}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1460058183}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &806011501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,11 +3471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828659617}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-<<<<<<< HEAD
   m_LocalPosition: {x: -0.5993514, y: 1.066, z: 19.147146}
-=======
-  m_LocalPosition: {x: -0.602, y: 1.066, z: 15.908}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalScale: {x: 0.4, y: 0.55, z: 0.35}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3845,11 +3581,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 1.9
-=======
-      value: 1.52
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
@@ -4561,11 +4293,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460058183}
-<<<<<<< HEAD
   m_RootOrder: 11
-=======
-  m_RootOrder: 14
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &904303474
 BoxCollider:
@@ -4788,11 +4516,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 0.75
-=======
-      value: -0.36846638
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -4802,20 +4526,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 19.28
-=======
-      value: 17.483845
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: 0.0010398625
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -4825,11 +4541,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.y
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -4844,11 +4556,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-<<<<<<< HEAD
       value: -179.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -4917,11 +4625,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 12.69887
-=======
-      value: 12.696221
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
@@ -4931,11 +4635,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 18.568073
-=======
-      value: 15.328928
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
@@ -5053,11 +4753,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -15.78
-=======
-      value: -15.792059
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
@@ -5067,11 +4763,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 17.06
-=======
-      value: 10.1599865
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
@@ -5266,11 +4958,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 19.481281
-=======
-      value: 19.478632
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
@@ -5280,11 +4968,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 19.189602
-=======
-      value: 15.950457
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
@@ -5366,106 +5050,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 54.70422, y: 166.30492, z: 56.310467}
   m_Center: {x: 0.00048828125, y: 83.68606, z: 0.82841915}
-<<<<<<< HEAD
-=======
---- !u!1 &1002674605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1002674606}
-  - component: {fileID: 1002674609}
-  - component: {fileID: 1002674608}
-  - component: {fileID: 1002674607}
-  m_Layer: 0
-  m_Name: CaseLid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1002674606
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002674605}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.72, z: -50}
-  m_LocalScale: {x: 1.8, y: 0.05, z: 1.8}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 354695449}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1002674607
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002674605}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: c66b49128ec4a6742aa010e9124be2c5, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1002674608
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002674605}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1002674609
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002674605}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1001 &1011855006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5905,11 +5489,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -0.5871866
-=======
-      value: -0.58983517
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
@@ -5919,11 +5499,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 19.153446
-=======
-      value: 15.9143
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e33331a5ea3de745b2afe5bc8dc7900,
         type: 3}
@@ -6357,11 +5933,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 74ddb374aee0abb4eb43930b2cf3168d,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -8.197616
-=======
-      value: -8.200264
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ddb374aee0abb4eb43930b2cf3168d,
         type: 3}
@@ -6371,11 +5943,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 74ddb374aee0abb4eb43930b2cf3168d,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 18.955254
-=======
-      value: 15.716107
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ddb374aee0abb4eb43930b2cf3168d,
         type: 3}
@@ -6574,11 +6142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241310899}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-<<<<<<< HEAD
   m_LocalPosition: {x: 19.55665, y: 1.014, z: 19.075146}
-=======
-  m_LocalPosition: {x: 19.554, y: 1.014, z: 15.836}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6680,11 +6244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460058183}
-<<<<<<< HEAD
   m_RootOrder: 10
-=======
-  m_RootOrder: 13
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1241611031
 BoxCollider:
@@ -7056,11 +6616,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 11.574623
-=======
-      value: 7
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
@@ -7070,11 +6626,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: -10.500889
-=======
-      value: -10.49
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112529d7feec4134784a4c3f89d73492,
         type: 3}
@@ -7162,40 +6714,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 239.90317, y: 35.36318, z: 81.87143}
   m_Center: {x: -0.00024414062, y: 17.55985, z: 0.0009765625}
-<<<<<<< HEAD
-=======
---- !u!1 &1380208333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1380208334}
-  m_Layer: 0
-  m_Name: walls and floor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1380208334
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380208333}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.235283, y: -18.5, z: -18.984283}
-  m_LocalScale: {x: 1, y: 0.5758554, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1460058183}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1456646102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7860,11 +7378,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 14.477649
-=======
-      value: 14.475
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -7874,11 +7388,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 18.855146
-=======
-      value: 15.616
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -7977,11 +7487,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -6.58
-=======
-      value: -7.286561
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -7991,20 +7497,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: 18.71
-=======
-      value: 17.49821
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: 0.0010398625
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -8014,11 +7512,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.y
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -8033,11 +7527,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-<<<<<<< HEAD
       value: -179.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -8731,11 +8221,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1460058183}
-<<<<<<< HEAD
   m_RootOrder: 5
-=======
-  m_RootOrder: 8
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1889563892
 BoxCollider:
@@ -9296,11 +8782,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -9.44
-=======
-      value: -7.323433
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -9310,20 +8792,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
       value: -1.53
-=======
-      value: -0.25730133
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.w
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -9333,11 +8807,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalRotation.y
-<<<<<<< HEAD
       value: -0.001042813
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -9352,11 +8822,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-<<<<<<< HEAD
       value: -359.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860538b355923cc4bafcd364f622a4cf,
         type: 3}
@@ -9986,7 +9452,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DisplayCase1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7919092396847160195, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9997,8 +9462,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -32
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 981fc73a32fe88b4b863b5a7ec00ca14, type: 3}
 --- !u!4 &2121195439 stripped

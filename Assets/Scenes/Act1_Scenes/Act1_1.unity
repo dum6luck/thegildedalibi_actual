@@ -526,7 +526,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
   sceneToLoad: BathroomScene
   requiredTag: Player
@@ -534,8 +533,6 @@ MonoBehaviour:
   mingleTracker: {fileID: 1925568599}
   screenFader: {fileID: 0}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &119478063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,19 +2506,13 @@ MonoBehaviour:
   uiFader: {fileID: 1613754599}
   mingleTracker: {fileID: 1925568599}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   typingSpeed: 0.0338
   triggerSentence: Ugh, I need the bathroom. These bright lights are making my head
     hurt.
   sceneToLoad: BathroomScene
-<<<<<<< HEAD
 =======
   typingSpeed: 0.0333
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   dialogueLines:
   - characterName: DETECTIVE
     sentence: "Might as well figure out who these people actually are.\r"
@@ -2835,9 +2826,6 @@ Transform:
   m_GameObject: {fileID: 887324626}
   m_LocalRotation: {x: -0, y: 0.20150718, z: -0, w: 0.97948706}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: 10.08, y: 1.48, z: -21.55}
   m_LocalScale: {x: 0.42049557, y: 0.42049557, z: 0.42049557}
 =======
@@ -3501,9 +3489,6 @@ Transform:
   m_GameObject: {fileID: 1221704788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: -8.39, y: 1.36, z: -18.95}
   m_LocalScale: {x: 0.40550303, y: 0.40550303, z: 0.40550303}
 =======
@@ -4022,9 +4007,6 @@ Transform:
   m_GameObject: {fileID: 1320931002}
   m_LocalRotation: {x: -0, y: 0.36485672, z: -0, w: 0.93106365}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: 15.16, y: 1.1, z: -26.27}
   m_LocalScale: {x: 0.39232293, y: 0.39232293, z: 0.39232293}
 =======
@@ -4367,12 +4349,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
   talkingManager: {fileID: 829070570}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1527038835
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,9 +5386,6 @@ Transform:
   m_GameObject: {fileID: 1833747466}
   m_LocalRotation: {x: -0, y: -0.34879574, z: -0, w: 0.9371988}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: -17.46, y: 1.15, z: -26.42}
   m_LocalScale: {x: 0.37339115, y: 0.37339115, z: 0.37339115}
 =======

@@ -460,12 +460,9 @@ SpriteRenderer:
   m_Materials:
 <<<<<<< HEAD
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-<<<<<<< HEAD
 =======
   - {fileID: 2100000, guid: 51feb998203d74e40966138d60161def, type: 2}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -479,14 +476,10 @@ SpriteRenderer:
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_SelectedEditorRenderState: 0
 =======
   m_SelectedEditorRenderState: 3
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
-  m_SelectedEditorRenderState: 0
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -495,9 +488,6 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_Sprite: {fileID: 21300000, guid: 1b1b73b5da66e7942a236be298b6bace, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -680,11 +670,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 =======
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_GameObject: {fileID: 110025859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.505866, y: 21.826124, z: -3.0336227}
@@ -694,9 +681,6 @@ Transform:
   m_Father: {fileID: 611395229}
   m_RootOrder: 6
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &144481070
 GameObject:
@@ -872,7 +856,6 @@ GameObject:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1091003111}
-<<<<<<< HEAD
 =======
   serializedVersion: 6
   m_Component:
@@ -966,8 +949,6 @@ Transform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &215499286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,9 +1034,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &365253850
 GameObject:
   m_ObjectHideFlags: 3
@@ -1151,11 +1129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 =======
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &383216092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,9 +1172,6 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: b4d4dfeaf4c8e804cbe60c93b7fb506e, type: 2}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2164,11 +2136,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3fac8e8d937ba4749b5ca71c1d0a06c4, type: 2}
-<<<<<<< HEAD
 =======
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2191,28 +2160,20 @@ MeshRenderer:
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!65 &674524485
 =======
 --- !u!65 &383216094
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
---- !u!65 &674524485
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_GameObject: {fileID: 674524483}
 =======
   m_GameObject: {fileID: 383216092}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
-  m_GameObject: {fileID: 674524483}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -2220,20 +2181,15 @@ BoxCollider:
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!33 &674524486
 =======
 --- !u!33 &383216095
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
---- !u!33 &674524486
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 674524483}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -2243,17 +2199,11 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &383216096
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
-  m_GameObject: {fileID: 674524483}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &674524487
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   m_GameObject: {fileID: 383216092}
@@ -2708,8 +2658,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_GameObject: {fileID: 674524483}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
   m_LocalPosition: {x: 12.695547, y: 0.67560005, z: -7.4239964}
@@ -3164,106 +3112,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &874703952
-<<<<<<< HEAD
-=======
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 874703956}
-  - component: {fileID: 874703955}
-  - component: {fileID: 874703954}
-  - component: {fileID: 874703953}
-  m_Layer: 0
-  m_Name: Center door
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &874703953
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874703952}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &874703954
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874703952}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: b711eb3fe9c732943a2d473cb8cc0702, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &874703955
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874703952}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &874703956
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874703952}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -8.344133, y: 18.61, z: -39.50362}
-  m_LocalScale: {x: 0.26989, y: 10.752561, z: 9.260045}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 611395229}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!1 &884396778
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3423,7 +3271,6 @@ BoxCollider:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 365253851}
-<<<<<<< HEAD
 =======
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3494,8 +3341,6 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &936985709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3983253544542466024, guid: bef81f9cb7461fd48b0456e694fc1c1b,
@@ -3590,10 +3435,7 @@ MeshRenderer:
 --- !u!135 &1013428652
 SphereCollider:
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3630,33 +3472,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1040956608
 GameObject:
-<<<<<<< HEAD
-=======
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1040956612}
-  - component: {fileID: 1040956611}
-  - component: {fileID: 1040956610}
-  - component: {fileID: 1040956609}
-  m_Layer: 0
-  m_Name: painting (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1040956609
-BoxCollider:
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1040956612}
@@ -3682,9 +3501,6 @@ BoxCollider:
 =======
   m_GameObject: {fileID: 1040956608}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
-  m_GameObject: {fileID: 1040956608}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -3692,11 +3508,8 @@ BoxCollider:
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!33 &1013428653
 =======
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!23 &1040956610
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3740,16 +3553,12 @@ MeshRenderer:
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1040956611
-<<<<<<< HEAD
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1013428650}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
@@ -3759,17 +3568,11 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1040956612
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
-  m_GameObject: {fileID: 1040956608}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1040956612
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1013428650}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
@@ -3781,18 +3584,6 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1040956608
-=======
-  m_GameObject: {fileID: 1040956608}
-  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 12.665867, y: 21.826124, z: -12.363621}
-  m_LocalScale: {x: 3.9244819, y: 5.3816934, z: 0.26358163}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 611395229}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1045406770
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4227,7 +4018,6 @@ Transform:
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -42.912, z: 0}
 --- !u!1 &1091003110
-<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1108436370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -4337,8 +4127,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1170692533
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4436,48 +4224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!1 &1105686574
 GameObject:
-<<<<<<< HEAD
-=======
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1105686575}
-  - component: {fileID: 1105686578}
-  - component: {fileID: 1105686577}
-  - component: {fileID: 1105686576}
-  m_Layer: 0
-  m_Name: Left Door (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1105686575
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105686574}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.77, y: 19.71, z: -20.95362}
-  m_LocalScale: {x: 0.26989, y: 8.098755, z: 2.1675858}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 611395229}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1105686576
-BoxCollider:
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1105686575}
@@ -4517,8 +4267,6 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_GameObject: {fileID: 1105686574}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5119,11 +4867,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<< HEAD
 =======
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1170692535
 BoxCollider:
@@ -5491,9 +5236,6 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1314686664
 GameObject:
   m_ObjectHideFlags: 3
@@ -5589,11 +5331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 =======
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1318222673
 GameObject:
   m_ObjectHideFlags: 0
@@ -5793,8 +5532,6 @@ Light:
   m_ShadowAngle: 0
 --- !u!4 &1353710698
 Transform:
-<<<<<<< HEAD
-=======
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5821,144 +5558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1441244881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1441244886}
-  - component: {fileID: 1441244885}
-  - component: {fileID: 1441244884}
-  - component: {fileID: 1441244883}
-  - component: {fileID: 1441244882}
-  m_Layer: 0
-  m_Name: plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1441244882
-BoxCollider:
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1353710695}
-  m_LocalRotation: {x: 0.2949759, y: 0.053862244, z: -0.060817275, w: 0.9520449}
-  m_LocalPosition: {x: 54.651917, y: 130.58989, z: 0.9680557}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 465337179}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 83.479, y: 5.956, z: 27.274}
---- !u!114 &1426160319 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3983253546175615290, guid: bef81f9cb7461fd48b0456e694fc1c1b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3983253544783162245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1441244881
-=======
-  m_GameObject: {fileID: 1441244881}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!64 &1441244883
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441244881}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1441244884
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441244881}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 1aab67aef26ba0b42aed4a753fc362b9, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1441244885
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441244881}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1441244886
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441244881}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.26841, y: -4.4, z: 39.78471}
-  m_LocalScale: {x: 23.292377, y: 23.292377, z: 23.292377}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1239183623}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1474170194
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6191,7 +5790,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1239183623}
-<<<<<<< HEAD
 =======
   m_GameObject: {fileID: 1441244881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -6235,8 +5833,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1239183623}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
 --- !u!65 &1507044360
@@ -6395,11 +5991,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 =======
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!65 &1644340783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6777,215 +6370,12 @@ Transform:
   m_LocalPosition: {x: -8.084134, y: 23.686125, z: -3.0336227}
   m_LocalScale: {x: 6.2415223, y: 8.559081, z: 0.41920197}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 611395229}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839374531
-=======
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 611395229}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1839374531
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1839374535}
-  - component: {fileID: 1839374534}
-  - component: {fileID: 1839374533}
-  - component: {fileID: 1839374532}
-  m_Layer: 0
-  m_Name: painting (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1839374532
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839374531}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1839374533
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839374531}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 51feb998203d74e40966138d60161def, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1839374534
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839374531}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1839374535
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839374531}
-  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -28.394135, y: 21.826124, z: -12.363621}
-  m_LocalScale: {x: 3.9244819, y: 5.3816934, z: 0.26358163}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 611395229}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1845953166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1845953170}
-  - component: {fileID: 1845953169}
-  - component: {fileID: 1845953168}
-  - component: {fileID: 1845953167}
-  m_Layer: 0
-  m_Name: Table3 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1845953167
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845953166}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: b4d4dfeaf4c8e804cbe60c93b7fb506e, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1845953168
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845953166}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1845953169
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845953166}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1845953170
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845953166}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -0.80445194, y: -0.32439995, z: -7.6199965}
-  m_LocalScale: {x: 1.8981001, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 51035838}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!1 &1883305809
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7342,7 +6732,6 @@ GameObject:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1314686665}
-<<<<<<< HEAD
 =======
   serializedVersion: 6
   m_Component:
@@ -7436,8 +6825,6 @@ Transform:
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1927452593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3983253545569696820, guid: bef81f9cb7461fd48b0456e694fc1c1b,
@@ -7540,11 +6927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 =======
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &2003349035
 GameObject:
   m_ObjectHideFlags: 0
