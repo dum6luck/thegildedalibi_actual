@@ -7,7 +7,6 @@ TagManager:
   - NPC
   - Door
   - Clue
-  - Interactable
   layers:
   - Default
   - TransparentFX
