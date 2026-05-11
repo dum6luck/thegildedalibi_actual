@@ -527,6 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   sceneToLoad: BathroomScene
   requiredTag: Player
@@ -534,6 +535,8 @@ MonoBehaviour:
   mingleTracker: {fileID: 1925568599}
   screenFader: {fileID: 0}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &119478063
@@ -2510,6 +2513,9 @@ MonoBehaviour:
   mingleTracker: {fileID: 1925568599}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   typingSpeed: 0.0338
@@ -2517,9 +2523,12 @@ MonoBehaviour:
     hurt.
   sceneToLoad: BathroomScene
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   typingSpeed: 0.0333
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   dialogueLines:
@@ -2836,6 +2845,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.20150718, z: -0, w: 0.97948706}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: 10.08, y: 1.48, z: -21.55}
@@ -3502,6 +3514,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: -8.39, y: 1.36, z: -18.95}
@@ -4023,6 +4038,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.36485672, z: -0, w: 0.93106365}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: 15.16, y: 1.1, z: -26.27}
@@ -4368,9 +4386,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   talkingManager: {fileID: 829070570}
 >>>>>>> parent of f22bde9 (Merge branch 'bridgit-branch' into testing-branch-use-this-instead-of-main)
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1527038835
@@ -5408,6 +5429,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.34879574, z: -0, w: 0.9371988}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalPosition: {x: -17.46, y: 1.15, z: -26.42}
