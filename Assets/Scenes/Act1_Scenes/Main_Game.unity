@@ -251,11 +251,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -2.31
-=======
-      value: -0.4053383
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.4053383
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -269,11 +265,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -1.39
-=======
-      value: -0.2716694
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.2716694
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -282,11 +274,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.7063701
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -300,11 +288,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -0.001042813
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.70784277
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -323,11 +307,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -359.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -180
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -1502,7 +1482,6 @@ MeshFilter:
   m_GameObject: {fileID: 317557065}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1001 &357537944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1616,9 +1595,6 @@ BoxCollider:
 =======
 --- !u!1 &354695448
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-=======
---- !u!1 &354695448
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1626,7 +1602,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
 <<<<<<< HEAD
   - component: {fileID: 396390080}
   - component: {fileID: 396390085}
@@ -1636,11 +1611,6 @@ GameObject:
   - component: {fileID: 396390081}
   m_Layer: 0
   m_Name: ClueNote
-=======
-  - component: {fileID: 354695449}
-  m_Layer: 0
-  m_Name: CaseLidPivot
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   - component: {fileID: 354695449}
   m_Layer: 0
@@ -1656,16 +1626,12 @@ GameObject:
 =======
   m_IsActive: 1
 --- !u!4 &354695449
-<<<<<<< HEAD
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-=======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 396390079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -1680,8 +1646,6 @@ Transform:
 --- !u!114 &396390081
 MonoBehaviour:
 =======
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_GameObject: {fileID: 354695448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 16.289286, y: -19.32548, z: -29.993286}
@@ -1783,28 +1747,6 @@ Transform:
   m_PrefabInstance: {fileID: 357537944}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &357537946 stripped
-<<<<<<< HEAD
-=======
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 860538b355923cc4bafcd364f622a4cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 357537944}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &357537947
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357537946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 66.92163, y: 105.93506, z: 53.10664}
-  m_Center: {x: 0.00024795532, y: 53.3039, z: -0.00048828125}
---- !u!1 &396390079
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 860538b355923cc4bafcd364f622a4cf,
     type: 3}
@@ -1864,10 +1806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396390079}
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 16.289286, y: -19.945478, z: -24.093285}
   m_LocalScale: {x: 0.3, y: 0.02, z: 0.2}
@@ -1896,9 +1835,6 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396390079}
-<<<<<<< HEAD
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-=======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
   serializedVersion: 2
   m_Mass: 0.1
@@ -2150,11 +2086,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1460058183}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 8
-=======
-  m_RootOrder: 11
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_RootOrder: 11
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -2385,11 +2317,7 @@ Transform:
   m_GameObject: {fileID: 557871293}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -4.870714, y: -16.59, z: -34.243286}
-=======
-  m_LocalPosition: {x: -4.870714, y: -18.83, z: -34.243286}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_LocalPosition: {x: -4.870714, y: -18.83, z: -34.243286}
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -2398,11 +2326,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1460058183}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 7
-=======
-  m_RootOrder: 10
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_RootOrder: 10
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -2654,11 +2578,7 @@ Transform:
   m_GameObject: {fileID: 611260686}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: 12.7, y: 0.67560005, z: 19.06}
-=======
-  m_LocalPosition: {x: 12.692284, y: 0.67560005, z: 15.646004}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_LocalPosition: {x: 12.692284, y: 0.67560005, z: 15.646004}
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -3654,10 +3574,7 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &805933847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,11 +3732,7 @@ Transform:
   m_GameObject: {fileID: 828659617}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -0.5993514, y: 1.066, z: 19.147146}
-=======
-  m_LocalPosition: {x: -0.602, y: 1.066, z: 15.908}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_LocalPosition: {x: -0.602, y: 1.066, z: 15.908}
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -3933,11 +3846,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 1.9
-=======
-      value: 1.52
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 1.52
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -4653,11 +4562,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1460058183}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 11
-=======
-  m_RootOrder: 14
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_RootOrder: 14
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -4884,11 +4789,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 0.75
-=======
-      value: -0.36846638
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.36846638
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -4902,11 +4803,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 19.28
-=======
-      value: 17.483845
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 17.483845
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -4915,11 +4812,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 0.0010398625
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.7063701
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -4933,11 +4826,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.70784277
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -4956,11 +4845,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -179.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -180
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -5033,11 +4918,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 12.69887
-=======
-      value: 12.696221
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 12.696221
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -5051,11 +4932,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 18.568073
-=======
-      value: 15.328928
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 15.328928
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -5177,11 +5054,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -15.78
-=======
-      value: -15.792059
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -15.792059
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -5195,11 +5068,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 17.06
-=======
-      value: 10.1599865
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 10.1599865
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -5398,11 +5267,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 19.481281
-=======
-      value: 19.478632
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 19.478632
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -5416,11 +5281,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 19.189602
-=======
-      value: 15.950457
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 15.950457
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -5506,10 +5367,7 @@ BoxCollider:
   m_Size: {x: 54.70422, y: 166.30492, z: 56.310467}
   m_Center: {x: 0.00048828125, y: 83.68606, z: 0.82841915}
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1002674605
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,9 +5465,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002674605}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-=======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1001 &1011855006
 PrefabInstance:
@@ -6051,11 +5906,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -0.5871866
-=======
-      value: -0.58983517
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.58983517
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -6069,11 +5920,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 19.153446
-=======
-      value: 15.9143
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 15.9143
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -6511,11 +6358,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -8.197616
-=======
-      value: -8.200264
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -8.200264
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -6529,11 +6372,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 18.955254
-=======
-      value: 15.716107
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 15.716107
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -6736,11 +6575,7 @@ Transform:
   m_GameObject: {fileID: 1241310899}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: 19.55665, y: 1.014, z: 19.075146}
-=======
-  m_LocalPosition: {x: 19.554, y: 1.014, z: 15.836}
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_LocalPosition: {x: 19.554, y: 1.014, z: 15.836}
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -6846,11 +6681,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1460058183}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 10
-=======
-  m_RootOrder: 13
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_RootOrder: 13
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -7226,11 +7057,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 11.574623
-=======
-      value: 7
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 7
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -7244,11 +7071,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -10.500889
-=======
-      value: -10.49
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -10.49
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -7372,9 +7195,6 @@ Transform:
   m_Father: {fileID: 1460058183}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
-=======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 --- !u!1 &1456646102
 GameObject:
@@ -8041,11 +7861,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 14.477649
-=======
-      value: 14.475
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 14.475
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -8059,11 +7875,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 18.855146
-=======
-      value: 15.616
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 15.616
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -8166,11 +7978,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -6.58
-=======
-      value: -7.286561
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -7.286561
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -8184,11 +7992,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 18.71
-=======
-      value: 17.49821
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: 17.49821
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -8197,11 +8001,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: 0.0010398625
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.7063701
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -8215,11 +8015,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.70784277
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -8238,11 +8034,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -179.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -180
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -8940,11 +8732,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1460058183}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 5
-=======
-  m_RootOrder: 8
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
   m_RootOrder: 8
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -9509,11 +9297,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -9.44
-=======
-      value: -7.323433
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -7.323433
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -9527,11 +9311,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -1.53
-=======
-      value: -0.25730133
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.25730133
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -9540,11 +9320,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -0.9999995
-=======
-      value: -0.7063701
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.7063701
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -9558,11 +9334,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -0.001042813
-=======
-      value: -0.70784277
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -0.70784277
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -9581,11 +9353,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
 <<<<<<< HEAD
-<<<<<<< HEAD
       value: -359.881
-=======
-      value: -180
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
       value: -180
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
@@ -10219,7 +9987,6 @@ PrefabInstance:
       value: DisplayCase1
       objectReference: {fileID: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
     - target: {fileID: 7919092396847160195, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10230,8 +9997,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -32
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
 =======
 >>>>>>> parent of 312fef1 (Merge branch 'bridgit-branch')
     m_RemovedComponents: []
