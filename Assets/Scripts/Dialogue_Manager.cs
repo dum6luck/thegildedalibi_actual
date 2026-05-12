@@ -46,6 +46,14 @@ public class Dialogue_Manager : MonoBehaviour
         }
     }
 
+    // Inside your Dialogue_Manager script
+    public static Dialogue_Manager Instance; // Add this line
+
+    private void Awake()
+    {
+        // Initialize the Singleton
+        if (Instance == null) Instance = this;
+    }
     private void Update()
     {
         // Handle the arrow bounce
