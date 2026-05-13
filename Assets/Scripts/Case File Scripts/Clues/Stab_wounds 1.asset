@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77e81a80cc891c54aabbfe16b288d3f1, type: 3}
-  m_Name: Stab_wounds
+  m_Name: Stab_wounds 1
   m_EditorClassIdentifier: 
   clue_title: Stab Wounds
   clue_description: Max has sevral stab wounds on his chest from a sharp object.
