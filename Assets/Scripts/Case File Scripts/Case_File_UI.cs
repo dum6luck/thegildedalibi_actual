@@ -21,11 +21,15 @@ public class Case_File_UI : MonoBehaviour
     public TextMeshProUGUI display_title;
     public TextMeshProUGUI display_description;
     public Image display_image;
+    public Button showcase_button;
 
     [Header("Prefabs")]
     public GameObject clue_button_prefab;
 
     private bool is_open = false;
+    private bool can_be_showcased = false;
+    private bool is_showcasing = false;
+    private string showcased_clue = "";
 
     // NEW: This list stores the actual data objects you've found
     private List<Clue_Data> collected_clues_list = new List<Clue_Data>();
@@ -40,6 +44,8 @@ public class Case_File_UI : MonoBehaviour
         }
 
         display_image.enabled = false;
+        showcase_button.onClick.AddListener(() => Showcase());
+        showcase_button.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -52,14 +58,19 @@ public class Case_File_UI : MonoBehaviour
             }
             else
             {
-                Open_Case_File();
+                Open_Case_File(can_be_showcased);
             }
+        }
+
+        if (display_image.enabled) {
+            showcase_button.gameObject.SetActive(can_be_showcased);
         }
     }
 
-    public void Open_Case_File()
+    public void Open_Case_File(bool part_of_dialogue=false)
     {
         is_open = true;
+        can_be_showcased = part_of_dialogue;
         case_file_panel.SetActive(true);
 
         if (case_file_background != null)
@@ -75,6 +86,7 @@ public class Case_File_UI : MonoBehaviour
     public void Close_Case_File()
     {
         is_open = false;
+        can_be_showcased = false;
         case_file_panel.SetActive(false);
 
         if (case_file_background != null)
@@ -112,5 +124,25 @@ public class Case_File_UI : MonoBehaviour
         display_description.text = clue.clue_description;
         display_image.sprite = clue.clue_icon;
         display_image.enabled = true;
+    }
+
+    public bool Is_Open()
+    {
+        return is_open;
+    }
+
+    private void Showcase() {
+        Close_Case_File();
+        is_showcasing = true;
+        showcased_clue = display_title.text;
+    }
+
+    public bool Is_Showcasing() {
+        return is_showcasing;
+    }
+
+    public string Get_Showcased_Clue() {
+        is_showcasing = false;
+        return showcased_clue;
     }
 }

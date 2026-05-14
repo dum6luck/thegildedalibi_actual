@@ -69,7 +69,7 @@ public class Dialogue_Manager : MonoBehaviour
             {
                 if (can_open_case_file)
                 {
-                    case_canvas.Open_Case_File();
+                    case_canvas.Open_Case_File(true);
                     can_open_case_file = false;
                 }
                 // Second click (when arrow is up): Close the panel
@@ -138,5 +138,20 @@ public class Dialogue_Manager : MonoBehaviour
             dialogue_canvas_group.interactable = false;
             dialogue_canvas_group.blocksRaycasts = false;
         }
+    }
+
+    public bool Is_Dialogue_Ongoing(bool with_case_ui=false)
+    {
+        if (dialogue_canvas_group.alpha == 1)
+        {
+            return true;
+        }
+
+        if (case_canvas != null && with_case_ui)
+        {
+            return case_canvas.Is_Open();
+        }
+
+        return false;
     }
 }
