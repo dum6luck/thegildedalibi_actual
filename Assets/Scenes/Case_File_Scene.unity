@@ -216,8 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba54ffe49ef5c904fa03282317fd5efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplaySceneName: Main_Game
-  caseFileSceneName: Case_File_Scene
 --- !u!4 &117293790
 Transform:
   m_ObjectHideFlags: 0
@@ -345,12 +343,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &334769523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 355192377170639141, guid: d1634656fedb3f349a7aa89f8324f416,
-    type: 3}
-  m_PrefabInstance: {fileID: 355192377500669014}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &334769524 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 355192377170639138, guid: d1634656fedb3f349a7aa89f8324f416,
@@ -955,11 +947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094b155e92ad707439b919715f01295a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clueImage: {fileID: 939691864}
-  clueTitle: {fileID: 1480579277}
-  clueDescription: {fileID: 1910158510}
-  clueButtonPrefab: {fileID: 334769523}
-  gridParent: {fileID: 27787329}
 --- !u!225 &1882943415
 CanvasGroup:
   m_ObjectHideFlags: 0
