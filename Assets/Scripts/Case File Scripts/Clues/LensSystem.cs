@@ -1,14 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI; // Needed for the Image component
 
 public class LensSystem : MonoBehaviour
 {
     private Camera cam;
     private int baseMask;
 
-    [Header("Magnifying Glass Frame")]
-    public GameObject magGlassOverlay; // Drag your 'MagGlassOverlay' here
-
-    [Header("Overlay UI Lenses")]
+    [Header("Overlay UI Elements")]
     public GameObject blueOverlay;
     public GameObject redOverlay;
     public GameObject blackOverlay;
@@ -22,64 +20,51 @@ public class LensSystem : MonoBehaviour
 
     void Update()
     {
-        // Toggle Logic for Key 1 (Blue)
+        // Toggle logic: If the lens is already active, Reset. Otherwise, Switch.
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (blueOverlay.activeSelf) ResetLens();
             else SwitchLens("Blue Light", blueOverlay);
         }
 
-        // Toggle Logic for Key 2 (Red)
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             if (redOverlay.activeSelf) ResetLens();
             else SwitchLens("Red Light", redOverlay);
         }
 
-        // Toggle Logic for Key 3 (Black)
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (blackOverlay.activeSelf) ResetLens();
             else SwitchLens("Black Light", blackOverlay);
         }
 
-        // Emergency manual reset key
         if (Input.GetKeyDown(KeyCode.Alpha0)) ResetLens();
     }
 
-    void SwitchLens(string layerName, GameObject activeLens)
+    void SwitchLens(string layerName, GameObject activeOverlay)
     {
         int layerIndex = LayerMask.NameToLayer(layerName);
+
         if (layerIndex == -1) return;
 
-        // Clear previous states
+        // Clean slate before applying the new lens
         DisableAllOverlays();
 
-        // 1. Change what the camera sees
+        // Activate the specific lens layer and UI
         cam.cullingMask = baseMask | (1 << layerIndex);
-
-        // 2. Turn on the main magnifying glass frame
-        if (magGlassOverlay != null) magGlassOverlay.SetActive(true);
-
-        // 3. Turn on the specific colored lens inside the glass
-        if (activeLens != null) activeLens.SetActive(true);
-
-        Debug.Log($"Lens Active: {layerName}");
+        if (activeOverlay != null) activeOverlay.SetActive(true);
     }
 
     public void ResetLens()
     {
         cam.cullingMask = baseMask;
         DisableAllOverlays();
-        Debug.Log("Lenses and Magnifying Glass Hidden");
+        Debug.Log("Lenses Reset to Default");
     }
 
     void DisableAllOverlays()
     {
-        // Hide the main frame
-        if (magGlassOverlay) magGlassOverlay.SetActive(false);
-
-        // Hide individual color lenses
         if (blueOverlay) blueOverlay.SetActive(false);
         if (redOverlay) redOverlay.SetActive(false);
         if (blackOverlay) blackOverlay.SetActive(false);
