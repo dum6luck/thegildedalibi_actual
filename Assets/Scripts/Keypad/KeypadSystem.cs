@@ -4,7 +4,7 @@ using TMPro;
 public class KeypadSystem : MonoBehaviour
 {
     [Header("Settings")]
-    public string correctCode = "4729";
+    public string correctCode = "0";
     public GameObject keypadUI;
 
     [Header("References")]
@@ -23,9 +23,14 @@ public class KeypadSystem : MonoBehaviour
 
     void Update()
     {
-        if (keypadUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        // Check if the keypad UI is currently open/visible
+        if (keypadUI.activeSelf)
         {
-            ToggleKeypad(false);
+            // FIX: If the player presses Escape OR E, close the keypad layout cleanly
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
+            {
+                ToggleKeypad(false);
+            }
         }
     }
 
@@ -62,6 +67,14 @@ public class KeypadSystem : MonoBehaviour
             statusText.text = "ENTER CODE";
             inputField.text = "";
             inputField.ActivateInputField();
+        }
+        else
+        {
+            // Clean up focus parameters when closing so the input field doesn't trap keystrokes
+            if (inputField != null && inputField.isFocused)
+            {
+                inputField.DeactivateInputField();
+            }
         }
     }
 
