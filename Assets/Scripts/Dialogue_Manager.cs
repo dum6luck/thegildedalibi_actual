@@ -154,4 +154,9 @@ public class Dialogue_Manager : MonoBehaviour
 
         return false;
     }
+
+    public void OnSliderValueChanged(float value)
+    {
+        type_speed = 0.2f - value;
+    }
 }

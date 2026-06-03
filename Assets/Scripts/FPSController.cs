@@ -106,4 +106,15 @@ public class FPSController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
     }
+
+    public void MovementSlider(float value)
+    {
+        walkSpeed = value;
+        sprintSpeed = value * 2;
+    }
+
+    public void SensitivitySlider(float value)
+    {
+        mouseSensitivity = value;
+    }
 }

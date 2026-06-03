@@ -44,8 +44,11 @@ public class Case_File_UI : MonoBehaviour
         }
 
         display_image.enabled = false;
-        showcase_button.onClick.AddListener(() => Showcase());
-        showcase_button.gameObject.SetActive(false);
+        if (showcase_button != null)
+        {
+            showcase_button.onClick.AddListener(() => Showcase());
+            showcase_button.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -62,7 +65,7 @@ public class Case_File_UI : MonoBehaviour
             }
         }
 
-        if (display_image.enabled) {
+        if (showcase_button != null && display_image.enabled) {
             showcase_button.gameObject.SetActive(can_be_showcased);
         }
     }
