@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI; // Required for using Slider components
 
 public class LensSystem : MonoBehaviour
 {
@@ -6,82 +7,157 @@ public class LensSystem : MonoBehaviour
     private int baseMask;
 
     [Header("Magnifying Glass Frame")]
-    public GameObject magGlassOverlay; // Drag your 'MagGlassOverlay' here
+    public GameObject magGlassOverlay; // Drag 'MagGlassOverlay' here
 
     [Header("Overlay UI Lenses")]
     public GameObject blueOverlay;
     public GameObject redOverlay;
     public GameObject blackOverlay;
 
+    [Header("Timer UI Element")]
+    public Slider lensTimerSlider; // Drag your UI Slider here
+
+    [Header("Lens Timers")]
+    public float maxTime = 30f;
+    private float blueTimer = 0f;
+    private float redTimer = 0f;
+
+    [Header("Unlock Progression")]
+    public bool isBlueLensUnlocked = false;
+    public bool isRedLensUnlocked = false;
+    public bool isBlackLensUnlocked = true; // Set to true if Black Light is unlocked from the start
+
     void Start()
     {
         cam = GetComponent<Camera>();
+
+        // Grab the camera's starting culling mask layers (Default, UI, etc.)
         baseMask = cam.cullingMask;
-        ResetLens(); // Ensure everything starts clean
+
+        ResetLens(); // Ensure a completely clean slate on game startup
     }
 
     void Update()
     {
-        // Toggle Logic for Key 1 (Blue)
+        // 1. Manual Key Toggles
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (blueOverlay.activeSelf) ResetLens();
-            else SwitchLens("Blue Light", blueOverlay);
+            if (isBlueLensUnlocked) HandleManualToggle("Blue Light", blueOverlay, ref blueTimer);
+            else Debug.Log("Blue Light Lens is locked! Go find the Blue Gem first.");
         }
 
-        // Toggle Logic for Key 2 (Red)
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (redOverlay.activeSelf) ResetLens();
-            else SwitchLens("Red Light", redOverlay);
+            if (isRedLensUnlocked) HandleManualToggle("Red Light", redOverlay, ref redTimer);
+            else Debug.Log("Red Light Lens is locked! Go find the Red Gem first.");
         }
 
-        // Toggle Logic for Key 3 (Black)
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (blackOverlay.activeSelf) ResetLens();
-            else SwitchLens("Black Light", blackOverlay);
+            if (isBlackLensUnlocked)
+            {
+                float dummyTimer = 0f; // Black light uses no timer, pass a throwaway variable
+                HandleManualToggle("Black Light", blackOverlay, ref dummyTimer);
+            }
         }
 
-        // Emergency manual reset key
         if (Input.GetKeyDown(KeyCode.Alpha0)) ResetLens();
+
+        // 2. Countdown Timers & Progress Bar Processing
+        if (blueTimer > 0 && blueOverlay.activeSelf)
+        {
+            blueTimer -= Time.deltaTime;
+            UpdateSliderUI(blueTimer);
+
+            if (blueTimer <= 0) ResetLens();
+        }
+
+        if (redTimer > 0 && redOverlay.activeSelf)
+        {
+            redTimer -= Time.deltaTime;
+            UpdateSliderUI(redTimer);
+
+            if (redTimer <= 0) ResetLens();
+        }
     }
 
-    void SwitchLens(string layerName, GameObject activeLens)
+    // Handles calculating and assigning the countdown slider percentage
+    void UpdateSliderUI(float currentTimerValue)
+    {
+        if (lensTimerSlider != null)
+        {
+            lensTimerSlider.value = currentTimerValue / maxTime;
+        }
+    }
+
+    // Triggered externally by LensGem.cs when the player stands nearby and presses 'E'
+    public void ChargeLens(string lensType)
+    {
+        if (lensType == "Blue")
+        {
+            isBlueLensUnlocked = true;
+            blueTimer = maxTime;
+            SwitchLens("Blue Light", blueOverlay, true); // True tells it to reveal the timer bar
+        }
+        else if (lensType == "Red")
+        {
+            isRedLensUnlocked = true;
+            redTimer = maxTime;
+            SwitchLens("Red Light", redOverlay, true); // True tells it to reveal the timer bar
+        }
+    }
+
+    void HandleManualToggle(string layerName, GameObject overlay, ref float timer)
+    {
+        if (overlay.activeSelf)
+        {
+            ResetLens();
+        }
+        else
+        {
+            // Show the timer bar only if this specific lens layer has remaining time left
+            bool showTimer = (timer > 0);
+            SwitchLens(layerName, overlay, showTimer);
+        }
+    }
+
+    void SwitchLens(string layerName, GameObject activeLens, bool showTimer = false)
     {
         int layerIndex = LayerMask.NameToLayer(layerName);
-        if (layerIndex == -1) return;
+        if (layerIndex == -1)
+        {
+            Debug.LogError($"Layer assignment failed! Unity cannot find a Layer named '{layerName}'.");
+            return;
+        }
 
-        // Clear previous states
         DisableAllOverlays();
 
-        // 1. Change what the camera sees
+        // Combine the baseline render mask with our temporary active detective frequency mask
         cam.cullingMask = baseMask | (1 << layerIndex);
 
-        // 2. Turn on the main magnifying glass frame
         if (magGlassOverlay != null) magGlassOverlay.SetActive(true);
-
-        // 3. Turn on the specific colored lens inside the glass
         if (activeLens != null) activeLens.SetActive(true);
 
-        Debug.Log($"Lens Active: {layerName}");
+        if (lensTimerSlider != null)
+        {
+            lensTimerSlider.gameObject.SetActive(showTimer);
+        }
     }
 
     public void ResetLens()
     {
-        cam.cullingMask = baseMask;
+        cam.cullingMask = baseMask; // Restore standard vision layers
+        blueTimer = 0f;
+        redTimer = 0f;
         DisableAllOverlays();
-        Debug.Log("Lenses and Magnifying Glass Hidden");
     }
 
     void DisableAllOverlays()
     {
-        // Hide the main frame
         if (magGlassOverlay) magGlassOverlay.SetActive(false);
-
-        // Hide individual color lenses
         if (blueOverlay) blueOverlay.SetActive(false);
         if (redOverlay) redOverlay.SetActive(false);
         if (blackOverlay) blackOverlay.SetActive(false);
+        if (lensTimerSlider) lensTimerSlider.gameObject.SetActive(false);
     }
 }
