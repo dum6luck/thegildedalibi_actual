@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* 
- * SUMMARY:
- * This script is attached to physical objects in the world. 
- * It detects when the player is nearby and handles the 'E' key press 
- * to send data to the Case_File_UI.
+/* * SUMMARY:
+ * This script handles NPC dialogue and clues.
+ * It has been upgraded to aggressively look up and down the object hierarchy
+ * to find the NPCWander script and force it to a dead stop.
  */
 
 public class NPC_For_Clues : MonoBehaviour
@@ -13,10 +12,6 @@ public class NPC_For_Clues : MonoBehaviour
     public NPCData npc;
     public string dialogue = "[Placeholder] You found anything yet?";
 
-    /* 
-     * Forms a dictionary of possible dialogues from
-     * showcasing a clue with the clue's title as the key
-     */
     [Header("Dictionary of Clue Dialogues")]
     public List<string> clue_keys = new List<string>();
     public List<string> dialogue_values = new List<string>();
@@ -25,9 +20,17 @@ public class NPC_For_Clues : MonoBehaviour
     private bool is_dialogue_ongoing = false;
     Dictionary<string, string> dialogue_dict = new Dictionary<string, string>();
 
+    private NPCWander wanderScript;
 
     private void Start()
     {
+        // FIX: Look on this object, and if it's not here, check parent objects too!
+        wanderScript = GetComponent<NPCWander>();
+        if (wanderScript == null)
+        {
+            wanderScript = GetComponentInParent<NPCWander>();
+        }
+
         int dict_len = clue_keys.Count;
         if (clue_keys.Count > dialogue_values.Count) dict_len = dialogue_values.Count;
 
@@ -39,13 +42,26 @@ public class NPC_For_Clues : MonoBehaviour
 
     private void Update()
     {
+        Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
+
+        // If dialogue was running but is now closed, let them walk again
+        if (is_dialogue_ongoing && dialogue_manager != null && !dialogue_manager.Is_Dialogue_Ongoing(true))
+        {
+            is_dialogue_ongoing = false;
+            if (wanderScript != null)
+            {
+                wanderScript.ResumeWandering();
+            }
+        }
+
         if (is_player_nearby)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Talk();
             }
-            else if (is_dialogue_ongoing) {
+            else if (is_dialogue_ongoing)
+            {
                 Showcase();
             }
         }
@@ -58,10 +74,18 @@ public class NPC_For_Clues : MonoBehaviour
 
         if (ui_manager != null)
         {
-            // Trigger the VN-style dialogue box
             if (dialogue_manager != null && !dialogue_manager.Is_Dialogue_Ongoing(true))
             {
                 is_dialogue_ongoing = true;
+
+                // Double check layout linkage right before freezing
+                if (wanderScript == null) FindWanderScriptFallback();
+
+                if (wanderScript != null)
+                {
+                    wanderScript.StopWandering();
+                }
+
                 dialogue_manager.Show_Dialogue(npc.npcName, dialogue, true);
             }
         }
@@ -77,13 +101,17 @@ public class NPC_For_Clues : MonoBehaviour
             if (!dialogue_manager.Is_Dialogue_Ongoing(true))
             {
                 is_dialogue_ongoing = false;
+                if (wanderScript != null) wanderScript.ResumeWandering();
             }
 
-            // Trigger the VN-style dialogue box
             if (dialogue_manager != null && ui_manager.Is_Showcasing())
             {
                 string clue_name = ui_manager.Get_Showcased_Clue();
                 is_dialogue_ongoing = false;
+
+                if (wanderScript == null) FindWanderScriptFallback();
+                if (wanderScript != null) wanderScript.StopWandering();
+
                 try
                 {
                     dialogue_manager.Show_Dialogue(npc.npcName, dialogue_dict[clue_name]);
@@ -96,6 +124,14 @@ public class NPC_For_Clues : MonoBehaviour
         }
     }
 
+    // Emergency manual sweep loop if assignments get unlinked at runtime
+    private void FindWanderScriptFallback()
+    {
+        wanderScript = GetComponent<NPCWander>();
+        if (wanderScript == null) wanderScript = GetComponentInParent<NPCWander>();
+        if (wanderScript == null) wanderScript = GetComponentInChildren<NPCWander>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) is_player_nearby = true;
@@ -103,6 +139,11 @@ public class NPC_For_Clues : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) is_player_nearby = false;
+        if (other.CompareTag("Player"))
+        {
+            is_player_nearby = false;
+            is_dialogue_ongoing = false;
+            if (wanderScript != null) wanderScript.ResumeWandering();
+        }
     }
 }

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e81a80cc891c54aabbfe16b288d3f1, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
-  clue_title: White Fiber
-  clue_description: A white fiber left in the knife display case.
+  clue_title: Fake Dagger
+  clue_description: A dagger that seemingly fits the description of the murder weapon.
+    When inspecting it closer, it turns out it is a complete fake.
   clue_icon: {fileID: 21300000, guid: 0779d4f346274034686745c0d0187976, type: 3}
-  collection_dialogue: Looks like a white thread... maybe a fiber of some sort? What
-    is it doing here?
+  collection_dialogue: 
   npc_reactions: []

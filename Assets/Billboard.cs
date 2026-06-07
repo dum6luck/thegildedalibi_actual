@@ -6,41 +6,42 @@ public class Billboard : MonoBehaviour
 {
     [SerializeField] private BillboardType billboardType;
 
-    [Header("Lock Rotation")]
-    [SerializeField] private bool lockX;
-    [SerializeField] private bool lockY;
-    [SerializeField] private bool lockZ;
-
-    private Vector3 originalRotation;
-
     public enum BillboardType { LookAtCamera, CameraForward };
 
-    private void Awake()
-    {
-        originalRotation = transform.rotation.eulerAngles;
-    }
-
-    // Use Late update so everything should have finished moving.
+    // Use LateUpdate so the camera has already finished its movement for the frame
     void LateUpdate()
     {
-        // There are two ways people billboard things.
+        if (Camera.main == null) return;
+
         switch (billboardType)
         {
             case BillboardType.LookAtCamera:
-                transform.LookAt(Camera.main.transform.position, Vector3.up);
+                // 1. Get the camera's position
+                Vector3 targetPosition = Camera.main.transform.position;
+
+                // 2. FORCE the target height to match the NPC's exact height
+                // This strips away any vertical tilting entirely!
+                targetPosition.y = transform.position.y;
+
+                // 3. Face that flattened position safely
+                transform.LookAt(targetPosition, Vector3.up);
                 break;
+
             case BillboardType.CameraForward:
-                transform.forward = Camera.main.transform.forward;
+                // Get the camera's flat forward vector
+                Vector3 camForward = Camera.main.transform.forward;
+
+                // Strip vertical viewing angles from the camera vector
+                camForward.y = 0;
+
+                if (camForward.sqrMagnitude > 0.001f)
+                {
+                    transform.forward = camForward.normalized;
+                }
                 break;
+
             default:
                 break;
         }
-        // Modify the rotation in Euler space to lock certain dimensions.
-        Vector3 rotation = transform.rotation.eulerAngles;
-        if (lockX) { rotation.x = originalRotation.x; }
-        if (lockY) { rotation.y = originalRotation.y; }
-        if (lockZ) { rotation.z = originalRotation.z; }
-        transform.rotation = Quaternion.Euler(rotation);
     }
 }
-
