@@ -1042,7 +1042,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29468
+  m_Name: pb_Mesh29438
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8342,7 +8342,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29088
+  m_Name: pb_Mesh29054
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13295,6 +13295,7 @@ GameObject:
   - component: {fileID: 746102498}
   - component: {fileID: 746102497}
   - component: {fileID: 746102496}
+  - component: {fileID: 746102505}
   - component: {fileID: 746102495}
   - component: {fileID: 746102494}
   - component: {fileID: 746102500}
@@ -13488,6 +13489,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057798f6d4135e946bafc8d1e5b00467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &746102505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746102493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9523c4409c03b47974d390323071b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 3
+  playerCamera: {fileID: 886195474}
 --- !u!1001 &747742637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14500,7 +14515,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28124
+  m_Name: pb_Mesh28102
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14858,11 +14873,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 853506132}
-  dialogue: You found anything yet? (Placeholder)
+  dialogue: You want to talk?
   clue_keys:
   - Stab Wounds
+  - Blood Smear
+  - Caesar Woodworking
+  - Random Code
+  - Glove Fiber
+  - Fake Dagger
   dialogue_values:
-  - '[Placeholder] Change me!'
+  - The wounds are clustered together. That usually suggests the attacker was focused
+    on one target area rather than striking at random.
+  - People can remain surprisingly active after severe injuries. It's possible he
+    tried to drag himself to get help.
+  - That company has manufactured many wooden objects for our musuem.
+  - It seems to be a cipher. If we decode it, we may learn why it was hidden in the
+    first place.
+  - Interesting. The display piece is a replica. Which means the real dagger was
+    removed before tonight, not during the panic after the lights went out.
 --- !u!195 &853506138
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15091,7 +15119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 867229019}
-  dialogue: You found anything yet? (Placeholder)
+  dialogue: Need something?
   clue_keys:
   - Stab Wounds
   dialogue_values:
@@ -17214,11 +17242,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 1082141154}
-  dialogue: You found anything yet? (Placeholder)
+  dialogue: Um... You found anything yet?
   clue_keys:
   - Stab Wounds
+  - Blood Smear
+  - Caesar Woodworking
+  - Random Code
+  - Glove Fiber
+  - Fake Dagger
   dialogue_values:
-  - '[Placeholder] Change me!'
+  - Ergh... It's making me feel queasy. Who would do something like that?
+  - The trail starts somewhere else. Was he not attacked where we found him?
+  - ...I've seen that name before. I just can't remember where...
+  - Hmm... It looks random at first. But someone took the time to carve that into
+    the wood.
+  - It's small but really bright. It must've fallen off something.
+  - Y-You're saying that the dagger is a fake? So what is the real murder weapon?
 --- !u!195 &1082141160
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -70127,7 +70166,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29378
+  m_Name: pb_Mesh29344
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -71279,7 +71318,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29058
+  m_Name: pb_Mesh29020
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -120565,11 +120604,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 1957190223}
-  dialogue: You found anything yet? (Placeholder)
+  dialogue: Whats up?
   clue_keys:
   - Stab Wounds
+  - Blood Smear
+  - Caesar Woodworking
+  - Random Code
+  - Glove Fiber
+  - Fake Dagger
   dialogue_values:
-  - '[Placeholder] Change me!'
+  - Those wounds are horrible. I don't know how anyone could do that to another person.
+    One stab would've been enough, wouldn't it?
+  - So he didn't die where we found him? Great. Somehow this keeps getting worse.
+  - Never heard of them. Though Max collected enough weird junk that it could mean
+    absolutely anything.
+  - Even from beyond the grave, he's making everyone solve riddles. Annoying.
+  - It's just a tiny thread. You really think you can really solve crimes with stuff
+    like that?
+  - You're kidding. So we've been staring at a fake knife this entire time?
 --- !u!195 &1957190229
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -123324,7 +123376,7 @@ PrefabInstance:
     - target: {fileID: 3486247763638378230, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: KeypadDoor
       objectReference: {fileID: 0}
     - target: {fileID: 7799945169625059941, guid: 981fc73a32fe88b4b863b5a7ec00ca14,
         type: 3}
@@ -123398,7 +123450,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.8, y: 69.225525, z: 62.616795}
+  m_Size: {x: 67.54, y: 69.225525, z: 62.616795}
   m_Center: {x: 1.9557731, y: 0.000089645386, z: 33.77768}
 --- !u!65 &2121195444
 BoxCollider:

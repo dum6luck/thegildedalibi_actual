@@ -1,6 +1,12 @@
 using UnityEngine;
 using TMPro;
 
+/* * SUMMARY:
+ * This script handles the lock code logic, door animation, and menu state.
+ * All automatic proximity detection has been stripped; it relies entirely
+ * on the PlayerKeypadInteractor script shooting a raycast at the door.
+ */
+
 public class KeypadSystem : MonoBehaviour
 {
     [Header("Settings")]
@@ -17,23 +23,25 @@ public class KeypadSystem : MonoBehaviour
 
     [Header("Door Settings")]
     public GameObject doorObject;
-    // Set this to (0, -6.454, 0) in the Inspector
     public Vector3 openRotation = new Vector3(0f, -6.454f, 0f);
 
-    [Header("Unlock Dialogue (New!)")]
+    [Header("Unlock Dialogue")]
     public string detectiveName = "DETECTIVE";
     [TextArea(3, 10)]
     public string unlockThoughts = "A key... maybe I can use it somewhere.";
 
     void Start()
     {
+        // Enforce safe default closure state on initialization
         ToggleKeypad(false);
     }
 
     void Update()
     {
+        // Only run code tracking if the UI layer is currently active
         if (keypadUI.activeSelf)
         {
+            // Allow cancelling out manually
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
             {
                 ToggleKeypad(false);
@@ -56,7 +64,7 @@ public class KeypadSystem : MonoBehaviour
         {
             statusText.text = "<color=green>CORRECT</color>";
 
-            // 1. Automatically grant the key to the player's inventory script
+            // 1. Grant the key token to player
             if (playerObject != null)
             {
                 PlayerInventory inventory = playerObject.GetComponent<PlayerInventory>();
@@ -66,20 +74,16 @@ public class KeypadSystem : MonoBehaviour
                 }
             }
 
-            // 2. Open the physical door
+            // 2. Open the physical container
             if (doorObject != null)
             {
                 doorObject.transform.localRotation = Quaternion.Euler(openRotation);
             }
 
-            // 3. NEW: Trigger the dialogue box using your existing Dialogue_Manager setup!
+            // 3. Trigger dialogue text banner
             if (Dialogue_Manager.Instance != null)
             {
                 Dialogue_Manager.Instance.Show_Dialogue(detectiveName, unlockThoughts);
-            }
-            else
-            {
-                Debug.LogWarning("Dialogue_Manager Instance not found in scene!");
             }
 
             Invoke("UnlockSuccess", 1.0f);
@@ -98,6 +102,9 @@ public class KeypadSystem : MonoBehaviour
         Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = state;
 
+        // Toggles game timescale to freeze background action while interfacing
+        Time.timeScale = state ? 0f : 1f;
+
         if (state)
         {
             statusText.text = "ENTER CODE";
@@ -106,9 +113,10 @@ public class KeypadSystem : MonoBehaviour
         }
         else
         {
-            if (inputField != null && inputField.isFocused)
+            if (inputField != null)
             {
                 inputField.DeactivateInputField();
+                UnityEngine.EventSystems.EventSystem.current?.SetSelectedGameObject(null);
             }
         }
     }

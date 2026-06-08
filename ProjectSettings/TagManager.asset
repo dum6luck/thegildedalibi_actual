@@ -9,6 +9,7 @@ TagManager:
   - Clue
   - Interactable
   - Label
+  - KeypadDoor
   layers:
   - Default
   - TransparentFX

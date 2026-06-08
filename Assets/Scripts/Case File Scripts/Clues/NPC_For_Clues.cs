@@ -3,8 +3,8 @@ using UnityEngine;
 
 /* * SUMMARY:
  * This script handles NPC dialogue and clues.
- * It has been upgraded to aggressively look up and down the object hierarchy
- * to find the NPCWander script and force it to a dead stop.
+ * Upgraded so that showcasing a clue instantly triggers the custom response dialogue
+ * without forcing the player to press 'E' again.
  */
 
 public class NPC_For_Clues : MonoBehaviour
@@ -24,7 +24,6 @@ public class NPC_For_Clues : MonoBehaviour
 
     private void Start()
     {
-        // FIX: Look on this object, and if it's not here, check parent objects too!
         wanderScript = GetComponent<NPCWander>();
         if (wanderScript == null)
         {
@@ -42,9 +41,17 @@ public class NPC_For_Clues : MonoBehaviour
 
     private void Update()
     {
+        Case_File_UI ui_manager = FindObjectOfType<Case_File_UI>();
         Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
 
-        // If dialogue was running but is now closed, let them walk again
+        // 1. CONSTANT WATCHER: If the player just selected a clue to showcase to THIS nearby NPC, intercept it immediately!
+        if (is_player_nearby && ui_manager != null && ui_manager.Is_Showcasing())
+        {
+            HandleShowcaseDialogue(ui_manager, dialogue_manager);
+            return;
+        }
+
+        // 2. Clear conversation state and let the NPC walk again if dialogue finishes normally
         if (is_dialogue_ongoing && dialogue_manager != null && !dialogue_manager.Is_Dialogue_Ongoing(true))
         {
             is_dialogue_ongoing = false;
@@ -54,77 +61,51 @@ public class NPC_For_Clues : MonoBehaviour
             }
         }
 
-        if (is_player_nearby)
+        // 3. Regular interaction triggers
+        if (is_player_nearby && !is_dialogue_ongoing)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Talk();
-            }
-            else if (is_dialogue_ongoing)
-            {
-                Showcase();
+                Talk(dialogue_manager);
             }
         }
     }
 
-    private void Talk()
+    private void Talk(Dialogue_Manager dialogue_manager)
     {
-        Case_File_UI ui_manager = FindObjectOfType<Case_File_UI>();
-        Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
-
-        if (ui_manager != null)
+        if (dialogue_manager != null && !dialogue_manager.Is_Dialogue_Ongoing(true))
         {
-            if (dialogue_manager != null && !dialogue_manager.Is_Dialogue_Ongoing(true))
-            {
-                is_dialogue_ongoing = true;
+            is_dialogue_ongoing = true;
 
-                // Double check layout linkage right before freezing
-                if (wanderScript == null) FindWanderScriptFallback();
+            if (wanderScript == null) FindWanderScriptFallback();
+            if (wanderScript != null) wanderScript.StopWandering();
 
-                if (wanderScript != null)
-                {
-                    wanderScript.StopWandering();
-                }
-
-                dialogue_manager.Show_Dialogue(npc.npcName, dialogue, true);
-            }
+            dialogue_manager.Show_Dialogue(npc.npcName, dialogue, true);
         }
     }
 
-    private void Showcase()
+    private void HandleShowcaseDialogue(Case_File_UI ui_manager, Dialogue_Manager dialogue_manager)
     {
-        Case_File_UI ui_manager = FindObjectOfType<Case_File_UI>();
-        Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
+        string clue_name = ui_manager.Get_Showcased_Clue();
+        is_dialogue_ongoing = true;
 
-        if (ui_manager != null)
+        if (wanderScript == null) FindWanderScriptFallback();
+        if (wanderScript != null) wanderScript.StopWandering();
+
+        if (dialogue_manager != null)
         {
-            if (!dialogue_manager.Is_Dialogue_Ongoing(true))
+            if (dialogue_dict.ContainsKey(clue_name))
             {
-                is_dialogue_ongoing = false;
-                if (wanderScript != null) wanderScript.ResumeWandering();
+                dialogue_manager.Show_Dialogue(npc.npcName, dialogue_dict[clue_name], true);
             }
-
-            if (dialogue_manager != null && ui_manager.Is_Showcasing())
+            else
             {
-                string clue_name = ui_manager.Get_Showcased_Clue();
-                is_dialogue_ongoing = false;
-
-                if (wanderScript == null) FindWanderScriptFallback();
-                if (wanderScript != null) wanderScript.StopWandering();
-
-                try
-                {
-                    dialogue_manager.Show_Dialogue(npc.npcName, dialogue_dict[clue_name]);
-                }
-                catch
-                {
-                    dialogue_manager.Show_Dialogue(npc.npcName, "[Placeholder] It seems like this person doesn't want to talk.");
-                }
+                // Fallback default description line if the specific character doesn't have unique dialogue for this clue asset
+                dialogue_manager.Show_Dialogue(npc.npcName, "[Placeholder] I don't know anything about that item.", true);
             }
         }
     }
 
-    // Emergency manual sweep loop if assignments get unlinked at runtime
     private void FindWanderScriptFallback()
     {
         wanderScript = GetComponent<NPCWander>();
