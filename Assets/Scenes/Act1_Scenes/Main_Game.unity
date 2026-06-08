@@ -15122,8 +15122,15 @@ MonoBehaviour:
   dialogue: Need something?
   clue_keys:
   - Stab Wounds
+  - Blood Smear
+  - Caesar Woodworking
+  - Random Code
+  - Glove Fiber
+  - Fake Dagger
   dialogue_values:
-  - '[Placeholder] Change me!'
+  - "That\u2019s\u2026 a lot of force behind it. It doesn\u2019t look like something
+    that happened quickly."
+  - So he moved after he was hurt.hing that happened quickly.
 --- !u!195 &867229025
 NavMeshAgent:
   m_ObjectHideFlags: 0
