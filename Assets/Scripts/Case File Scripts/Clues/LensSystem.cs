@@ -18,10 +18,10 @@ public class LensSystem : MonoBehaviour
     public Slider lensTimerSlider;
 
     [Header("Screen-Space Clue Prompt")]
-    public GameObject screenCluePrompt; // Drag 'ScreenInteractionPrompt' here
+    public GameObject screenCluePrompt;
 
     [Header("Lens Timers")]
-    public float maxTime = 30f;
+    public float maxTime = 20f;
     private float blueTimer = 0f;
     private float redTimer = 0f;
 
@@ -30,26 +30,81 @@ public class LensSystem : MonoBehaviour
     public bool isRedLensUnlocked = false;
     public bool isBlackLensUnlocked = true;
 
+    [Header("First Time Event")]
+    private bool hasTriggeredFirstLensTutorial = false;
+
+    private string currentActiveLensName = "None";
+
     void Start()
     {
         cam = GetComponent<Camera>();
         baseMask = cam.cullingMask;
-        ResetLens();
+
+        if (lensTimerSlider != null)
+        {
+            lensTimerSlider.gameObject.SetActive(false);
+        }
+
+        if (LensDataCarrier.Instance != null)
+        {
+            isBlueLensUnlocked = LensDataCarrier.Instance.isBlueLensUnlocked;
+            isRedLensUnlocked = LensDataCarrier.Instance.isRedLensUnlocked;
+            isBlackLensUnlocked = LensDataCarrier.Instance.isBlackLensUnlocked;
+            hasTriggeredFirstLensTutorial = LensDataCarrier.Instance.hasTriggeredFirstLensTutorial;
+
+            blueTimer = LensDataCarrier.Instance.blueTimerRemaining;
+            redTimer = LensDataCarrier.Instance.redTimerRemaining;
+            currentActiveLensName = LensDataCarrier.Instance.activeLensLayerName;
+
+            if (currentActiveLensName == "Blue Light" && blueTimer > 0)
+                SwitchLens("Blue Light", blueOverlay, true);
+            else if (currentActiveLensName == "Red Light" && redTimer > 0)
+                SwitchLens("Red Light", redOverlay, true);
+            else if (currentActiveLensName == "Black Light")
+                SwitchLens("Black Light", blackOverlay, false);
+            else
+                ResetLens();
+        }
+        else
+        {
+            ResetLens();
+        }
     }
 
     void Update()
     {
-        // 1. Manual Key Toggles
+        // --- FIXED MANUAL TOGGLES ---
+        // Added '&& blueTimer > 0' and '&& redTimer > 0' so they CANNOT be opened with an empty battery!
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (isBlueLensUnlocked) HandleManualToggle("Blue Light", blueOverlay, ref blueTimer);
-            else Debug.Log("Blue Light Lens is locked! Find the Blue Gem first.");
+            if (isBlueLensUnlocked && blueTimer > 0)
+            {
+                HandleManualToggle("Blue Light", blueOverlay, ref blueTimer);
+            }
+            else if (!isBlueLensUnlocked)
+            {
+                Debug.Log("Blue Light Lens is locked! Find the Blue Gem first.");
+            }
+            else
+            {
+                Debug.Log("Blue Light battery is dead! Go back to the Blue Gem to recharge.");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (isRedLensUnlocked) HandleManualToggle("Red Light", redOverlay, ref redTimer);
-            else Debug.Log("Red Light Lens is locked! Find the Red Gem first.");
+            if (isRedLensUnlocked && redTimer > 0)
+            {
+                HandleManualToggle("Red Light", redOverlay, ref redTimer);
+            }
+            else if (!isRedLensUnlocked)
+            {
+                Debug.Log("Red Light Lens is locked! Find the Red Gem first.");
+            }
+            else
+            {
+                Debug.Log("Red Light battery is dead! Go back to the Red Gem to recharge.");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -63,43 +118,77 @@ public class LensSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha0)) ResetLens();
 
-        // 2. Countdown Timers
-        if (blueTimer > 0 && blueOverlay.activeSelf)
+        // --- BACKGROUND COUNTDOWNS ---
+        bool aTimerIsCountingDown = false;
+
+        if (blueTimer > 0)
         {
             blueTimer -= Time.deltaTime;
+            aTimerIsCountingDown = true;
             UpdateSliderUI(blueTimer);
-            if (blueTimer <= 0) ResetLens();
+
+            if (blueTimer <= 0)
+            {
+                blueTimer = 0f;
+                ResetLens();
+            }
         }
 
-        if (redTimer > 0 && redOverlay.activeSelf)
+        if (redTimer > 0)
         {
             redTimer -= Time.deltaTime;
+            aTimerIsCountingDown = true;
             UpdateSliderUI(redTimer);
-            if (redTimer <= 0) ResetLens();
+
+            if (redTimer <= 0)
+            {
+                redTimer = 0f;
+                ResetLens();
+            }
+        }
+
+        if (!aTimerIsCountingDown && lensTimerSlider != null && lensTimerSlider.gameObject.activeSelf)
+        {
+            lensTimerSlider.gameObject.SetActive(false);
+        }
+
+        SaveDataToCarrier();
+    }
+
+    void SaveDataToCarrier()
+    {
+        if (LensDataCarrier.Instance != null)
+        {
+            LensDataCarrier.Instance.isBlueLensUnlocked = isBlueLensUnlocked;
+            LensDataCarrier.Instance.isRedLensUnlocked = isRedLensUnlocked;
+            LensDataCarrier.Instance.isBlackLensUnlocked = isBlackLensUnlocked;
+            LensDataCarrier.Instance.hasTriggeredFirstLensTutorial = hasTriggeredFirstLensTutorial;
+
+            LensDataCarrier.Instance.blueTimerRemaining = blueTimer;
+            LensDataCarrier.Instance.redTimerRemaining = redTimer;
+            LensDataCarrier.Instance.activeLensLayerName = currentActiveLensName;
         }
     }
 
-    // --- NEW PUBLIC FUNCTIONS CALLED BY CLUES ---
     public void ShowCluePrompt()
     {
-        if (screenCluePrompt != null)
-        {
-            screenCluePrompt.SetActive(true);
-        }
+        if (screenCluePrompt != null) screenCluePrompt.SetActive(true);
     }
 
     public void HideCluePrompt()
     {
-        if (screenCluePrompt != null)
-        {
-            screenCluePrompt.SetActive(false);
-        }
+        if (screenCluePrompt != null) screenCluePrompt.SetActive(false);
     }
 
     void UpdateSliderUI(float currentTimerValue)
     {
         if (lensTimerSlider != null)
         {
+            if (!lensTimerSlider.gameObject.activeSelf)
+            {
+                lensTimerSlider.gameObject.SetActive(true);
+            }
+
             lensTimerSlider.value = currentTimerValue / maxTime;
         }
     }
@@ -136,14 +225,37 @@ public class LensSystem : MonoBehaviour
 
         if (magGlassOverlay != null) magGlassOverlay.SetActive(true);
         if (activeLens != null) activeLens.SetActive(true);
-        if (lensTimerSlider != null) lensTimerSlider.gameObject.SetActive(showTimer);
+
+        if (lensTimerSlider != null && showTimer)
+        {
+            lensTimerSlider.gameObject.SetActive(true);
+        }
+
+        currentActiveLensName = layerName;
+
+        if (!hasTriggeredFirstLensTutorial && (layerName == "Blue Light" || layerName == "Red Light"))
+        {
+            TriggerJulianTutorialDialogue();
+        }
+    }
+
+    void TriggerJulianTutorialDialogue()
+    {
+        Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
+
+        if (dialogue_manager != null)
+        {
+            hasTriggeredFirstLensTutorial = true;
+            if (LensDataCarrier.Instance != null) LensDataCarrier.Instance.hasTriggeredFirstLensTutorial = true;
+
+            dialogue_manager.Show_Dialogue("JULIAN", "Hey, detective! Over here! Did you find something with that magnifying glass? Come check out this mask, something looks strange about it.");
+        }
     }
 
     public void ResetLens()
     {
         cam.cullingMask = baseMask;
-        blueTimer = 0f;
-        redTimer = 0f;
+        currentActiveLensName = "None";
         DisableAllOverlays();
     }
 
@@ -153,9 +265,7 @@ public class LensSystem : MonoBehaviour
         if (blueOverlay) blueOverlay.SetActive(false);
         if (redOverlay) redOverlay.SetActive(false);
         if (blackOverlay) blackOverlay.SetActive(false);
-        if (lensTimerSlider) lensTimerSlider.gameObject.SetActive(false);
 
-        // Hide prompt whenever resetting or switching lenses out
         HideCluePrompt();
     }
 }

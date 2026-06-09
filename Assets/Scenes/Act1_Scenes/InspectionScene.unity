@@ -1085,6 +1085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa528a7a8df820244a25e91e8831807d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magGlassOverlay: {fileID: 0}
   blueOverlay: {fileID: 293663078}
   redOverlay: {fileID: 771858117}
   blackOverlay: {fileID: 88164847}
+  lensTimerSlider: {fileID: 0}
+  screenCluePrompt: {fileID: 0}
+  maxTime: 20
+  isBlueLensUnlocked: 0
+  isRedLensUnlocked: 0
+  isBlackLensUnlocked: 1

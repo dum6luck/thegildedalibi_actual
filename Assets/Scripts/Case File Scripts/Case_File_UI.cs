@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic; // Added for List support
+using System.Collections.Generic;
 
 /* * SUMMARY:
  * This script manages the Case File interface. It handles pausing the game,
@@ -30,7 +30,6 @@ public class Case_File_UI : MonoBehaviour
     private bool is_showcasing = false;
     private string showcased_clue = "";
 
-    // Local list copy updated to track active data references in the scene
     private List<Clue_Data> collected_clues_list = new List<Clue_Data>();
 
     private void Start()
@@ -49,7 +48,6 @@ public class Case_File_UI : MonoBehaviour
             showcase_button.gameObject.SetActive(false);
         }
 
-        // AUTOMATIC RESTORE: Rebuild your journal visuals from the immortal master vault
         RestoreSavedCluesFromVault();
     }
 
@@ -109,25 +107,21 @@ public class Case_File_UI : MonoBehaviour
     {
         if (new_clue == null) return;
 
-        // 1. Save it to the immortal static vault so it survives scene transitions
         if (!InspectionData.SavedClues.Contains(new_clue))
         {
             InspectionData.SavedClues.Add(new_clue);
         }
 
-        // 2. Also keep our local runtime script reference updated for your NPCs
         if (!collected_clues_list.Contains(new_clue))
         {
             collected_clues_list.Add(new_clue);
         }
 
-        // 3. Physically draw the button onto your notebook UI panel layout
         CreateClueButtonUI(new_clue);
     }
 
     private void RestoreSavedCluesFromVault()
     {
-        // Wipe old button leftovers in the container to clear out layout space
         foreach (Transform child in clue_list_container)
         {
             Destroy(child.gameObject);
@@ -135,7 +129,6 @@ public class Case_File_UI : MonoBehaviour
 
         collected_clues_list.Clear();
 
-        // Pull elements directly out of your static immortal storage and regenerate their layouts
         Debug.Log($"[Notebook System] Restoring {InspectionData.SavedClues.Count} clues from cross-scene storage...");
         foreach (Clue_Data saved_clue in InspectionData.SavedClues)
         {
@@ -147,7 +140,6 @@ public class Case_File_UI : MonoBehaviour
         }
     }
 
-    // Helper method to safely instantiate visual prefabs into your layout list container
     private void CreateClueButtonUI(Clue_Data clue)
     {
         GameObject new_button = Instantiate(clue_button_prefab, clue_list_container);
@@ -189,5 +181,12 @@ public class Case_File_UI : MonoBehaviour
     {
         is_showcasing = false;
         return showcased_clue;
+    }
+
+    // --- HELPER FUNCTION: Matches parameter against local clue_title values ---
+    public bool Has_Collected_Clue(string clueID)
+    {
+        if (collected_clues_list == null) return false;
+        return collected_clues_list.Exists(clue => clue != null && clue.clue_title == clueID);
     }
 }

@@ -3,14 +3,20 @@ using UnityEngine;
 
 /* * SUMMARY:
  * This script handles NPC dialogue and clues.
- * Upgraded so that showcasing a clue instantly triggers the custom response dialogue
- * without forcing the player to press 'E' again.
+ * Upgraded so Julian's unique mask response ONLY triggers if the player
+ * investigated the mask using the Blue or Red lens—not the Blacklight!
  */
 
 public class NPC_For_Clues : MonoBehaviour
 {
     public NPCData npc;
     public string dialogue = "[Placeholder] You found anything yet?";
+
+    [Header("Specific Mask Interaction Setup")]
+    public string maskClueID = "Mask"; // Matches the 'clue_title' in Case_File_UI
+    public string maskInvestigatedResponse = "You didn't find anything on the mask? I thought there was something...";
+
+    private bool hasDeliveredMaskReaction = false;
 
     [Header("Dictionary of Clue Dialogues")]
     public List<string> clue_keys = new List<string>();
@@ -44,14 +50,12 @@ public class NPC_For_Clues : MonoBehaviour
         Case_File_UI ui_manager = FindObjectOfType<Case_File_UI>();
         Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
 
-        // 1. CONSTANT WATCHER: If the player just selected a clue to showcase to THIS nearby NPC, intercept it immediately!
         if (is_player_nearby && ui_manager != null && ui_manager.Is_Showcasing())
         {
             HandleShowcaseDialogue(ui_manager, dialogue_manager);
             return;
         }
 
-        // 2. Clear conversation state and let the NPC walk again if dialogue finishes normally
         if (is_dialogue_ongoing && dialogue_manager != null && !dialogue_manager.Is_Dialogue_Ongoing(true))
         {
             is_dialogue_ongoing = false;
@@ -61,7 +65,6 @@ public class NPC_For_Clues : MonoBehaviour
             }
         }
 
-        // 3. Regular interaction triggers
         if (is_player_nearby && !is_dialogue_ongoing)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -80,8 +83,44 @@ public class NPC_For_Clues : MonoBehaviour
             if (wanderScript == null) FindWanderScriptFallback();
             if (wanderScript != null) wanderScript.StopWandering();
 
-            dialogue_manager.Show_Dialogue(npc.npcName, dialogue, true);
+            // --- NARRATIVE PROGRESSION BRAIN WITH LENS CHECK ---
+            bool hasPlayerInvestigatedMask = PlayerHasMaskClue();
+            bool structuralLensValid = IsValidLensActive();
+
+            // ONLY trigger Julian's unique prompt if it's Julian, they have the mask clue, 
+            // a valid lens (Blue/Red) is active, and they haven't heard it yet.
+            if (npc.npcName.ToUpper() == "JULIAN" && hasPlayerInvestigatedMask && structuralLensValid && !hasDeliveredMaskReaction)
+            {
+                dialogue_manager.Show_Dialogue(npc.npcName, maskInvestigatedResponse, true);
+                hasDeliveredMaskReaction = true;
+                Debug.Log("Narrative Flow: Delivered Julian's specific mask line (Validated Blue/Red Lens).");
+            }
+            else
+            {
+                // Defaults directly to "You found anything yet?" if Blacklight or no lens is active
+                dialogue_manager.Show_Dialogue(npc.npcName, dialogue, true);
+            }
         }
+    }
+
+    private bool PlayerHasMaskClue()
+    {
+        Case_File_UI ui_manager = FindObjectOfType<Case_File_UI>();
+        if (ui_manager != null)
+        {
+            return ui_manager.Has_Collected_Clue(maskClueID);
+        }
+        return false;
+    }
+
+    private bool IsValidLensActive()
+    {
+        if (LensDataCarrier.Instance != null)
+        {
+            string currentLens = LensDataCarrier.Instance.activeLensLayerName;
+            return (currentLens == "Blue Light" || currentLens == "Red Light");
+        }
+        return false;
     }
 
     private void HandleShowcaseDialogue(Case_File_UI ui_manager, Dialogue_Manager dialogue_manager)
@@ -100,7 +139,6 @@ public class NPC_For_Clues : MonoBehaviour
             }
             else
             {
-                // Fallback default description line if the specific character doesn't have unique dialogue for this clue asset
                 dialogue_manager.Show_Dialogue(npc.npcName, "[Placeholder] I don't know anything about that item.", true);
             }
         }
