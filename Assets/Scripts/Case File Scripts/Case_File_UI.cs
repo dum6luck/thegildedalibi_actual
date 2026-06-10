@@ -7,6 +7,7 @@ using System.Collections.Generic;
  * This script manages the Case File interface. It handles pausing the game,
  * unlocking the cursor for UI interaction, and populating the clue list.
  * It now stores clues inside InspectionData so they save across scene loads!
+ * Added: Audio support for brand new clue discovery events.
  */
 
 public class Case_File_UI : MonoBehaviour
@@ -24,6 +25,10 @@ public class Case_File_UI : MonoBehaviour
 
     [Header("Prefabs")]
     public GameObject clue_button_prefab;
+
+    [Header("Audio SFX Settings")]
+    public AudioSource uiAudioSource;      // Drag your AudioSource component here in the Inspector
+    public AudioClip clueDiscoverySound;   // Drop your .mp3 or .wav discovery sound here
 
     private bool is_open = false;
     private bool can_be_showcased = false;
@@ -106,6 +111,17 @@ public class Case_File_UI : MonoBehaviour
     public void Add_Clue_To_Log(Clue_Data new_clue)
     {
         if (new_clue == null) return;
+
+        // --- DYNAMIC AUDIO JINGLE TRIGGER ---
+        // Checks if this is a brand new clue entry before it gets appended to your collection databases
+        if (!InspectionData.SavedClues.Contains(new_clue))
+        {
+            if (uiAudioSource != null && clueDiscoverySound != null)
+            {
+                uiAudioSource.PlayOneShot(clueDiscoverySound);
+                Debug.Log($"[Audio Logic] Playing discovery jingle for new clue: {new_clue.clue_title}");
+            }
+        }
 
         if (!InspectionData.SavedClues.Contains(new_clue))
         {
