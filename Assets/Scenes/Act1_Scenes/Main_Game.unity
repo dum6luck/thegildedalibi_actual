@@ -1042,7 +1042,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh65350
+  m_Name: pb_Mesh30334
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15695,7 +15695,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh63868
+  m_Name: pb_Mesh28840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18442,7 +18442,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29204
+  m_Name: pb_Mesh29912
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -74343,7 +74343,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh64894
+  m_Name: pb_Mesh29876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -126831,7 +126831,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29514
+  m_Name: pb_Mesh30222
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -127822,6 +127822,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clue_info: {fileID: 11400000, guid: fab19e72c6f3239438daf40e24b98800, type: 2}
+--- !u!114 &3469287838453251914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148251355737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604197420e0fa64408078c7dad8acc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultLayerIndex: 0
+  xRayLayerIndex: 3
 --- !u!1001 &3728306140270931865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127829,6 +127843,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 247435646}
     m_Modifications:
+    - target: {fileID: 2186782905165239580, guid: 3e2466cb296fcdf45b99e229592748e1,
+        type: 3}
+      propertyPath: xRayLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186782905165239580, guid: 3e2466cb296fcdf45b99e229592748e1,
+        type: 3}
+      propertyPath: defaultLayer.m_Bits
+      value: 1015
+      objectReference: {fileID: 0}
     - target: {fileID: 3728306139367307413, guid: 3e2466cb296fcdf45b99e229592748e1,
         type: 3}
       propertyPath: isLocked
@@ -127904,7 +127928,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: knife
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4574799051759306176, guid: 3e2466cb296fcdf45b99e229592748e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2186782905165239580, guid: 3e2466cb296fcdf45b99e229592748e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e2466cb296fcdf45b99e229592748e1, type: 3}
 --- !u!1001 &5136110211648226795
 PrefabInstance:

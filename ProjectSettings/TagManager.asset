@@ -14,14 +14,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - RenderAbove
   - Water
   - UI
   - Blue Light
   - Red Light
   - Black Light
   - Interactable
-  - RenderOnTop
+  - 
   - 
   - 
   - 
