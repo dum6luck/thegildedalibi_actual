@@ -19,6 +19,8 @@ public class Clue_Data : ScriptableObject
     [TextArea(3, 5)]
     public string collection_dialogue;
 
+    public Cutscene_Data clue_cutscene;
+
     // NEW: List of reactions for different characters
     public List<NPC_Reaction> npc_reactions;
 }

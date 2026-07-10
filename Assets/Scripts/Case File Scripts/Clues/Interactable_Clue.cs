@@ -4,7 +4,13 @@ public class Interactable_Clue : MonoBehaviour
 {
     public Clue_Data clue_info;
     private bool is_player_nearby = false;
+    private bool is_collected = false;
+    private bool is_dialogue_ongoing = false;
+    private bool is_cutscene_ongoing = false;
     private LensSystem cameraLensSystem;
+
+    private Case_File_UI ui_manager;
+    private Dialogue_Manager dialogue_manager;
 
     private void Start()
     {
@@ -13,27 +19,46 @@ public class Interactable_Clue : MonoBehaviour
         {
             cameraLensSystem = Camera.main.GetComponent<LensSystem>();
         }
+
+        ui_manager = FindObjectOfType<Case_File_UI>();
+        dialogue_manager = FindObjectOfType<Dialogue_Manager>();
     }
 
     private void Update()
     {
-        if (is_player_nearby && Input.GetKeyDown(KeyCode.E))
+        if (is_dialogue_ongoing && dialogue_manager != null
+                && !dialogue_manager.Is_Dialogue_Ongoing())
         {
-            Collect();
+            if (is_cutscene_ongoing || clue_info.clue_cutscene == null)
+            {
+                is_dialogue_ongoing = false;
+                is_cutscene_ongoing = false;
+            }
+            else
+            {
+                is_cutscene_ongoing = true;
+                dialogue_manager.Show_Cutscene(clue_info.clue_cutscene);
+            }
+        }
+        else if (!is_collected && is_player_nearby && Input.GetKeyDown(KeyCode.E))
+        {
+            this.Collect();
         }
     }
 
     private void Collect()
     {
-        Case_File_UI ui_manager = FindObjectOfType<Case_File_UI>();
-        Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
+        //Case_File_UI ui_manager = FindObjectOfType<Case_File_UI>();
+        //Dialogue_Manager dialogue_manager = FindObjectOfType<Dialogue_Manager>();
 
+        is_collected = true;
         if (ui_manager != null)
         {
             ui_manager.Add_Clue_To_Log(clue_info);
 
             if (dialogue_manager != null && !string.IsNullOrEmpty(clue_info.collection_dialogue))
             {
+                this.is_dialogue_ongoing = true;
                 dialogue_manager.Show_Dialogue("DETECTIVE", clue_info.collection_dialogue);
             }
 
@@ -44,7 +69,7 @@ public class Interactable_Clue : MonoBehaviour
             }
 
             if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = false;
-            this.enabled = false;
+            //this.enabled = false;
         }
     }
 
