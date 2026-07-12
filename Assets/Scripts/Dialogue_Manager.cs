@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 /* 
  * SUMMARY:
@@ -17,6 +19,7 @@ public class Dialogue_Manager : MonoBehaviour
     public TextMeshProUGUI dialogue_text;
     public GameObject floating_arrow;
     public Case_File_UI case_canvas;
+    public GameObject cutscene_background;
 
     [Header("Typewriter Settings")]
     public float type_speed = 0.05f;
@@ -24,6 +27,11 @@ public class Dialogue_Manager : MonoBehaviour
     [Header("Arrow Bounce Settings")]
     public float bounce_speed = 5f;
     public float bounce_amplitude = 10f;
+
+    private List<string> names = new List<string>();
+    private List<string> lines = new List<string>();
+    private List<Sprite> images = new List<Sprite>();
+    private int line_index = 0;
 
     private bool is_typing = false;
     private bool can_close = false;
@@ -45,6 +53,11 @@ public class Dialogue_Manager : MonoBehaviour
         {
             arrow_start_pos = floating_arrow.transform.localPosition;
             floating_arrow.SetActive(false);
+        }
+
+        if (cutscene_background != null)
+        {
+            cutscene_background.SetActive(false);
         }
     }
 
@@ -75,13 +88,19 @@ public class Dialogue_Manager : MonoBehaviour
             }
             else if (can_close)
             {
-                if (can_open_case_file)
-                {
-                    case_canvas.Open_Case_File(true);
-                    can_open_case_file = false;
+                line_index++;
+                if (line_index < lines.Count) {
+                    Show_Dialogue(names[line_index], lines[line_index], can_open_case_file);
                 }
-                // Second click (when arrow is up): Close the panel
-                Hide_Dialogue();
+                else {
+                    if (can_open_case_file)
+                    {
+                        case_canvas.Open_Case_File(true);
+                        can_open_case_file = false;
+                    }
+                    // Second click (when arrow is up): Close the panel
+                    Hide_Dialogue();
+                }
             }
         }
     }
@@ -95,6 +114,13 @@ public class Dialogue_Manager : MonoBehaviour
         can_open_case_file = case_buttons;
         is_typing = true;
 
+        int img_num = images.Count;
+        
+        if (img_num > 0)
+        {
+            cutscene_background.GetComponent<Image>().sprite = images[line_index % img_num];
+        }
+
         if (dialogue_canvas_group != null)
         {
             dialogue_canvas_group.alpha = 1;
@@ -104,6 +130,32 @@ public class Dialogue_Manager : MonoBehaviour
 
         if (typing_coroutine != null) StopCoroutine(typing_coroutine);
         typing_coroutine = StartCoroutine(Typewriter_Effect(text));
+    }
+
+    public void Show_Dialogue(
+            List<string> name_list, List<string> text_list, bool case_buttons=false)
+    {
+        line_index = 0;
+        lines = text_list;
+        names = name_list;
+        Show_Dialogue(names[0], lines[0], case_buttons);
+    }
+
+    public void Show_Dialogue(
+            string name, List<string> text_list, bool case_buttons=false)
+    {
+        List<string> _names = new List<string>();
+        for (int i = 0; i < text_list.Count; i++) {
+            _names.Add(name);
+        }
+        Show_Dialogue(_names, text_list, case_buttons);
+    }
+
+    public void Show_Cutscene(Cutscene_Data cutscene)
+    {
+        cutscene_background.SetActive(true);
+        images = cutscene.images;
+        Show_Dialogue(cutscene.names, cutscene.dialogue_lines);
     }
 
     IEnumerator Typewriter_Effect(string text)
@@ -146,6 +198,8 @@ public class Dialogue_Manager : MonoBehaviour
             dialogue_canvas_group.interactable = false;
             dialogue_canvas_group.blocksRaycasts = false;
         }
+
+        cutscene_background.SetActive(false);
     }
 
     public bool Is_Dialogue_Ongoing(bool with_case_ui=false)
