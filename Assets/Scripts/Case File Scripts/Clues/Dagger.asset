@@ -17,4 +17,5 @@ MonoBehaviour:
     When inspecting it closer, it turns out it is a complete fake.
   clue_icon: {fileID: 21300000, guid: 0779d4f346274034686745c0d0187976, type: 3}
   collection_dialogue: 
+  clue_cutscene: {fileID: 0}
   npc_reactions: []
