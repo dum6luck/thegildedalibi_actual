@@ -56,10 +56,13 @@ public class Interactable_Clue : MonoBehaviour
         {
             ui_manager.Add_Clue_To_Log(clue_info);
 
-            if (dialogue_manager != null && !string.IsNullOrEmpty(clue_info.collection_dialogue))
+            if (dialogue_manager != null)
             {
                 this.is_dialogue_ongoing = true;
-                dialogue_manager.Show_Dialogue("DETECTIVE", clue_info.collection_dialogue);
+                if (!string.IsNullOrEmpty(clue_info.collection_dialogue))
+                {
+                    dialogue_manager.Show_Dialogue("DETECTIVE", clue_info.collection_dialogue);
+                }
             }
 
             // Clue is collected! Tell the camera to turn off the prompt immediately
