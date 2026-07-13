@@ -26,7 +26,6 @@ public class Interactable_Clue : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(!dialogue_manager.Is_Dialogue_Ongoing());
         if (is_dialogue_ongoing && dialogue_manager != null
                 && !dialogue_manager.Is_Dialogue_Ongoing())
         {
