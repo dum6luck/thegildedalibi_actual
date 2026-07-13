@@ -17,4 +17,5 @@ MonoBehaviour:
   clue_icon: {fileID: 21300000, guid: 8f7020b16543b4a4081bbc6f060608ad, type: 3}
   collection_dialogue: Looks like giberish. Maybe something else could help me decode
     it.
+  clue_cutscene: {fileID: 11400000, guid: 3a2354a37624a944a859d8e0c3fbfd19, type: 2}
   npc_reactions: []

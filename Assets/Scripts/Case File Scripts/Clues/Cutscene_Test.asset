@@ -16,5 +16,5 @@ MonoBehaviour:
   clue_description: 
   clue_icon: {fileID: 0}
   collection_dialogue: '[Placeholder] A cutscene is triggered.'
-  clue_cutscene: {fileID: 11400000, guid: f7231fab91377407abee0fe30247e6cb, type: 2}
+  clue_cutscene: {fileID: 11400000, guid: 3a2354a37624a944a859d8e0c3fbfd19, type: 2}
   npc_reactions: []
