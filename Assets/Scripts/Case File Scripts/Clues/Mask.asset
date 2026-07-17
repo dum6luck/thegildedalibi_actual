@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77e81a80cc891c54aabbfe16b288d3f1, type: 3}
-  m_Name: Scratch_Marks
+  m_Name: Mask
   m_EditorClassIdentifier: 
-  clue_title: Small Scratch Marks
-  clue_description: Small scratch mark looking indents on the key hole. Someone missed
-    inserting the key several times.
-  clue_icon: {fileID: 21300000, guid: 98ac322fdad750f429d19cbeefa2301e, type: 3}
-  collection_dialogue: Small scratch marks... looks like someone was trying to unlock
-    this in a hurry.
+  clue_title: '[Placeholder title for the mask]'
+  clue_description: '[Placeholder for a description of a mask]'
+  clue_icon: {fileID: 21300000, guid: 2b3b811b118ff7f4d80623fdc33d206b, type: 3}
+  collection_dialogue: '[Placeholder for an observation of a mask]'
   clue_cutscene: {fileID: 11400000, guid: f7231fab91377407abee0fe30247e6cb, type: 2}
   npc_reactions: []
