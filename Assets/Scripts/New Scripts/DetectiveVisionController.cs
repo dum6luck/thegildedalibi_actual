@@ -29,11 +29,12 @@ public class DetectiveVisionController : MonoBehaviour
 
     private ScriptableRendererFeature behindWallFeature;
     private ScriptableRendererFeature inSightFeature;
-    private float targetWeight = 0f;
+    private float targetIntensity = 0.412f;
+    private bool xRayActive = false;
 
     void Start()
     {
-        FindRendererFeatures();
+        // FindRendererFeatures();
 
         // Force the features completely OFF the moment the game boots
         SetVisionFeaturesActive(false);
@@ -42,24 +43,32 @@ public class DetectiveVisionController : MonoBehaviour
 
     void Update()
     {
-        // 1. Hold 'V' to turn on detective mode
+        // 1. Press 'V' to turn on detective mode, and release it to turn it back off
         if (Input.GetKeyDown(KeyCode.V))
         {
-            targetWeight = 1f;
-            SetVisionFeaturesActive(true);
+            xRayActive = !xRayActive;
         }
 
-        // 2. Release 'V' to turn it back off
-        if (Input.GetKeyUp(KeyCode.V))
+        if (xRayActive)
         {
-            targetWeight = 0f;
+            targetIntensity = 0.55f;
+            SetVisionFeaturesActive(true);
+        }
+        else
+        {
+            targetIntensity = 0.412f;
             SetVisionFeaturesActive(false);
         }
 
         // 3. Smoothly blend the post-processing dimming volume weight
         if (detectiveVisionVolume != null)
         {
-            detectiveVisionVolume.weight = Mathf.Lerp(detectiveVisionVolume.weight, targetWeight, Time.deltaTime * transitionSpeed);
+            detectiveVisionVolume.weight = 1f;
+            if (detectiveVisionVolume.profile.TryGet<Vignette>(out Vignette vignetteEffect))
+            {
+                Vignette vignette = vignetteEffect;
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, targetIntensity, Time.deltaTime * transitionSpeed);
+            }
         }
     }
 
