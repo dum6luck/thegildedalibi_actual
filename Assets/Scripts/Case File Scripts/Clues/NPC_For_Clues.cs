@@ -4,12 +4,12 @@ using UnityEngine;
 /* * SUMMARY:
  * This script handles NPC dialogue and clues.
  * Upgraded so Julian's unique mask response ONLY triggers if the player
- * investigated the mask using the Blue or Red lens—not the Blacklight!
+ * investigated the mask using the Blue or Red lensï¿½not the Blacklight!
  */
 
 public class NPC_For_Clues : MonoBehaviour
 {
-    public NPCData npc;
+    public Character_Data npc;
     public string dialogue = "[Placeholder] You found anything yet?";
 
     [Header("Specific Mask Interaction Setup")]
@@ -89,16 +89,16 @@ public class NPC_For_Clues : MonoBehaviour
 
             // ONLY trigger Julian's unique prompt if it's Julian, they have the mask clue, 
             // a valid lens (Blue/Red) is active, and they haven't heard it yet.
-            if (npc.npcName.ToUpper() == "JULIAN" && hasPlayerInvestigatedMask && structuralLensValid && !hasDeliveredMaskReaction)
+            if (npc.name.ToUpper() == "JULIAN" && hasPlayerInvestigatedMask && structuralLensValid && !hasDeliveredMaskReaction)
             {
-                dialogue_manager.Show_Dialogue(npc.npcName, maskInvestigatedResponse, true);
+                dialogue_manager.Show_Dialogue(npc, maskInvestigatedResponse, true);
                 hasDeliveredMaskReaction = true;
                 Debug.Log("Narrative Flow: Delivered Julian's specific mask line (Validated Blue/Red Lens).");
             }
             else
             {
                 // Defaults directly to "You found anything yet?" if Blacklight or no lens is active
-                dialogue_manager.Show_Dialogue(npc.npcName, dialogue, true);
+                dialogue_manager.Show_Dialogue(npc, dialogue, true);
             }
         }
     }
@@ -135,11 +135,11 @@ public class NPC_For_Clues : MonoBehaviour
         {
             if (dialogue_dict.ContainsKey(clue_name))
             {
-                dialogue_manager.Show_Dialogue(npc.npcName, dialogue_dict[clue_name], true);
+                dialogue_manager.Show_Dialogue(npc, dialogue_dict[clue_name], true);
             }
             else
             {
-                dialogue_manager.Show_Dialogue(npc.npcName, "[Placeholder] I don't know anything about that item.", true);
+                dialogue_manager.Show_Dialogue(npc, "[Placeholder] I don't know anything about that item.", true);
             }
         }
     }
