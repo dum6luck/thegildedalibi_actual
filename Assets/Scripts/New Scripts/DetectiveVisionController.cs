@@ -34,7 +34,7 @@ public class DetectiveVisionController : MonoBehaviour
 
     void Start()
     {
-        // FindRendererFeatures();
+        FindRendererFeatures();
 
         // Force the features completely OFF the moment the game boots
         SetVisionFeaturesActive(false);
