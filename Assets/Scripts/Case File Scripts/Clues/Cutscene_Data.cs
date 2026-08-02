@@ -6,6 +6,12 @@ public class Cutscene_Data : ScriptableObject
 {
     public List<Sprite> images;
 
+    public List<Character_Data> left_characters = new List<Character_Data>();
+    public List<Character_Data> right_characters = new List<Character_Data>();
+
+    public List<string> left_chr_emotions = new List<string>();
+    public List<string> right_chr_emotions = new List<string>();
+
     [Header("Dictionary of Dialogues For Each Image")]
     public List<Character_Data> characters = new List<Character_Data>();
     public List<string> dialogue_lines = new List<string>();
