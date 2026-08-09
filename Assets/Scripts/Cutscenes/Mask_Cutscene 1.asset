@@ -1,0 +1,234 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfeb3096ff7f4a8da5cc40215e800ae, type: 3}
+  m_Name: Mask_Cutscene 1
+  m_EditorClassIdentifier: 
+  backgroundSprite: {fileID: 21300000, guid: 5749103293338694c99738a7104fbf99, type: 3}
+  frames:
+  - leftCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    rightCharacterSprite: {fileID: 0}
+    activeSpeaker: 0
+    speakerName: JULIAN VANE
+    isItalic: 0
+    dialogueLine: 'What''s up with this mask? It doesn''t look suspicious at all.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: 'It''s a mask from the Babylonian Bronze Age. Max fought tooth
+      and nail to get this in his collection.
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: JULIAN VANE
+    isItalic: 0
+    dialogueLine: 'Of course he did. Man collected people the same way he collected
+      creepy old faces.
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: PENNY STERLING
+    isItalic: 0
+    dialogueLine: 'Everything in this building is a creepy old face, Julian. Welcome
+      to museums.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: 'It''s a funerary mask, actually. Ceremonial. Buried with the dead
+      to guide them into the next life.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: JULIAN VANE
+    isItalic: 0
+    dialogueLine: 'Fitting, considering.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: DETECTIVE
+    isItalic: 0
+    dialogueLine: 'How much would something like this be worth?
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: 'On paper? A private collector once offered Max nearly triple what
+      he paid for it. He turned it down without blinking.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: DETECTIVE
+    isItalic: 0
+    dialogueLine: 'Anything unusual about it? Besides the obvious.
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: 'Now that you mention it...
+
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: "The gemstone set into the forehead. The setting around it seems
+      to be molded on. Max must have had it modified after he acquired it.\r..\n\n\n"
+  - leftCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: IRIS GABLE
+    isItalic: 0
+    dialogueLine: 'Wait, that''s not part of the original mask?
+
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: ' No. Not even close.
+
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: DETECTIVE
+    isItalic: 0
+    dialogueLine: 'Can it come out?
+
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: ' It shouldn''t be able to. Feel free to try.
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: 
+    isItalic: 0
+    dialogueLine: 'The gem pops free into the detective''s palm with far less resistance
+      than expected.
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: DETECTIVE
+    isItalic: 0
+    dialogueLine: ' I''ll be holding onto this.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DR. HARLOW
+    isItalic: 0
+    dialogueLine: "That is Institute property, technically\u2014\r\n\n"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    activeSpeaker: 0
+    speakerName: DETECTIVE
+    isItalic: 0
+    dialogueLine: 'Technically,  but I think we can make an exception.
+
+
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    activeSpeaker: 1
+    speakerName: DETECTIVE
+    isItalic: 0
+    dialogueLine: ' ...Fair enough.
+
+
+'

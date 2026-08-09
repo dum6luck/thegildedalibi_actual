@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e81a80cc891c54aabbfe16b288d3f1, type: 3}
   m_Name: Mask
   m_EditorClassIdentifier: 
-  clue_title: '[Placeholder title for the mask]'
-  clue_description: '[Placeholder for a description of a mask]'
-  clue_icon: {fileID: 21300000, guid: 2b3b811b118ff7f4d80623fdc33d206b, type: 3}
-  collection_dialogue: '[Placeholder for an observation of a mask]'
-  clue_cutscene: {fileID: 11400000, guid: 3a2354a37624a944a859d8e0c3fbfd19, type: 2}
+  clue_title: Golden Mask
+  clue_description: A Bronze Age burial mask with a gemstone that is able to be taken
+    out. Maybe I can use the gem somewhere?
+  clue_icon: {fileID: 21300000, guid: 621c324cd3d8f494c9c1d0f4cfae9fdb, type: 3}
+  collection_dialogue: A golden mask with a green gemstone imbedded on the forehead.
+  clue_cutscene: {fileID: 11400000, guid: f0e87017275011d4ea43e67da694f5c8, type: 2}
   npc_reactions: []

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dagger
   m_EditorClassIdentifier: 
   clue_title: Fake Dagger
-  clue_description: A dagger that seemingly fits the description of the murder weapon.
-    When inspecting it closer, it turns out it is a complete fake.
-  clue_icon: {fileID: 21300000, guid: 0779d4f346274034686745c0d0187976, type: 3}
-  collection_dialogue: 
-  clue_cutscene: {fileID: 11400000, guid: 3a2354a37624a944a859d8e0c3fbfd19, type: 2}
+  clue_description: A near perfect copy of the Ottoman ceremonial dagger. The edge
+    is dull and the maker's mark is wrong. Someone swapped this in, and with a key.
+  clue_icon: {fileID: 21300000, guid: 0bccc34e50d99964f907b219d5dd1765, type: 3}
+  collection_dialogue: A shiny golder dagger.
+  clue_cutscene: {fileID: 11400000, guid: af6e89aea36a5a34190827a7a4fbfa17, type: 2}
   npc_reactions: []

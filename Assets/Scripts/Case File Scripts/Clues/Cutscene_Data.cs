@@ -13,6 +13,9 @@ public struct CutsceneFrame
     public ActiveSpeaker activeSpeaker;
     public string speakerName;
 
+    [Header("Text Formatting")]
+    public bool isItalic;
+
     [TextArea(3, 5)]
     public string dialogueLine;
 }
@@ -21,7 +24,7 @@ public struct CutsceneFrame
 public class Cutscene_Data : ScriptableObject
 {
     [Header("Cutscene Background")]
-    public Sprite backgroundSprite; // Drag your background image here
+    public Sprite backgroundSprite;
 
     public List<CutsceneFrame> frames = new List<CutsceneFrame>();
 }
