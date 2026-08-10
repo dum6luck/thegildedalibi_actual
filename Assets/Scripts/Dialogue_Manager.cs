@@ -23,6 +23,7 @@ public class Dialogue_Manager : MonoBehaviour
     public GameObject character_a;
     public GameObject character_b;
     public AudioSource audioSource;
+    public List<AudioClip> default_voice_samples;
 
     [Header("Typewriter Settings")]
     public float type_speed = 0.05f;
@@ -305,23 +306,30 @@ public class Dialogue_Manager : MonoBehaviour
 
     private void PlaySound()
     {
-        if (speaking_npcs == null) {
-            return;
+        if (speaking_npcs != null)
+        {
+            int npcs_size = speaking_npcs.Count;
+
+            //Play the sound only if it exists
+            if (npcs_size > 0 && audioSource != null)
+            {
+                //Stop the audioSource so that the new sentence does not overlap with the old one
+                //audioSource.Stop();
+
+                Character_Data npc = speaking_npcs[line_index % npcs_size];
+
+                //Play sentence sound
+                audioSource.PlayOneShot(
+                    npc.voiceSamples[UnityEngine.Random.Range(0, npc.voiceSamples.Count)]);
+
+                return;
+            }
         }
 
-        int npcs_size = speaking_npcs.Count;
-
-        //Play the sound only if it exists
-        if (npcs_size == 0 || audioSource == null)
-            return;
-
-        //Stop the audioSource so that the new sentence does not overlap with the old one
-        //audioSource.Stop();
-
-        Character_Data npc = speaking_npcs[line_index % npcs_size];
-
-        //Play sentence sound
-        audioSource.PlayOneShot(
-            npc.voiceSamples[UnityEngine.Random.Range(0, npc.voiceSamples.Count)]);
+        if (default_voice_samples != null)
+        {
+            audioSource.PlayOneShot(
+                default_voice_samples[UnityEngine.Random.Range(0, default_voice_samples.Count)]);
+        }
     }
 }

@@ -15,9 +15,9 @@ MonoBehaviour:
   name: JULIAN VANE
   initial_emotion: neutral
   voiceSamples:
-  - {fileID: 8300000, guid: 32974a213b725e44cb870cc72968492d, type: 3}
-  - {fileID: 8300000, guid: 5267d1e4c33fd394fa6a214c344f15c4, type: 3}
-  - {fileID: 8300000, guid: bbcfa161bffce9340a319afe20897d5c, type: 3}
+  - {fileID: 8300000, guid: 9147f9a19894f444ab67e1f5656b670b, type: 3}
+  - {fileID: 8300000, guid: d5925ae5052d04ffc9daa877d8e179e9, type: 3}
+  - {fileID: 8300000, guid: a5f7df71c1ef04e3d856dc6e423a77f2, type: 3}
   overworld_emotions:
   - neutral
   overworld_sprites:

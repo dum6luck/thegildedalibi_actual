@@ -15,9 +15,9 @@ MonoBehaviour:
   name: IRIS GABLE
   initial_emotion: neutral
   voiceSamples:
-  - {fileID: 8300000, guid: 32974a213b725e44cb870cc72968492d, type: 3}
-  - {fileID: 8300000, guid: 5267d1e4c33fd394fa6a214c344f15c4, type: 3}
-  - {fileID: 8300000, guid: bbcfa161bffce9340a319afe20897d5c, type: 3}
+  - {fileID: 8300000, guid: c085488e3edf64c9ab16ab7dab1ed848, type: 3}
+  - {fileID: 8300000, guid: c070e7054d9fc4b46a00a5b49ee21906, type: 3}
+  - {fileID: 8300000, guid: c3290262fa3af40d08322adef7d67239, type: 3}
   overworld_emotions:
   - neutral
   overworld_sprites:

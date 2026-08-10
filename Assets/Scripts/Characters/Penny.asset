@@ -15,9 +15,9 @@ MonoBehaviour:
   name: PENNY STERLING
   initial_emotion: neutral
   voiceSamples:
-  - {fileID: 8300000, guid: 32974a213b725e44cb870cc72968492d, type: 3}
-  - {fileID: 8300000, guid: 5267d1e4c33fd394fa6a214c344f15c4, type: 3}
-  - {fileID: 8300000, guid: bbcfa161bffce9340a319afe20897d5c, type: 3}
+  - {fileID: 8300000, guid: 2511f632b64ee40b0a4500ec3097ac29, type: 3}
+  - {fileID: 8300000, guid: 9ed04379a9c984b75ac16245f857e360, type: 3}
+  - {fileID: 8300000, guid: 1ccbbef1c9d3647c38793d8fcc7bc8d9, type: 3}
   overworld_emotions:
   - neutral
   overworld_sprites:
