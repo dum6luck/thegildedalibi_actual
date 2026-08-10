@@ -22,6 +22,8 @@ public class Dialogue_Manager : MonoBehaviour
     public GameObject floating_arrow;
     public Case_File_UI case_canvas;
     public GameObject cutscene_background;
+    public AudioSource audioSource;
+    public List<AudioClip> default_voice_samples;
 
     [Header("Cutscene Portrait Displays")]
     public Image left_character_image;
@@ -43,9 +45,11 @@ public class Dialogue_Manager : MonoBehaviour
     private bool is_cutscene_mode = false;
 
     // Standard Dialogue Tracking
-    private List<string> names = new List<string>();
+    private List<Character_Data> npcs = null;
     private List<string> lines = new List<string>();
     private int line_index = 0;
+
+    private Cutscene_Data cutscene = null;
 
     private bool is_typing = false;
     private bool can_close = false;
@@ -115,7 +119,7 @@ public class Dialogue_Manager : MonoBehaviour
                 {
                     if (line_index < lines.Count)
                     {
-                        Show_Dialogue(names[line_index], lines[line_index], can_open_case_file);
+                        Show_Dialogue(npcs[line_index].name, lines[line_index], can_open_case_file);
                     }
                     else
                     {
@@ -153,23 +157,27 @@ public class Dialogue_Manager : MonoBehaviour
         typing_coroutine = StartCoroutine(Typewriter_Effect(text));
     }
 
-    public void Show_Dialogue(List<string> name_list, List<string> text_list, bool case_buttons = false)
+    public void Show_Dialogue(Character_Data character, string text, bool case_buttons=false)
     {
-        is_cutscene_mode = false;
-        line_index = 0;
-        lines = text_list;
-        names = name_list;
-        Show_Dialogue(names[0], lines[0], case_buttons);
+        npcs = new List<Character_Data>();
+        npcs.Add(character);
+        Show_Dialogue(character.name, text, case_buttons);
     }
 
-    public void Show_Dialogue(string name, List<string> text_list, bool case_buttons = false)
+    public void Show_Dialogue(Character_Data character, List<string> text_list, bool case_buttons=false)
     {
-        List<string> _names = new List<string>();
-        for (int i = 0; i < text_list.Count; i++)
-        {
-            _names.Add(name);
-        }
-        Show_Dialogue(_names, text_list, case_buttons);
+        List<Character_Data> _characters = new List<Character_Data>();
+        _characters.Add(character);
+        Show_Dialogue(_characters, text_list, case_buttons);
+    }
+
+    public void Show_Dialogue(
+            List<Character_Data> characters, List<string> text_list, bool case_buttons=false)
+    {
+        line_index = 0;
+        lines = text_list;
+        npcs = characters;
+        Show_Dialogue(characters[0].name, lines[0], case_buttons);
     }
 
     #endregion
@@ -217,8 +225,13 @@ public class Dialogue_Manager : MonoBehaviour
             if (right_character_image != null) right_character_image.color = active_color;
         }
 
+        string speakerName = "";
+        if (frame.speaker != null) {
+            speakerName = frame.speaker.name;
+        }
+
         // Trigger typewriter effect with speaker name and line
-        Show_Dialogue(frame.speakerName, frame.dialogueLine);
+        Show_Dialogue(speakerName, frame.dialogueLine);
         is_cutscene_mode = true;
     }
 
@@ -245,9 +258,17 @@ public class Dialogue_Manager : MonoBehaviour
     {
         if (floating_arrow != null) floating_arrow.SetActive(false);
 
+        int tick = 0;
+
         foreach (char c in text.ToCharArray())
         {
             dialogue_text.text += c;
+
+            // Prevents loud echoing for debug purposes
+            if ((tick % 20) - 1 == 0) audioSource.Stop();
+
+            PlaySound();
+            tick++;
             yield return new WaitForSecondsRealtime(type_speed);
         }
 
@@ -272,6 +293,7 @@ public class Dialogue_Manager : MonoBehaviour
     {
         can_close = false;
         is_cutscene_mode = false;
+        npcs = null;
 
         if (floating_arrow != null) floating_arrow.SetActive(false);
 
@@ -309,6 +331,52 @@ public class Dialogue_Manager : MonoBehaviour
     public void OnSliderValueChanged(float value)
     {
         type_speed = 0.2f - value;
+    }
+
+    private void PlaySound()
+    {
+        //Play sounds only if the source exists
+        if (audioSource == null) return;
+
+        if (npcs != null)
+        {
+            int npcs_size = npcs.Count;
+
+            if (npcs_size > 0)
+            {
+                //Stop the audioSource so that the new sentence does not overlap with the old one
+                //audioSource.Stop();
+
+                Character_Data npc = npcs[line_index % npcs_size];
+
+                //Play sentence sound
+                if (npc.voiceSamples != null)
+                {
+                    audioSource.PlayOneShot(
+                        npc.voiceSamples[UnityEngine.Random.Range(0, npc.voiceSamples.Count)]);
+                }
+
+                return;
+            }
+        }
+
+        if (is_cutscene_mode && current_cutscene_frames != null) {
+            Character_Data npc = current_cutscene_frames[line_index].speaker;
+
+            if (npc != null && npc.voiceSamples != null)
+            {
+                audioSource.PlayOneShot(
+                    npc.voiceSamples[UnityEngine.Random.Range(0, npc.voiceSamples.Count)]);
+
+                return;
+            }
+        }
+
+        if (default_voice_samples != null)
+        {
+            audioSource.PlayOneShot(
+                default_voice_samples[UnityEngine.Random.Range(0, default_voice_samples.Count)]);
+        }
     }
 
     #endregion

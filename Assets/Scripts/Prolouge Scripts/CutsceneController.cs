@@ -148,7 +148,7 @@ public class CutsceneController : MonoBehaviour
         // 4. Update Text & Italic state
         if (speakerNameText != null)
         {
-            speakerNameText.text = frame.speakerName;
+            speakerNameText.text = frame.speaker.name;
         }
 
         if (dialogueText != null)

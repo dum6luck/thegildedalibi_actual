@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690387eb57ce749d387fc63b7b285934, type: 3}
+  m_Name: Iris
+  m_EditorClassIdentifier: 
+  name: IRIS GABLE
+  initial_emotion: neutral
+  voiceSamples:
+  - {fileID: 8300000, guid: c085488e3edf64c9ab16ab7dab1ed848, type: 3}
+  - {fileID: 8300000, guid: c070e7054d9fc4b46a00a5b49ee21906, type: 3}
+  - {fileID: 8300000, guid: c3290262fa3af40d08322adef7d67239, type: 3}
+  overworld_emotions:
+  - neutral
+  overworld_sprites:
+  - {fileID: 21300000, guid: d49e23c132525144e952727be05e803d, type: 3}
+  dialogue_emotions:
+  - neutral
+  dialogue_sprites:
+  - {fileID: 21300000, guid: 2c2d356ce5a08dc4a8756ea40cabf276, type: 3}

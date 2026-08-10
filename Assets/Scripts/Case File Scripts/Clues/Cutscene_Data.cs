@@ -11,7 +11,7 @@ public struct CutsceneFrame
     public enum ActiveSpeaker { Left, Right, Neither }
     [Header("Focus & Dialogue")]
     public ActiveSpeaker activeSpeaker;
-    public string speakerName;
+    public Character_Data speaker;
 
     [Header("Text Formatting")]
     public bool isItalic;

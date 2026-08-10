@@ -18,7 +18,7 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 0}
     activeSpeaker: 0
-    speakerName: IRIS GABLE
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
     dialogueLine: "This has to be the murder weapon. It's in plain sight!\r"
   - leftCharacterSprite: {fileID: 21300000, guid: 0eb9d0631edfb60419df2c025bd4af07,
@@ -26,7 +26,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
       type: 3}
     activeSpeaker: 1
-    speakerName: JULIAN VANE
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
     isItalic: 0
     dialogueLine: 'Behind glass, Iris. Not exactly plain sight if you need a locked
       case to keep it in.
@@ -37,7 +37,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
       type: 3}
     activeSpeaker: 0
-    speakerName: IRIS GABLE
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
     dialogueLine: 'You know what I mean.
 
@@ -47,7 +47,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: Let me take a look.
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
@@ -55,7 +55,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: Seems like the case is unlocked already.
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
@@ -63,7 +63,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: "That's the ceremonial dagger from the Ottoman collection. Sixteenth
       century, or it's supposed to be.\r"
@@ -72,7 +72,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
     activeSpeaker: 0
-    speakerName: PENNY STERLING
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
     dialogueLine: Supposed to be?
   - leftCharacterSprite: {fileID: 21300000, guid: 3b0bfe50efe868a4a9ddef4c5d2519d8,
@@ -80,7 +80,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: ' It''s never left this case in the two years I''ve worked here.
       Max was very particular about it.'
@@ -89,7 +89,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: Mind if I take a look?
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
@@ -97,7 +97,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: Feel free, Detective.
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
@@ -105,7 +105,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: "...This doesn't look right.\r"
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
@@ -113,7 +113,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
     activeSpeaker: 1
-    speakerName: IRIS GABLE
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
     dialogueLine: "What do you mean?\r"
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
@@ -121,7 +121,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: "The edge. Look at it.\r"
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
@@ -129,7 +129,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: "That's dull. Completely dull.\r"
   - leftCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
@@ -137,7 +137,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 0
-    speakerName: PENNY STERLING
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
     dialogueLine: You said it's ceremonial. Aren't those things usually decorative?
       Not exactly built for stabbing people.
@@ -146,7 +146,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: " No, this one wasn't just decorative. It was authenticated as
       a functioning blade, that was half of why Max wanted it so badly. He liked
@@ -156,7 +156,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 0
-    speakerName: JULIAN VANE
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
     isItalic: 0
     dialogueLine: 'What a charming guy.
 
@@ -166,7 +166,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 1
     dialogueLine: 'A blade that shouldn''t be sharp isn''t newsworthy. A blade that''s
       supposed to be sharp and isn''t, that''s a problem.
@@ -177,7 +177,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: 'Dr. Harlow, look at the mark on the blade. Does this match your
       records?
@@ -189,7 +189,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: "The maker's mark is wrong. It's close, but the real one has the
       lines not intersecting in the middle. \n\n"
@@ -198,7 +198,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 0
-    speakerName: IRIS GABLE
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
     dialogueLine: 'So it''s fake?
 
@@ -210,7 +210,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: ' It''s a replica of the real blade, and a very good one. Good
       enough to fool anyone who wasn''t looking closely.
@@ -222,7 +222,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 0
-    speakerName: JULIAN VANE
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
     isItalic: 0
     dialogueLine: 'So we found the murder weapon and it''s a prop?!
 
@@ -233,7 +233,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
     activeSpeaker: 0
-    speakerName: PENNY STERLING
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
     dialogueLine: 'So somebody swapped a museum grade replica into a locked case?
 
@@ -245,7 +245,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 1
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: 'You don''t commission a replica like this overnight. And you don''t
       get into the case without a key.
@@ -258,7 +258,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: 'Which means this wasn''t improvised. Someone brought a copy, had
       access to the case, made the trade, and took the real dagger.
@@ -272,7 +272,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
     activeSpeaker: 0
-    speakerName: DETECTIVE
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
     dialogueLine: 'All we know is that there is a real dagger out there somewhere.
       And that they had to do the swap recently.
@@ -286,7 +286,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
     activeSpeaker: 1
-    speakerName: IRIS GABLE
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
     dialogueLine: ' Which means whoever swapped it still has it. Right now. With
       us.
@@ -299,7 +299,7 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
     activeSpeaker: 0
-    speakerName: DR. HARLOW
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
     dialogueLine: "That's not a comforting thought.\r"
   - leftCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
@@ -307,6 +307,6 @@ MonoBehaviour:
     rightCharacterSprite: {fileID: 21300000, guid: 3b54442e51286fc458f735252ee3c2e2,
       type: 3}
     activeSpeaker: 0
-    speakerName: PENNY STERLING
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
     dialogueLine: ' No. It isn''t.'
