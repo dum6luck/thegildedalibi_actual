@@ -40,6 +40,9 @@ public class Dialogue_Manager : MonoBehaviour
     public float bounce_speed = 5f;
     public float bounce_amplitude = 10f;
 
+    [Header("Cutscene Settings")]
+    public float transitionDuration = 0.25f;
+
     // Cutscene Frame Tracking
     private List<CutsceneFrame> current_cutscene_frames = new List<CutsceneFrame>();
     private bool is_cutscene_mode = false;
@@ -56,7 +59,12 @@ public class Dialogue_Manager : MonoBehaviour
     private bool can_open_case_file = false;
     private string current_full_text;
     private Vector3 arrow_start_pos;
+    private Vector3 left_chr_start_pos;
+    private Vector3 right_chr_start_pos;
     private Coroutine typing_coroutine;
+    private Coroutine leftChrCoroutine;
+    private Coroutine rightChrCoroutine;
+    private enum CoroutineTypes { Left, Right }
 
     private void Awake()
     {
@@ -81,6 +89,16 @@ public class Dialogue_Manager : MonoBehaviour
         if (cutscene_background != null)
         {
             cutscene_background.SetActive(false);
+        }
+
+        if (left_character_image != null)
+        {
+            left_chr_start_pos = left_character_image.transform.localPosition;
+        }
+
+        if (right_character_image != null)
+        {
+            right_chr_start_pos = right_character_image.transform.localPosition;
         }
     }
 
@@ -205,8 +223,8 @@ public class Dialogue_Manager : MonoBehaviour
         CutsceneFrame frame = current_cutscene_frames[index];
 
         // Set left and right character sprites
-        Update_Portrait(left_character_image, frame.leftCharacterSprite);
-        Update_Portrait(right_character_image, frame.rightCharacterSprite);
+        Update_Portrait(left_character_image, frame.leftCharacter, frame.leftCharacterEmotion, CoroutineTypes.Left);
+        Update_Portrait(right_character_image, frame.rightCharacter, frame.rightCharacterEmotion, CoroutineTypes.Right);
 
         // Highlight active speaker and dim the inactive one
         if (frame.activeSpeaker == CutsceneFrame.ActiveSpeaker.Left)
@@ -235,19 +253,86 @@ public class Dialogue_Manager : MonoBehaviour
         is_cutscene_mode = true;
     }
 
-    private void Update_Portrait(Image portraitImage, Sprite sprite)
+    private void Update_Portrait(Image portraitImage, Character_Data character, string emotion, CoroutineTypes coroutineType)
     {
         if (portraitImage == null) return;
 
-        if (sprite != null)
+        float x = portraitImage.transform.localPosition.x;
+
+        Character_Data prev_chr;
+        if (line_index > 0)
         {
-            portraitImage.gameObject.SetActive(true);
-            portraitImage.sprite = sprite;
+            if (coroutineType == CoroutineTypes.Left)
+            {
+                prev_chr = current_cutscene_frames[line_index - 1].leftCharacter;
+            }
+            else
+            {
+                prev_chr = current_cutscene_frames[line_index - 1].rightCharacter;
+            }
+        }
+        else
+        {
+            prev_chr = null;
+        }
+
+        if (character != null)
+        {
+            if (character != prev_chr)
+            {
+                if (coroutineType == CoroutineTypes.Left)
+                {
+                    if (leftChrCoroutine != null) StopCoroutine(leftChrCoroutine);
+                    leftChrCoroutine = StartCoroutine(Change_Character(x - 1000, portraitImage, left_chr_start_pos, character.Get_Dialogue_Sprite(emotion)));
+                }
+                else
+                {
+                    if (rightChrCoroutine != null) StopCoroutine(rightChrCoroutine);
+                    rightChrCoroutine = StartCoroutine(Change_Character(x + 1000, portraitImage, right_chr_start_pos, character.Get_Dialogue_Sprite(emotion)));
+                }
+            }
+            else
+            {
+                portraitImage.sprite = character.Get_Dialogue_Sprite(emotion);
+            }
         }
         else
         {
             portraitImage.gameObject.SetActive(false);
         }
+    }
+
+    public IEnumerator Change_Character(float target_x, Image target_image, Vector2 end_pos, Sprite sprite)
+    {
+        Vector2 start_pos = target_image.transform.localPosition;
+        Vector2 target_pos = new Vector2(target_x, 0);
+        float elapsed = 0f;
+
+        while (elapsed < transitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.SmoothStep(0f, 1f, elapsed / transitionDuration);
+
+            target_image.transform.localPosition = Vector2.Lerp(start_pos, target_pos, t);
+
+            yield return null;
+        }
+
+        target_image.gameObject.SetActive(true);
+        target_image.sprite = sprite;
+        elapsed = 0f;
+
+        while (elapsed < transitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.SmoothStep(0f, 1f, elapsed / transitionDuration);
+
+            target_image.transform.localPosition = Vector2.Lerp(target_pos, end_pos, t);
+
+            yield return null;
+        }
+
+        target_image.transform.localPosition = end_pos;
     }
 
     #endregion

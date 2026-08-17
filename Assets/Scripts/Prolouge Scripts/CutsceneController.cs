@@ -142,8 +142,8 @@ public class CutsceneController : MonoBehaviour
         }
 
         // 3. Update Sprites & Initial transform states
-        UpdateSprite(leftCharacterImage, frame.leftCharacterSprite, leftScale, leftCol);
-        UpdateSprite(rightCharacterImage, frame.rightCharacterSprite, rightScale, rightCol);
+        UpdateSprite(leftCharacterImage, frame.leftCharacter, frame.leftCharacterEmotion, leftScale, leftCol);
+        UpdateSprite(rightCharacterImage, frame.rightCharacter, frame.rightCharacterEmotion, rightScale, rightCol);
 
         // 4. Update Text & Italic state
         if (speakerNameText != null)
@@ -170,15 +170,15 @@ public class CutsceneController : MonoBehaviour
         }
     }
 
-    private void UpdateSprite(Image img, Sprite sprite, Vector3 defaultScale, Color defaultColor)
+    private void UpdateSprite(Image img, Character_Data character, string emotion, Vector3 defaultScale, Color defaultColor)
     {
         if (img == null) return;
 
-        if (sprite != null)
+        if (character != null)
         {
             bool wasInactive = !img.gameObject.activeSelf;
             img.gameObject.SetActive(true);
-            img.sprite = sprite;
+            img.sprite = character.Get_Dialogue_Sprite(emotion);
 
             if (wasInactive)
             {

@@ -21,8 +21,8 @@ MonoBehaviour:
   overworld_emotions:
   - neutral
   overworld_sprites:
-  - {fileID: 21300000, guid: b78b7589b7324ff4d843d2d970ed616a, type: 3}
+  - {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6, type: 3}
   dialogue_emotions:
   - neutral
   dialogue_sprites:
-  - {fileID: 21300000, guid: 9cecb861ff347cf4f9132ebaf7c5547a, type: 3}
+  - {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6, type: 3}

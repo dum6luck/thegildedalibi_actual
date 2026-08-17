@@ -24,5 +24,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b232aa2816123da46af764c0e1486082, type: 3}
   dialogue_emotions:
   - neutral
+  - angry
+  - happy
   dialogue_sprites:
-  - {fileID: 21300000, guid: 913485f85371795419648587ba22d280, type: 3}
+  - {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021, type: 3}
+  - {fileID: 21300000, guid: ec2a29aabc4a6104ebc48cdff4a433a9, type: 3}
+  - {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b, type: 3}

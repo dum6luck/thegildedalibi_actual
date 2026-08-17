@@ -5,8 +5,10 @@ using System.Collections.Generic;
 public struct CutsceneFrame
 {
     [Header("Character Sprites")]
-    public Sprite leftCharacterSprite;
-    public Sprite rightCharacterSprite;
+    public Character_Data leftCharacter;
+    public string leftCharacterEmotion;
+    public Character_Data rightCharacter;
+    public string rightCharacterEmotion;
 
     public enum ActiveSpeaker { Left, Right, Neither }
     [Header("Focus & Dialogue")]

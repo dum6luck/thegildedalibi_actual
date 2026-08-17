@@ -17,6 +17,10 @@ MonoBehaviour:
   - leftCharacterSprite: {fileID: 21300000, guid: 0eb9d0631edfb60419df2c025bd4af07,
       type: 3}
     rightCharacterSprite: {fileID: 0}
+    leftCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    leftCharacterEmotion: happy
+    rightCharacter: {fileID: 0}
+    rightCharacterEmotion: 
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
@@ -25,6 +29,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    leftCharacterEmotion: happy
+    rightCharacter: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
     isItalic: 0
@@ -36,6 +44,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    leftCharacterEmotion: nervous
+    rightCharacter: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
@@ -46,6 +58,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -54,6 +70,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -62,6 +82,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -71,6 +95,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    leftCharacterEmotion: happy
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
@@ -79,6 +107,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    leftCharacterEmotion: happy
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -88,6 +120,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -96,6 +132,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -104,6 +144,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: d4d7669b0858d474db0f4e362b34219a,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: happy
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -112,6 +156,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    rightCharacterEmotion: nervous
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
@@ -120,6 +168,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    rightCharacterEmotion: nervous
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -128,6 +180,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -136,6 +192,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    leftCharacterEmotion: 
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
@@ -145,6 +205,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    leftCharacterEmotion: 
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -155,6 +219,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    leftCharacterEmotion: 
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
     isItalic: 0
@@ -165,6 +233,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 1
@@ -176,6 +248,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -188,6 +264,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -197,6 +277,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    leftCharacterEmotion: nervous
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
@@ -209,6 +293,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    leftCharacterEmotion: nervous
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -221,6 +309,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    leftCharacterEmotion: angry
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
     isItalic: 0
@@ -232,6 +324,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    leftCharacterEmotion: angry
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
@@ -244,6 +340,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    leftCharacterEmotion: angry
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -257,6 +357,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -271,6 +375,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    rightCharacterEmotion: think
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
     isItalic: 0
@@ -285,6 +393,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    leftCharacterEmotion: '[TODO: change this]'
+    rightCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    rightCharacterEmotion: nervous
     activeSpeaker: 1
     speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
     isItalic: 0
@@ -298,6 +410,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    leftCharacterEmotion: angry
+    rightCharacter: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    rightCharacterEmotion: nervous
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
     isItalic: 0
@@ -306,6 +422,10 @@ MonoBehaviour:
       type: 3}
     rightCharacterSprite: {fileID: 21300000, guid: 3b54442e51286fc458f735252ee3c2e2,
       type: 3}
+    leftCharacter: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    leftCharacterEmotion: angry
+    rightCharacter: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    rightCharacterEmotion: angry
     activeSpeaker: 0
     speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
     isItalic: 0
