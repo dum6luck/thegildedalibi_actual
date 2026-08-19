@@ -12966,6 +12966,7 @@ MonoBehaviour:
   loadsMinigameOnComplete: 0
   minigameSceneName: CircuitMinigame
   postMinigameCutscene: {fileID: 0}
+  cutsceneDelay: 1
 --- !u!4 &211712649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f4626c7e8816f3489bcc29f47ed64e3,
@@ -22884,6 +22885,7 @@ MonoBehaviour:
   loadsMinigameOnComplete: 0
   minigameSceneName: CircuitMinigame
   postMinigameCutscene: {fileID: 0}
+  cutsceneDelay: 1
 --- !u!65 &537768480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45437,8 +45439,9 @@ MonoBehaviour:
   clue_info: {fileID: 11400000, guid: 78aa21447ea36f44aa1f1284f5f43787, type: 2}
   loadsMinigameOnComplete: 1
   minigameSceneName: CircuitMinigame
-  postMinigameCutscene: {fileID: 11400000, guid: aa38486b036e00f4d92230a4e158dbab,
+  postMinigameCutscene: {fileID: 11400000, guid: f70b0aa9ab172194397b6287d457e5d0,
     type: 2}
+  cutsceneDelay: 1
 --- !u!65 &1236918711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -117258,6 +117261,7 @@ MonoBehaviour:
   loadsMinigameOnComplete: 0
   minigameSceneName: CircuitMinigame
   postMinigameCutscene: {fileID: 0}
+  cutsceneDelay: 1
 --- !u!23 &1860313615
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -166585,7 +166589,7 @@ MonoBehaviour:
   fadeImage: {fileID: 0}
   speakerNameText: {fileID: 1512032921}
   dialogueText: {fileID: 1207917796}
-  transitionDuration: 0.25
+  transitionDuration: 0.5
   activeScale: {x: 1.2, y: 1.2, z: 1}
   inactiveScale: {x: 0.85, y: 0.85, z: 1}
   activeColor: {r: 1, g: 1, b: 1, a: 1}

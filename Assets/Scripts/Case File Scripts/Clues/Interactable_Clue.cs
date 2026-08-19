@@ -7,28 +7,33 @@ public class Interactable_Clue : MonoBehaviour
     public Clue_Data clue_info;
 
     [Header("Minigame Scene Settings")]
-    [Tooltip("Check this if collecting this clue should trigger a scene switch.")]
     public bool loadsMinigameOnComplete = false;
-    [Tooltip("Exact name of the scene to load after dialogue finishes.")]
     public string minigameSceneName = "CircuitMinigame";
+
+    [Header("Post-Minigame Cutscene")]
+    public Cutscene_Data postMinigameCutscene;
+    public float cutsceneDelay = 1.0f; // seconds to wait before cutscene appears
+
+    // Static queue stores cutscene data across scene transitions
+    public static Cutscene_Data QueuedCutscene = null;
 
     private bool is_player_nearby = false;
     private bool is_collected = false;
-    private bool is_dialogue_ongoing = false;
     private LensSystem cameraLensSystem;
-
     private Case_File_UI ui_manager;
     private Dialogue_Manager dialogue_manager;
 
-    private void Start()
+    private IEnumerator Start()
     {
-        // 1. RESTORE PLAYER POSITION: Check if a position was saved before loading the minigame
+        // 1. Wait one frame so managers finish their Awake() on scene load
+        yield return null;
+
+        // 2. RESTORE PLAYER POSITION (immediate, no delay)
         if (PlayerPositionManager.HasSavedPosition)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
             {
-                // Disable CharacterController/NavMeshAgent if present to allow instant teleportation
                 CharacterController controller = player.GetComponent<CharacterController>();
                 if (controller != null) controller.enabled = false;
 
@@ -37,11 +42,11 @@ public class Interactable_Clue : MonoBehaviour
 
                 if (controller != null) controller.enabled = true;
 
-                // Clear so normal scene transitions don't force this position again
                 PlayerPositionManager.ClearPosition();
             }
         }
 
+        // Grab references early so they're ready regardless of cutscene delay
         if (Camera.main != null)
         {
             cameraLensSystem = Camera.main.GetComponent<LensSystem>();
@@ -49,13 +54,28 @@ public class Interactable_Clue : MonoBehaviour
 
         ui_manager = FindObjectOfType<Case_File_UI>();
         dialogue_manager = FindObjectOfType<Dialogue_Manager>();
+
+        // 3. PLAY QUEUED CUTSCENE (after a short delay), through Dialogue_Manager
+        //    so it matches the look/feel of your other cutscenes
+        if (QueuedCutscene != null)
+        {
+            Cutscene_Data cutsceneToPlay = QueuedCutscene;
+            QueuedCutscene = null; // Clear queue so it doesn't repeat/re-trigger
+
+            yield return new WaitForSeconds(cutsceneDelay);
+
+            if (Dialogue_Manager.Instance != null)
+            {
+                Dialogue_Manager.Instance.Show_Cutscene(cutsceneToPlay);
+            }
+        }
     }
 
     private void Update()
     {
         if (!is_collected && is_player_nearby && Input.GetKeyDown(KeyCode.E))
         {
-            this.Collect();
+            Collect();
         }
     }
 
@@ -78,16 +98,13 @@ public class Interactable_Clue : MonoBehaviour
 
     private IEnumerator HandleDialogueSequence()
     {
-        // 1. Trigger Collection Dialogue
         if (dialogue_manager != null && clue_info != null && !string.IsNullOrEmpty(clue_info.collection_dialogue))
         {
-            is_dialogue_ongoing = true;
             dialogue_manager.Show_Dialogue("DETECTIVE", clue_info.collection_dialogue);
 
             yield return null;
 
             bool dialogueFinished = false;
-
             while (!dialogueFinished)
             {
                 if (Input.GetMouseButtonDown(0))
@@ -102,20 +119,15 @@ public class Interactable_Clue : MonoBehaviour
                         dialogueFinished = true;
                     }
                 }
-
                 yield return null;
             }
-
-            is_dialogue_ongoing = false;
         }
 
-        // 2. Play Clue Cutscene (For normal clues)
         if (!loadsMinigameOnComplete && clue_info != null && clue_info.clue_cutscene != null)
         {
             if (dialogue_manager != null)
             {
                 dialogue_manager.Show_Cutscene(clue_info.clue_cutscene);
-
                 yield return null;
 
                 while (!Input.GetMouseButtonDown(0))
@@ -130,7 +142,7 @@ public class Interactable_Clue : MonoBehaviour
             GetComponent<Collider>().enabled = false;
         }
 
-        // 3. Save player position & load Minigame Scene
+        // SAVE POSITION & QUEUE CUTSCENE BEFORE LOADING MINIGAME
         if (loadsMinigameOnComplete)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -139,7 +151,11 @@ public class Interactable_Clue : MonoBehaviour
                 PlayerPositionManager.SavePosition(player.transform);
             }
 
-            Debug.Log("Dialogue fully read and dismissed. Saving position and loading minigame scene now.");
+            if (postMinigameCutscene != null)
+            {
+                QueuedCutscene = postMinigameCutscene;
+            }
+
             SceneManager.LoadScene(minigameSceneName);
         }
     }
@@ -149,11 +165,7 @@ public class Interactable_Clue : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             is_player_nearby = true;
-
-            if (cameraLensSystem != null)
-            {
-                cameraLensSystem.ShowCluePrompt();
-            }
+            if (cameraLensSystem != null) cameraLensSystem.ShowCluePrompt();
         }
     }
 
@@ -162,11 +174,7 @@ public class Interactable_Clue : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             is_player_nearby = false;
-
-            if (cameraLensSystem != null)
-            {
-                cameraLensSystem.HideCluePrompt();
-            }
+            if (cameraLensSystem != null) cameraLensSystem.HideCluePrompt();
         }
     }
 }
