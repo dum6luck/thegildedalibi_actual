@@ -5,31 +5,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-/// <summary>
-/// Builds the circuit grid, routes arrow-key input to the selected tile,
-/// and flood-fills power from the Source tile to see if it reaches the Target.
-///
-/// Controls:
-///   Left/Right or Up/Down Arrow  -> rotate the selected tile
-///   Tab / Shift+Tab              -> move selection between rotatable tiles
-///   Mouse click on a tile        -> select it
-///
-/// The puzzle is built once on Start and, once solved, all input is locked —
-/// this is designed as a single-play puzzle rather than a repeatable one.
-/// </summary>
 public class CircuitGridManager : MonoBehaviour
 {
+    // Global static flag accessible across scene loads
+    public static bool BreakerPuzzleSolved = false;
+
     [Header("Scene References")]
     public RectTransform gridContainer;
-    public TMP_Text statusText; // Legacy UI Text. Swap for TMP_Text if you use TextMeshPro.
+    public TMP_Text statusText;
 
     [Header("Grid Settings")]
     public float CellSize = 100f;
     public float spacing = 8f;
 
     [Header("On Complete")]
-    [Tooltip("Name of the scene to load once the circuit is solved. Must be added to Build Settings.")]
-    public string sceneToLoadOnComplete;
+    [Tooltip("Name of the scene to load once the circuit is solved (e.g. Main_Game). Must be added to Build Settings.")]
+    public string sceneToLoadOnComplete = "Main_Game";
     [Tooltip("Seconds to wait after the win message appears before loading the next scene.")]
     public float delayBeforeLoad = 2f;
 
@@ -58,10 +49,17 @@ public class CircuitGridManager : MonoBehaviour
     {
         if (solved || selected == null) return;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+        // WASD rotates the selected tile
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D))
             selected.Rotate(1);
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A))
             selected.Rotate(-1);
+
+        // Arrow keys move selection to the next/previous tile
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+            CycleSelection(1);
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+            CycleSelection(-1);
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -72,9 +70,6 @@ public class CircuitGridManager : MonoBehaviour
 
     private void BuildLevel()
     {
-        // Hand-authored, guaranteed-solvable path from Source (0,2) to Target (4,2).
-        // Row 0 is the top row. Every corner/straight piece can reach its required
-        // orientation purely through rotation, no matter how it's scrambled below.
         var layout = new TileType[Cols, Rows];
         for (int c = 0; c < Cols; c++)
             for (int r = 0; r < Rows; r++)
@@ -112,7 +107,7 @@ public class CircuitGridManager : MonoBehaviour
 
                 int startRotation = 0;
                 if (type == TileType.Straight || type == TileType.Corner)
-                    startRotation = Random.Range(0, 4); // scramble only the movable pieces
+                    startRotation = Random.Range(0, 4);
 
                 tile.Init(this, type, c, r, startRotation);
                 tiles[c, r] = tile;
@@ -122,7 +117,7 @@ public class CircuitGridManager : MonoBehaviour
         selected = null;
         solved = false;
         SelectFirstRotatable();
-        SetStatus("Rotate the pieces to connect the energy!");
+        SetStatus("Use WASD to rotate a piece, and Arrow Keys to move between tiles!");
         EvaluateFlow();
     }
 
@@ -161,7 +156,6 @@ public class CircuitGridManager : MonoBehaviour
         EvaluateFlow();
     }
 
-    /// <summary>Flood-fills power outward from the Source tile through matching connectors.</summary>
     private void EvaluateFlow()
     {
         foreach (var t in tiles) if (t != null) t.SetPowered(false);
@@ -204,12 +198,26 @@ public class CircuitGridManager : MonoBehaviour
             solved = true;
             SetStatus("Circuit complete! Energy is flowing.");
 
-            if (!string.IsNullOrEmpty(sceneToLoadOnComplete))
+            // Set the static solve flag
+            BreakerPuzzleSolved = true;
+
+            // Unlock and show the cursor before returning to the main scene
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            // Trigger scene load via BreakerSceneLoader if present, or fallback to Coroutine
+            if (BreakerSceneLoader.Instance != null)
+            {
+                BreakerSceneLoader.Instance.ReturnToMainGame(delayBeforeLoad);
+            }
+            else if (!string.IsNullOrEmpty(sceneToLoadOnComplete))
+            {
                 StartCoroutine(LoadSceneAfterDelay());
+            }
         }
         else
         {
-            SetStatus("Rotate the pieces with the Arrow Keyts to connect the energy! Use cursor to click on each tile.");
+            SetStatus("Use WASD to rotate a piece, and Arrow Keys to move between tiles!");
         }
     }
 

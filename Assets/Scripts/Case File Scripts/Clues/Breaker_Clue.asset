@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e81a80cc891c54aabbfe16b288d3f1, type: 3}
+  m_Name: Breaker_Clue
+  m_EditorClassIdentifier: 
+  clue_title: Breaker Box
+  clue_description: "Shows signs a timer device was recently mounted and removed.
+    Power was cut and restored on a pre-set schedule, with no one needing to be present.\r"
+  clue_icon: {fileID: 21300000, guid: b04fa8c494648e1429fe515f40152050, type: 3}
+  collection_dialogue: A circuit seems to be out of place. Lets see if I can fix
+    it.
+  clue_cutscene: {fileID: 0}
+  npc_reactions: []

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Events; // Required for UnityEvents
+using UnityEngine.Events;
 using System.Collections;
 using TMPro;
 
@@ -36,7 +36,7 @@ public class CutsceneController : MonoBehaviour
     public KeyCode advanceKey = KeyCode.Space;
 
     [Header("Cutscene Events")]
-    public UnityEvent onCutsceneEnd; // Shows up as an Event Box in the Inspector!
+    public UnityEvent onCutsceneEnd;
 
     private int currentFrameIndex = 0;
     private Coroutine leftAnimCoroutine;
@@ -84,9 +84,7 @@ public class CutsceneController : MonoBehaviour
         }
         else
         {
-            // Trigger events (e.g. GemCutsceneListener.HideGem) when dialogue ends
             onCutsceneEnd?.Invoke();
-
             StartFadeOut();
         }
     }
