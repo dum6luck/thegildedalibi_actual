@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e81a80cc891c54aabbfe16b288d3f1, type: 3}
+  m_Name: SecurityCams_Clue
+  m_EditorClassIdentifier: 
+  clue_title: Security Cameras
+  clue_description: "Every screen was black with no feed at all. Cameras appear to
+    have been disabled before the gala began.\r"
+  clue_icon: {fileID: 21300000, guid: b57b382d2589fc747b61b1923affd07b, type: 3}
+  collection_dialogue: Let's check and see if any of these cameras cought anything.
+  clue_cutscene: {fileID: 11400000, guid: 4efc2e38013838c4b8a250558d281d5f, type: 2}
+  npc_reactions: []

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfeb3096ff7f4a8da5cc40215e800ae, type: 3}
   m_Name: Sample_Cutscene 1
   m_EditorClassIdentifier: 
-  backgroundSprite: {fileID: 21300000, guid: 5749103293338694c99738a7104fbf99, type: 3}
+  backgroundSprite: {fileID: 0}
   frames:
   - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
       type: 3}

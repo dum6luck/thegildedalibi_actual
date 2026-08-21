@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfeb3096ff7f4a8da5cc40215e800ae, type: 3}
   m_Name: Dagger_Cutscene
   m_EditorClassIdentifier: 
-  backgroundSprite: {fileID: 21300000, guid: 5749103293338694c99738a7104fbf99, type: 3}
+  backgroundSprite: {fileID: 21300000, guid: 45e85f261811bbd4f8c338f3c8fe2bfe, type: 3}
   frames:
   - leftCharacterSprite: {fileID: 21300000, guid: 0eb9d0631edfb60419df2c025bd4af07,
       type: 3}

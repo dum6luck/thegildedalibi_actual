@@ -10,6 +10,9 @@ public class ControlsMenuToggle : MonoBehaviour
     public GameObject playerObject;
     public Slider speedSlider;
 
+    [Header("Keybind Settings")]
+    public KeyCode toggleKey = KeyCode.M;
+
     private FPSController movementScript;
 
     void Start()
@@ -18,8 +21,23 @@ public class ControlsMenuToggle : MonoBehaviour
         FindPlayerScript();
     }
 
+    void Update()
+    {
+        // Listens for the M key press to open/close the menu
+        if (Input.GetKeyDown(toggleKey))
+        {
+            ToggleMenu();
+        }
+    }
+
     void FindPlayerScript()
     {
+        // Try finding player by field assignment first, or search tag/type if null
+        if (playerObject == null)
+        {
+            playerObject = GameObject.FindGameObjectWithTag("Player");
+        }
+
         if (playerObject != null)
         {
             movementScript = playerObject.GetComponent<FPSController>();
@@ -38,7 +56,7 @@ public class ControlsMenuToggle : MonoBehaviour
         speedSlider.maxValue = 25f;
         speedSlider.value = Mathf.Clamp(movementScript.walkSpeed, speedSlider.minValue, speedSlider.maxValue);
 
-        // This stops the slider from stealing WASD arrow keys focus!
+        // Stops the slider from stealing WASD arrow keys focus
         speedSlider.navigation = new Navigation { mode = Navigation.Mode.None };
 
         speedSlider.onValueChanged.RemoveAllListeners();
@@ -50,7 +68,7 @@ public class ControlsMenuToggle : MonoBehaviour
         if (movementScript == null) return;
         if (newValue < 4f) newValue = 5f;
 
-        // Automatically updates your walk and sprint speed values live
+        // Automatically updates walk and sprint speed values live
         movementScript.walkSpeed = newValue;
         movementScript.sprintSpeed = newValue * 1.8f;
     }

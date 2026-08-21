@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfeb3096ff7f4a8da5cc40215e800ae, type: 3}
+  m_Name: Breaker_Cutscene
+  m_EditorClassIdentifier: 
+  backgroundSprite: {fileID: 0}
+  frames:
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 0}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "Fixed the broken circuit. Now let's see why it broke in the first
+      place.\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: "Is that it? Fixed?\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "Mechanically, yes. But something about it doesn't sit right with
+      me.\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: "The lights are on. Whatever was wrong didn't seem to change anything.
+      \r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 9c8f320fb24652748bda3d97fbba4e7b,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "Maybe. But this switch wasn't the one anybody touched tonight,
+      and I don't think it broke on its own.\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: Meaning what, exactly?
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: 'If someone wanted the lights out, they''d come here and flip the
+      main switch by hand. That switch would show wear from being forced off and
+      on. This one doesn''t.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: 'Then what does it show?
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: 'Marks like something was clipped onto it. Screw holes. Recent
+      ones.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: 'Wait, hold on. This room is nowhere near the main gallery. We
+      walked forever just to get here.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: 'She''s right. Did someone seriously run all the way down here
+      in pitch dark, do whatever they needed to do, and run all the way back before
+      anyone noticed they were gone?
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: "That would take several minutes at least. And in the dark at that.\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: "Unless they know this building better than the rest of us combined.\r.."
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 5ef972a4c46a94e4f86a5481ade1422c,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "Even then. That's a long way to move fast, blind, without being
+      seen or heard by anyone. I don't think that's what happened.\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: "Then what are you thinking?\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: f2a0aadb7a19e21488898a4a61a5cc96,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "I think whoever did this didn't need to be here at all when the
+      lights actually went out.\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: "That's not possible. Somebody has to physically touch a breaker
+      for it to turn off.\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 903afd396953c2b4e957d32948a8f021,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: 'Somebody has to install a device. After that, it does the work
+      by itself.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: 'A device?
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: 'A timer relay. Small and easy enough to wire in if you know what
+      you''re doing. Set it once, and it cuts power at a set point, then restores
+      it a set number of minutes later. No one has to be in this room when it happens.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: I see...
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 0eb9d0631edfb60419df2c025bd4af07,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: "So nobody ran anywhere?\r"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 0eb9d0631edfb60419df2c025bd4af07,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: 'Yes. They set it up in advance, walked away, and let it work while
+      they were somewhere else entirely.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 57d06ee28d045874598b4cee3993f805,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: "Somewhere else. Meaning in the gallery\u2026 with the rest of
+      us.\r\n"
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: ec2a29aabc4a6104ebc48cdff4a433a9,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: 'So someone planned this before we ever got to the party!
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: ec2a29aabc4a6104ebc48cdff4a433a9,
+      type: 3}
+    activeSpeaker: 0
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: 'That''s exactly what I think happened.
+
+'
+  - leftCharacterSprite: {fileID: 21300000, guid: 332c630027153654ba758ceb5b85def6,
+      type: 3}
+    rightCharacterSprite: {fileID: 21300000, guid: 8100e67ebce1a124183e9722ddee88b1,
+      type: 3}
+    activeSpeaker: 1
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: 'That''s not exactly comforting.
+
+'

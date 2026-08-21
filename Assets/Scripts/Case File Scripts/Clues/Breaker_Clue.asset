@@ -15,7 +15,7 @@ MonoBehaviour:
   clue_title: Breaker Box
   clue_description: "Shows signs a timer device was recently mounted and removed.
     Power was cut and restored on a pre-set schedule, with no one needing to be present.\r"
-  clue_icon: {fileID: 21300000, guid: b04fa8c494648e1429fe515f40152050, type: 3}
+  clue_icon: {fileID: 21300000, guid: 8b79bb34da326e94982847f404687352, type: 3}
   collection_dialogue: A circuit seems to be out of place. Lets see if I can fix
     it.
   clue_cutscene: {fileID: 11400000, guid: f70b0aa9ab172194397b6287d457e5d0, type: 2}

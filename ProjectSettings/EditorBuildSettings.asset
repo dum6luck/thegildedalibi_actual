@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title_Screen.unity
+    path: Assets/Scene/Scenes/Title_Screen.unity
     guid: ccc4c2f7673276940a934f9f6edb1b61
   - enabled: 1
-    path: Assets/Scenes/Prolouge_Scenes/Opening_Cutscene.unity
+    path: Assets/Scene/Scenes/Prolouge_Scenes/Opening_Cutscene.unity
     guid: d3b3b89ed84c33e4b8d3cc2bcbbb86bd
   - enabled: 1
-    path: Assets/Scenes/Prolouge_Scenes/Prolouge_Cutscene.unity
+    path: Assets/Scene/Scenes/Prolouge_Scenes/Prolouge_Cutscene.unity
     guid: 4be6e8ae6671c1c4092b321dc738ea86
   - enabled: 1
-    path: Assets/Scenes/Act1_Scenes/Act1_1.unity
+    path: Assets/Scene/Scenes/Act1_Scenes/Act1_1.unity
     guid: b4bcb5f273674c34ebe9f0d313727bdd
   - enabled: 1
-    path: Assets/Scenes/Act1_Scenes/BathroomScene.unity
+    path: Assets/Scene/Scenes/Act1_Scenes/BathroomScene.unity
     guid: fa72c61fa2d1bc841ad8618c78c7adc4
   - enabled: 1
-    path: Assets/Scenes/Act1_Scenes/Murder_Cutscene.unity
+    path: Assets/Scene/Scenes/Act1_Scenes/Murder_Cutscene.unity
     guid: 6659d553004c1c04abe31493d2f612a7
   - enabled: 1
-    path: Assets/Scenes/Act1_Scenes/Main_Game.unity
+    path: Assets/Scene/Scenes/Act1_Scenes/Main_Game.unity
     guid: 8b0dddaf06a8fa341b876d6f2eb15e77
   - enabled: 1
-    path: Assets/Scenes/CircuitMinigame.unity
+    path: Assets/Scene/Scenes/CircuitMinigame.unity
     guid: eab1b7d0f073b65439a9e7de26de013e
   m_configObjects: {}

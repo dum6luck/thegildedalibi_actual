@@ -52,25 +52,59 @@ public class CutsceneController : MonoBehaviour
             c.a = 0f;
             fadeImage.color = c;
         }
+
+        if (backgroundImage != null)
+        {
+            backgroundImage.gameObject.SetActive(false);
+        }
     }
 
     void Start()
     {
         if (cutsceneData != null && cutsceneData.frames.Count > 0)
         {
+            ApplyCutsceneBackground();
             DisplayFrame(currentFrameIndex);
-        }
-        else
-        {
-            Debug.LogWarning("No Cutscene_Data assigned or frames list is empty.");
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(advanceKey))
+        if (cutsceneData != null && (Input.GetKeyDown(advanceKey) || Input.GetMouseButtonDown(0)))
         {
             NextFrame();
+        }
+    }
+
+    public void PlayCutscene(Cutscene_Data newData)
+    {
+        if (newData == null)
+        {
+            Debug.LogWarning("Tried to play a cutscene with null Cutscene_Data!");
+            return;
+        }
+
+        cutsceneData = newData;
+        currentFrameIndex = 0;
+
+        ApplyCutsceneBackground();
+        DisplayFrame(currentFrameIndex);
+    }
+
+    public void ApplyCutsceneBackground()
+    {
+        if (backgroundImage == null || cutsceneData == null) return;
+
+        if (cutsceneData.backgroundSprite != null)
+        {
+            backgroundImage.gameObject.SetActive(true);
+            backgroundImage.sprite = cutsceneData.backgroundSprite;
+            backgroundImage.color = Color.white;
+        }
+        else
+        {
+            backgroundImage.sprite = null;
+            backgroundImage.gameObject.SetActive(false);
         }
     }
 
@@ -78,7 +112,7 @@ public class CutsceneController : MonoBehaviour
     {
         currentFrameIndex++;
 
-        if (currentFrameIndex < cutsceneData.frames.Count)
+        if (cutsceneData != null && currentFrameIndex < cutsceneData.frames.Count)
         {
             DisplayFrame(currentFrameIndex);
         }
@@ -91,23 +125,10 @@ public class CutsceneController : MonoBehaviour
 
     public void DisplayFrame(int index)
     {
+        if (cutsceneData == null || index >= cutsceneData.frames.Count) return;
+
         CutsceneFrame frame = cutsceneData.frames[index];
 
-        // 1. Update Background
-        if (backgroundImage != null)
-        {
-            if (cutsceneData.backgroundSprite != null)
-            {
-                backgroundImage.gameObject.SetActive(true);
-                backgroundImage.sprite = cutsceneData.backgroundSprite;
-            }
-            else
-            {
-                backgroundImage.gameObject.SetActive(false);
-            }
-        }
-
-        // 2. Determine target states based on Active Speaker
         Vector3 leftScale = inactiveScale, rightScale = inactiveScale;
         Color leftCol = inactiveColor, rightCol = inactiveColor;
 
@@ -139,22 +160,27 @@ public class CutsceneController : MonoBehaviour
                 break;
         }
 
-        // 3. Update Sprites & Initial transform states
         UpdateSprite(leftCharacterImage, frame.leftCharacterSprite, leftScale, leftCol);
         UpdateSprite(rightCharacterImage, frame.rightCharacterSprite, rightScale, rightCol);
 
-        // 4. Update Text & Italic state
         if (speakerNameText != null)
         {
-            speakerNameText.text = frame.speaker.name;
+            speakerNameText.gameObject.SetActive(true);
+            if (speakerNameText.transform.parent != null)
+                speakerNameText.transform.parent.gameObject.SetActive(true);
+
+            speakerNameText.text = (frame.speaker != null) ? frame.speaker.name : "";
         }
 
         if (dialogueText != null)
         {
+            dialogueText.gameObject.SetActive(true);
+            if (dialogueText.transform.parent != null)
+                dialogueText.transform.parent.gameObject.SetActive(true);
+
             dialogueText.text = frame.isItalic ? $"<i>{frame.dialogueLine}</i>" : frame.dialogueLine;
         }
 
-        // 5. Trigger Focus Animations
         if (leftCharacterImage != null && leftCharacterImage.gameObject.activeSelf)
         {
             if (leftAnimCoroutine != null) StopCoroutine(leftAnimCoroutine);
@@ -238,7 +264,9 @@ public class CutsceneController : MonoBehaviour
 
         yield return new WaitForSeconds(waitTimeInBlack);
 
-        Debug.Log("Loading Scene: " + nextSceneName);
-        SceneManager.LoadScene(nextSceneName);
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 }
