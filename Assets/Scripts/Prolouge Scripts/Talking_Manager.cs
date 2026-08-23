@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI; // Required for UI Image
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using Cinemachine; // Correct namespace for Unity 2021
+using Cinemachine;
 
 public class Talking_Manager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Talking_Manager : MonoBehaviour
     public TextMeshProUGUI dialogueDisplay;
     public GameObject nextArrow;
     public GameObject dialoguePanel;
+    [Tooltip("Assign your UI Background Image component here.")]
+    public Image backgroundImage;
 
     [Header("Danganronpa Transition")]
     public UIFader uiFader;
@@ -20,6 +23,10 @@ public class Talking_Manager : MonoBehaviour
     [Header("Danganronpa Camera")]
     [Tooltip("The parent object containing all your Virtual Cameras (Julian, Harlow, Detective, etc.)")]
     public Transform cameraTargetGroup;
+
+    [Header("Audio")]
+    [Tooltip("Assign an AudioSource here to play per-line sound effects.")]
+    public AudioSource audioSource;
 
     [Header("Settings")]
     [Range(0.01f, 0.1f)]
@@ -39,6 +46,18 @@ public class Talking_Manager : MonoBehaviour
         [TextArea(3, 10)]
         public string sentence;
         public bool isItalic;
+
+        [Tooltip("Optional - Assign a Sprite here to change the background image on this line.")]
+        public Sprite backgroundImage;
+
+        [Tooltip("Optional - plays when this line is displayed.")]
+        public AudioClip soundEffect;
+
+        [Tooltip("Check this if the sound effect should loop continuously across dialogue lines until explicitly stopped or replaced.")]
+        public bool isLoopingSound;
+
+        [Tooltip("Check this if you want to stop any currently playing looping audio on this line.")]
+        public bool stopAudio;
     }
 
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
@@ -72,7 +91,6 @@ public class Talking_Manager : MonoBehaviour
         }
     }
 
-    // Call this from NPCData before starting the sequence
     public void SetCurrentNPC(string name)
     {
         currentInteractingNPC = name;
@@ -120,64 +138,83 @@ public class Talking_Manager : MonoBehaviour
         lineStartTime = Time.time;
         if (nextArrow != null) nextArrow.SetActive(false);
 
-        string speaker = dialogueLines[index].characterName;
+        DialogueLine currentLine = dialogueLines[index];
+        string speaker = currentLine.characterName;
         if (nameDisplay != null) nameDisplay.text = speaker;
 
-        // Switches camera based on speaker name
         SwitchCamera(speaker);
 
+        // --- Background Image Swapping ---
+        if (currentLine.backgroundImage != null && backgroundImage != null)
+        {
+            backgroundImage.sprite = currentLine.backgroundImage;
+        }
+
+        // --- Audio Handling ---
+        if (audioSource != null)
+        {
+            if (currentLine.stopAudio)
+            {
+                audioSource.Stop();
+                audioSource.loop = false;
+            }
+
+            if (currentLine.soundEffect != null)
+            {
+                if (currentLine.isLoopingSound)
+                {
+                    audioSource.Stop();
+                    audioSource.clip = currentLine.soundEffect;
+                    audioSource.loop = true;
+                    audioSource.Play();
+                }
+                else
+                {
+                    if (audioSource.loop)
+                    {
+                        audioSource.Stop();
+                        audioSource.loop = false;
+                    }
+                    audioSource.PlayOneShot(currentLine.soundEffect);
+                }
+            }
+        }
+
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-        typingCoroutine = StartCoroutine(TypeText(dialogueLines[index].sentence, dialogueLines[index].isItalic));
+        typingCoroutine = StartCoroutine(TypeText(currentLine.sentence, currentLine.isItalic));
     }
 
     void SwitchCamera(string characterName)
     {
-        // SAFETY: If you didn't drag the Cameras into the 'Camera Target Group' slot, 
-        // this function stops immediately and won't mess up your other scenes.
-        if (cameraTargetGroup == null)
-        {
-            return;
-        }
+        if (cameraTargetGroup == null) return;
 
         string speaker = characterName.ToUpper().Trim();
 
-        // Reset to wide shot logic if keyword is used
         if (speaker == "WIDE")
         {
             ForceWideShot();
             return;
         }
 
-        // Keep the current camera if the Detective is talking
-        if (speaker == "DETECTIVE")
-        {
-            return;
-        }
-
-        bool foundMatch = false;
+        if (speaker == "DETECTIVE") return;
 
         foreach (Transform cam in cameraTargetGroup)
         {
             CinemachineVirtualCamera vcam = cam.GetComponent<CinemachineVirtualCamera>();
             if (vcam == null) continue;
 
-            // Reset NPC cameras to 10
             vcam.Priority = 10;
-
             string camName = cam.name.ToUpper();
 
-            // Ensure the Wide shot stays as the baseline
             if (camName.Contains("WIDE"))
             {
                 vcam.Priority = 15;
                 continue;
             }
 
-            // Match speaker to camera
             if (speaker.Contains(camName.Replace("CAM_", "")) || camName.Contains(speaker))
             {
                 vcam.Priority = 20;
-                foundMatch = true;
             }
         }
     }
@@ -211,6 +248,8 @@ public class Talking_Manager : MonoBehaviour
 
     private void HandleDialogueEnd()
     {
+        if (audioSource != null) audioSource.Stop();
+
         string lastLine = dialogueLines[index].sentence.Trim();
 
         if (!string.IsNullOrEmpty(triggerSentence) && lastLine == triggerSentence.Trim())
@@ -231,7 +270,13 @@ public class Talking_Manager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        StartCoroutine(LoadCaseFile());
+    }
 
+    IEnumerator LoadCaseFile()
+    {
+        if (uiFader != null) uiFader.FadeOut();
+        yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene(caseFileSceneName);
     }
 
@@ -239,7 +284,6 @@ public class Talking_Manager : MonoBehaviour
     {
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
 
-        // NEW: Reset to Wide Shot when the dialogue ends
         ResetToWideShot();
 
         if (isFirstTimeTalking && mingleTracker != null)
@@ -252,7 +296,6 @@ public class Talking_Manager : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    // Helper function to force the Wide Shot to take priority again
     void ResetToWideShot()
     {
         if (cameraTargetGroup == null) return;
@@ -266,23 +309,12 @@ public class Talking_Manager : MonoBehaviour
 
             if (camName.Contains("WIDE"))
             {
-                vcam.Priority = 25; // Set higher than NPC (20) and previous Wide (15)
+                vcam.Priority = 25;
             }
             else
             {
                 vcam.Priority = 10;
             }
-        }
-
-        IEnumerator LoadCaseFile()
-        {
-            if (uiFader != null)
-                uiFader.FadeOut();
-
-            yield return new WaitForSeconds(0.8f);
-            caseFileSceneName = "Case_File_Scene";
-
-            SceneManager.LoadScene(caseFileSceneName);
         }
     }
 
