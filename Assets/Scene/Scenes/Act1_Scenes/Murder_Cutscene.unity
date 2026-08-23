@@ -49490,6 +49490,134 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 157948214}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &134413146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134413148}
+  - component: {fileID: 134413147}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &134413147
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134413146}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e9967f4e1a1eb174f8644dfb5803c737, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.396
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &134413148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134413146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -57.228764, y: 1.4216108, z: -0.7479429}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &135314652
 GameObject:
   m_ObjectHideFlags: 0
@@ -62267,9 +62395,11 @@ MonoBehaviour:
   dialogueDisplay: {fileID: 1185125705}
   nextArrow: {fileID: 306825173}
   dialoguePanel: {fileID: 586628161}
+  backgroundImage: {fileID: 0}
   uiFader: {fileID: 0}
   mingleTracker: {fileID: 665669472}
   cameraTargetGroup: {fileID: 579205904}
+  audioSource: {fileID: 0}
   typingSpeed: 0.0262
   triggerSentence: "...And I\u2019m going to find out who."
   sceneToLoad: Main_Game
@@ -62279,116 +62409,240 @@ MonoBehaviour:
     sentence: "I didn\u2019t need to be a detective to know someone was dead. I could
       smell the metallic tang of blood in the air."
     isItalic: 1
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DETECTIVE
     sentence: "No\u2026"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: JULIAN VANE
     sentence: "He was\u2014 the lights went out and he just\u2014"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: PENNY STERLING
     sentence: "How could this happen\u2014 nobody touched anything!"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DR. HARLOW
     sentence: "I don\u2019t understand. I was speaking with him only moments before
       the lights went out."
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: IRIS GABLE
     sentence: The alarm went off and then... the lights went off...
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DETECTIVE
     sentence: I was gone for maybe five minutes. Five minutes, and Maximilian Midas,
       the man who just announced he was taking everything and leaving, is dead on
       the floor of his own museum.
     isItalic: 1
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DETECTIVE
     sentence: "One of them did it. And  I\u2019m the only person in this room who
       can prove it."
     isItalic: 1
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DETECTIVE
     sentence: "\u2026Nobody leaves this room."
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: JULIAN VANE
     sentence: 'Excuse me?
 
 '
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DETECTIVE
     sentence: 'Whoever did this is still here. Which means walking out that door
       is not an option.
 
 '
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: PENNY STERLING
     sentence: "Okay. We should call someone... Police, ambulance... something\u2014"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 
     sentence: 'Penny digs into her phone, tapping rapidly.
 
 '
     isItalic: 1
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: PENNY STERLING
     sentence: '...No signal?
 
 '
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DR. HARLOW
     sentence: "That\u2019s not unusual in this building. The reception is\u2026 unreliable
       at best.\n"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: IRIS GABLE
     sentence: 'So what, we just wait here with a dead body?
 
 '
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'IRIS GABLE '
     sentence: "We\u2019re locked in with no signal, a dead man, and five people who
       just found out they were fired.\n"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'DETECTIVE '
     sentence: "We\u2019re locked in with five people who all had a reason to hate
       him."
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'DR. HARLOW '
     sentence: "You speak as though you\u2019ve already decided this was murder!"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: DETECTIVE
     sentence: "I haven\u2019t decided anything. I\u2019m a Detective, it's my job."
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'JULIAN VANE '
     sentence: '!!'
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: PENNY STERLING
     sentence: '!!'
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: IRIS GABLE
     sentence: '!!'
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'DR. HARLOW '
     sentence: '!!'
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: JULIAN VANE
     sentence: "Of course he invited a detective. That\u2019s very on brand for Max.
       Maybe he even wanted this!"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'IRIS GABLE '
     sentence: "If he did\u2026 then we\u2019re already inside his game."
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'DR. HARLOW '
     sentence: Then I assume you intend to determine what happened here.
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: PENNY STERLING
     sentence: Yes. Please. Just figure it out.
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'DETECTIVE '
     sentence: "Here\u2019s what\u2019s going to happen. No one leaves. No one touches
       anything. And no one lies to me."
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'DETECTIVE '
     sentence: "One of you turned this gala into a crime scene\u2026"
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
   - characterName: 'DETECTIVE '
     sentence: "...And I\u2019m going to find out who."
     isItalic: 0
+    backgroundImage: {fileID: 0}
+    soundEffect: {fileID: 0}
+    isLoopingSound: 0
+    stopAudio: 0
 --- !u!4 &950092906
 Transform:
   m_ObjectHideFlags: 0

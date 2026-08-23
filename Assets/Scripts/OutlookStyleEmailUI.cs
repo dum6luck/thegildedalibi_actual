@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,8 @@ using TMPro;
  * - Call AddEmail() at runtime (e.g. from your clue/dialogue system)
  *   to push a new email into the list.
  * - Tweak the Theme Colors section in the Inspector to restyle it.
+ * - Assign a clip to `loginSound` in the Inspector to hear a chime
+ *   when the "signing in" screen plays.
  *
  * Requires TextMeshPro (TMP Essential Resources imported - you already
  * have this since your other scripts use TextMeshProUGUI).
@@ -56,6 +59,19 @@ public class OutlookStyleEmailUI : MonoBehaviour
     [Tooltip("Scene to load when the player clicks the button to leave the email screen.")]
     public string mainGameSceneName = "Main_Game";
 
+    [Header("Login Sequence")]
+    [Tooltip("Name shown on the fake Windows-style sign-in screen.")]
+    public string userDisplayName = "Detective";
+    [Tooltip("Sound played when the sign-in screen appears.")]
+    public AudioClip loginSound;
+    [Range(0f, 1f)] public float loginSoundVolume = 0.8f;
+    [Tooltip("How long the sign-in screen stays up before fading out.")]
+    public float loginScreenDuration = 2.2f;
+    [Tooltip("How long the fade-out to the mail client takes.")]
+    public float loginFadeDuration = 0.6f;
+    [Tooltip("Degrees per second the loading spinner rotates.")]
+    public float spinnerSpeed = 220f;
+
     [Header("Theme Colors")]
     public Color colorTopBar = Color.white;
     public Color colorSidebar = new Color32(0xF3, 0xF2, 0xF1, 0xFF);
@@ -77,8 +93,16 @@ public class OutlookStyleEmailUI : MonoBehaviour
     private readonly List<TextMeshProUGUI> emailItemSubjectTexts = new List<TextMeshProUGUI>();
     private int selectedIndex = -1;
 
+    // --- Login sequence state ---
+    private CanvasGroup loginOverlayCanvasGroup;
+    private RectTransform spinnerRoot;
+    private AudioSource audioSource;
+    private bool loginSpinnerActive;
+
     private void Start()
     {
+        UnlockCursor();
+
         if (emails.Count == 0)
         {
             PopulateSampleEmails();
@@ -90,6 +114,24 @@ public class OutlookStyleEmailUI : MonoBehaviour
         {
             SelectEmail(0);
         }
+
+        StartCoroutine(PlayLoginSequence());
+    }
+
+    private void Update()
+    {
+        if (loginSpinnerActive && spinnerRoot != null)
+        {
+            spinnerRoot.Rotate(0f, 0f, -spinnerSpeed * Time.deltaTime);
+        }
+    }
+
+    // Makes sure the OS cursor is visible and free to move (not locked to
+    // the game view), so the player can actually click around the UI.
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void PopulateSampleEmails()
@@ -385,6 +427,9 @@ public class OutlookStyleEmailUI : MonoBehaviour
         bottomHLG.childForceExpandHeight = true;
 
         CreateQuitButton(bottomBar.transform);
+
+        // --- Login / "signing in" overlay (built last so it renders on top) ---
+        BuildLoginOverlay(canvasGO.transform);
     }
 
     private void CreateQuitButton(Transform parent)
@@ -487,6 +532,178 @@ public class OutlookStyleEmailUI : MonoBehaviour
         readingSenderText.text = data.senderName;
         readingTimestampText.text = data.timestamp;
         readingBodyText.text = data.body;
+    }
+
+    // --- Login / sign-in overlay ---
+
+    // Builds a full-screen "Signing in..." panel (avatar circle, welcome text,
+    // and a rotating dot spinner) that sits above the mail UI on a separate
+    // top-level child of the canvas so it can fade out independently.
+    private void BuildLoginOverlay(Transform canvasParent)
+    {
+        GameObject overlay = new GameObject("LoginOverlay", typeof(RectTransform));
+        overlay.transform.SetParent(canvasParent, false);
+        RectTransform overlayRT = overlay.GetComponent<RectTransform>();
+        overlayRT.anchorMin = Vector2.zero;
+        overlayRT.anchorMax = Vector2.one;
+        overlayRT.offsetMin = Vector2.zero;
+        overlayRT.offsetMax = Vector2.zero;
+
+        Image bg = overlay.AddComponent<Image>();
+        bg.color = colorAccent;
+
+        loginOverlayCanvasGroup = overlay.AddComponent<CanvasGroup>();
+        loginOverlayCanvasGroup.alpha = 1f;
+        loginOverlayCanvasGroup.blocksRaycasts = true;
+        loginOverlayCanvasGroup.interactable = false;
+
+        GameObject center = new GameObject("Center", typeof(RectTransform));
+        center.transform.SetParent(overlay.transform, false);
+        RectTransform centerRT = center.GetComponent<RectTransform>();
+        centerRT.anchorMin = new Vector2(0.5f, 0.5f);
+        centerRT.anchorMax = new Vector2(0.5f, 0.5f);
+        centerRT.pivot = new Vector2(0.5f, 0.5f);
+        centerRT.sizeDelta = new Vector2(420, 260);
+        centerRT.anchoredPosition = Vector2.zero;
+        VerticalLayoutGroup centerVLG = center.AddComponent<VerticalLayoutGroup>();
+        centerVLG.childAlignment = TextAnchor.MiddleCenter;
+        centerVLG.spacing = 16;
+        centerVLG.childForceExpandWidth = false;
+        centerVLG.childForceExpandHeight = false;
+        centerVLG.childControlWidth = false;
+        centerVLG.childControlHeight = false;
+
+        // Avatar circle with initials
+        GameObject avatarGO = new GameObject("Avatar", typeof(RectTransform));
+        avatarGO.transform.SetParent(center.transform, false);
+        RectTransform avatarRT = avatarGO.GetComponent<RectTransform>();
+        avatarRT.sizeDelta = new Vector2(96, 96);
+        Image avatarImg = avatarGO.AddComponent<Image>();
+        avatarImg.sprite = CreateCircleSprite(128, Color.white);
+        avatarImg.color = new Color(1f, 1f, 1f, 0.95f);
+
+        var initials = CreateText("AvatarInitials", avatarGO.transform, GetInitials(userDisplayName), 32, colorAccent, TextAlignmentOptions.Center, FontStyles.Bold);
+        RectTransform initRT = initials.GetComponent<RectTransform>();
+        initRT.anchorMin = Vector2.zero;
+        initRT.anchorMax = Vector2.one;
+        initRT.offsetMin = Vector2.zero;
+        initRT.offsetMax = Vector2.zero;
+
+        var welcomeText = CreateText("WelcomeText", center.transform, "Welcome, " + userDisplayName, 24, Color.white, TextAlignmentOptions.Center, FontStyles.Bold);
+        welcomeText.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 34);
+
+        var signingInText = CreateText("SigningInText", center.transform, "Signing in", 15, new Color(1f, 1f, 1f, 0.85f), TextAlignmentOptions.Center, FontStyles.Normal);
+        signingInText.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 22);
+
+        // Rotating dot spinner
+        GameObject spinnerGO = new GameObject("Spinner", typeof(RectTransform));
+        spinnerGO.transform.SetParent(center.transform, false);
+        spinnerRoot = spinnerGO.GetComponent<RectTransform>();
+        spinnerRoot.sizeDelta = new Vector2(46, 46);
+
+        int dotCount = 8;
+        float radius = 18f;
+        Sprite dotSprite = CreateCircleSprite(20, Color.white);
+        for (int i = 0; i < dotCount; i++)
+        {
+            GameObject dotGO = new GameObject("Dot" + i, typeof(RectTransform));
+            dotGO.transform.SetParent(spinnerRoot, false);
+            RectTransform dotRT = dotGO.GetComponent<RectTransform>();
+            float angle = (i / (float)dotCount) * Mathf.PI * 2f;
+            dotRT.anchoredPosition = new Vector2(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius);
+            dotRT.sizeDelta = new Vector2(7, 7);
+            Image dotImg = dotGO.AddComponent<Image>();
+            dotImg.sprite = dotSprite;
+            float alpha = 0.2f + 0.8f * (i / (float)(dotCount - 1)); // trailing fade, brightest at the "head"
+            dotImg.color = new Color(1f, 1f, 1f, alpha);
+        }
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f;
+    }
+
+    // Plays the login chime, holds the sign-in screen for a moment while the
+    // spinner turns, then fades it out to reveal the mail client underneath.
+    private IEnumerator PlayLoginSequence()
+    {
+        loginSpinnerActive = true;
+
+        if (loginOverlayCanvasGroup != null)
+        {
+            loginOverlayCanvasGroup.alpha = 1f;
+            loginOverlayCanvasGroup.blocksRaycasts = true;
+        }
+
+        if (audioSource != null && loginSound != null)
+        {
+            audioSource.PlayOneShot(loginSound, loginSoundVolume);
+        }
+
+        float elapsed = 0f;
+        while (elapsed < loginScreenDuration)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        float fadeElapsed = 0f;
+        while (fadeElapsed < loginFadeDuration)
+        {
+            fadeElapsed += Time.deltaTime;
+            if (loginOverlayCanvasGroup != null)
+            {
+                loginOverlayCanvasGroup.alpha = 1f - Mathf.Clamp01(fadeElapsed / loginFadeDuration);
+            }
+            yield return null;
+        }
+
+        loginSpinnerActive = false;
+
+        if (loginOverlayCanvasGroup != null)
+        {
+            loginOverlayCanvasGroup.alpha = 0f;
+            loginOverlayCanvasGroup.blocksRaycasts = false;
+            loginOverlayCanvasGroup.gameObject.SetActive(false);
+        }
+    }
+
+    private string GetInitials(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) return "?";
+        string[] parts = name.Split(new[] { ' ' }, System.StringSplitOptions.RemoveEmptyEntries);
+        if (parts.Length == 0) return "?";
+        if (parts.Length == 1) return parts[0].Substring(0, 1).ToUpper();
+        return (parts[0].Substring(0, 1) + parts[parts.Length - 1].Substring(0, 1)).ToUpper();
+    }
+
+    // Procedurally draws a solid circle into a texture and wraps it as a
+    // Sprite, so avatar/spinner dots don't need any imported art assets.
+    private Sprite CreateCircleSprite(int diameter, Color color)
+    {
+        Texture2D tex = new Texture2D(diameter, diameter, TextureFormat.ARGB32, false);
+        tex.filterMode = FilterMode.Bilinear;
+        Vector2 center = new Vector2(diameter / 2f, diameter / 2f);
+        float radius = diameter / 2f;
+
+        for (int y = 0; y < diameter; y++)
+        {
+            for (int x = 0; x < diameter; x++)
+            {
+                float dist = Vector2.Distance(new Vector2(x + 0.5f, y + 0.5f), center);
+                if (dist <= radius)
+                {
+                    tex.SetPixel(x, y, color);
+                }
+                else
+                {
+                    tex.SetPixel(x, y, new Color(color.r, color.g, color.b, 0f));
+                }
+            }
+        }
+
+        tex.Apply();
+        return Sprite.Create(tex, new Rect(0, 0, diameter, diameter), new Vector2(0.5f, 0.5f));
     }
 
     // --- UI building helpers ---

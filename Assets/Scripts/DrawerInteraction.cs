@@ -8,6 +8,9 @@ public class DrawerInteraction : MonoBehaviour
     [SerializeField] private string requiredItemID = "Gem";
     [SerializeField] private bool consumeItemOnUse = false;
 
+    [Header("Reward Item")]
+    [SerializeField] private string itemToRewardID = "USB"; // Added item ID reward
+
     [Header("Slide Settings")]
     [Tooltip("Local distance to slide (e.g., Z = 0.5 moves forward half a meter).")]
     [SerializeField] private Vector3 openOffset = new Vector3(0f, 0f, 0.5f);
@@ -41,7 +44,6 @@ public class DrawerInteraction : MonoBehaviour
             cameraLensSystem = Camera.main.GetComponent<LensSystem>();
         }
 
-        // Disable automatic E-key listening on Interactable_Clue so it won't fire early
         if (attachedClue != null)
         {
             attachedClue.enabled = false;
@@ -81,11 +83,9 @@ public class DrawerInteraction : MonoBehaviour
             dialogueManager.Show_Dialogue("DETECTIVE", lockedMessage);
         }
 
-        // Wait 2 frames so the E keypress used to trigger interaction isn't registered as a skip click
         yield return null;
         yield return null;
 
-        // Loop while Dialogue_Manager reports dialogue is ongoing or waiting for user advance
         while (dialogueManager != null && dialogueManager.Is_Dialogue_Ongoing())
         {
             if (Input.GetMouseButtonDown(0))
@@ -111,7 +111,6 @@ public class DrawerInteraction : MonoBehaviour
         yield return null;
         yield return null;
 
-        // Wait until player advances and finishes dialogue
         bool dialogueFinished = false;
         while (!dialogueFinished)
         {
@@ -132,16 +131,19 @@ public class DrawerInteraction : MonoBehaviour
 
         isInteracting = false;
 
-        // Slide drawer open after dialogue closes
         yield return StartCoroutine(OpenDrawerCoroutine());
 
-        // Consume item
         if (consumeItemOnUse && UserInventory.Instance != null)
         {
             UserInventory.Instance.RemoveItem(requiredItemID);
         }
 
-        // Collect clue (this will show the clue's own collection dialogue via Interactable_Clue.Collect())
+        // Add USB to inventory
+        if (!string.IsNullOrEmpty(itemToRewardID) && UserInventory.Instance != null)
+        {
+            UserInventory.Instance.AddItem(itemToRewardID);
+        }
+
         if (attachedClue != null)
         {
             attachedClue.enabled = true;

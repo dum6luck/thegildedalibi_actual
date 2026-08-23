@@ -29,4 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Scenes/CircuitMinigame.unity
     guid: eab1b7d0f073b65439a9e7de26de013e
+  - enabled: 1
+    path: Assets/Scene/Scenes/EmailScene.unity
+    guid: 259fa346381255343a0bface5eb29446
+  - enabled: 1
+    path: Assets/Scene/Scenes/Act1_Scenes/Accusationscene.unity
+    guid: f3394338179953342bdd0f9ba155c169
+  - enabled: 1
+    path: Assets/Scene/Scenes/EndingScene.unity
+    guid: e966854903ae94441b0e7709cfded46b
+  - enabled: 1
+    path: Assets/Scene/Scenes/GuiltyScene.unity
+    guid: 591ff706d27576f41b5c91e4f222aa9b
   m_configObjects: {}
