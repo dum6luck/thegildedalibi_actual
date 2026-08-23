@@ -110266,6 +110266,8 @@ MonoBehaviour:
   bounce_speed: 5
   bounce_amplitude: 10
   transitionDuration: 0.15
+  activeScale: 1.25
+  inactiveScale: 1
 --- !u!114 &1829844586
 MonoBehaviour:
   m_ObjectHideFlags: 0

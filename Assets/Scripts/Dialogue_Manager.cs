@@ -42,6 +42,8 @@ public class Dialogue_Manager : MonoBehaviour
 
     [Header("Cutscene Settings")]
     public float transitionDuration = 0.25f;
+    public float activeScale = 1.25f;
+    public float inactiveScale = 1f;
 
     // Cutscene Frame Tracking
     private List<CutsceneFrame> current_cutscene_frames = new List<CutsceneFrame>();
@@ -229,18 +231,42 @@ public class Dialogue_Manager : MonoBehaviour
         // Highlight active speaker and dim the inactive one
         if (frame.activeSpeaker == CutsceneFrame.ActiveSpeaker.Left)
         {
-            if (left_character_image != null) left_character_image.color = active_color;
-            if (right_character_image != null) right_character_image.color = inactive_color;
+            if (left_character_image != null)
+            {
+                left_character_image.color = active_color;
+                leftChrCoroutine = StartCoroutine(set_active_chr(activeScale, left_character_image));
+            }
+            if (right_character_image != null)
+            {
+                right_character_image.color = inactive_color;
+                rightChrCoroutine = StartCoroutine(set_active_chr(inactiveScale, right_character_image));
+            }
         }
         else if (frame.activeSpeaker == CutsceneFrame.ActiveSpeaker.Right)
         {
-            if (left_character_image != null) left_character_image.color = inactive_color;
-            if (right_character_image != null) right_character_image.color = active_color;
+            if (left_character_image != null)
+            {
+                left_character_image.color = inactive_color;
+                leftChrCoroutine = StartCoroutine(set_active_chr(inactiveScale, left_character_image));
+            }
+            if (right_character_image != null)
+            {
+                right_character_image.color = active_color;
+                rightChrCoroutine = StartCoroutine(set_active_chr(activeScale, right_character_image));
+            }
         }
         else
         {
-            if (left_character_image != null) left_character_image.color = active_color;
-            if (right_character_image != null) right_character_image.color = active_color;
+            if (left_character_image != null)
+            {
+                left_character_image.color = active_color;
+                leftChrCoroutine = StartCoroutine(set_active_chr(activeScale, left_character_image));
+            }
+            if (right_character_image != null)
+            {
+                right_character_image.color = active_color;
+                rightChrCoroutine = StartCoroutine(set_active_chr(activeScale, right_character_image));
+            }
         }
 
         string speakerName = "";
@@ -333,6 +359,25 @@ public class Dialogue_Manager : MonoBehaviour
         }
 
         target_image.transform.localPosition = end_pos;
+    }
+
+    public IEnumerator set_active_chr(float scale_factor, Image target_image)
+    {
+        Vector3 start_scale = target_image.transform.localScale;
+        Vector3 target_scale = new Vector3(scale_factor, scale_factor, start_scale.z);
+        float elapsed = 0f;
+
+        while (elapsed < transitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.SmoothStep(0f, 1f, elapsed / transitionDuration);
+
+            target_image.transform.localScale = Vector3.Lerp(start_scale, target_scale, t);
+
+            yield return null;
+        }
+
+        target_image.transform.localScale = target_scale;
     }
 
     #endregion
