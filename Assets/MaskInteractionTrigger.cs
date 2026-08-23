@@ -5,6 +5,9 @@ public class MaskInteractionTrigger : MonoBehaviour
     [Header("Gem Reference")]
     [SerializeField] private GameObject gemObject;
 
+    [Header("Inventory Settings")]
+    [SerializeField] private string itemID = "Gem";
+
     [Header("Interaction Settings")]
     [SerializeField] private bool hideGemOnInteract = true;
     [SerializeField] private bool triggerOnMouseClick = true;
@@ -15,15 +18,23 @@ public class MaskInteractionTrigger : MonoBehaviour
     /// </summary>
     public void OnMaskInteracted()
     {
+        // Add gem to UserInventory
+        if (UserInventory.Instance != null)
+        {
+            UserInventory.Instance.AddItem(itemID);
+        }
+        else
+        {
+            Debug.LogWarning("UserInventory Instance not found in scene!");
+        }
+
+        // Hide gem object in scene
         if (hideGemOnInteract && gemObject != null)
         {
-            gemObject.SetActive(false); // Unchecks the gem's active checkbox in the Inspector
+            gemObject.SetActive(false);
         }
     }
 
-    /// <summary>
-    /// Automatically handles mouse clicks on the Mask collider (if using 3D raycasts).
-    /// </summary>
     private void OnMouseDown()
     {
         if (triggerOnMouseClick)
@@ -32,9 +43,6 @@ public class MaskInteractionTrigger : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Optional: Automatically triggers if player steps into a trigger collider around the mask.
-    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

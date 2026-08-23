@@ -79,8 +79,13 @@ public class Interactable_Clue : MonoBehaviour
         }
     }
 
-    private void Collect()
+    /// <summary>
+    /// Collects the clue and logs it to the Case File UI. Public so UnityEvents can trigger it.
+    /// </summary>
+    public void Collect()
     {
+        if (is_collected) return;
+
         is_collected = true;
 
         if (ui_manager != null && clue_info != null)
