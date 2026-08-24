@@ -13,8 +13,9 @@ public class ObjectInteractor : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // Don't interact if the Keypad is already open
-            if (keypadSystem.keypadUI.activeSelf) return;
+            // Safely check if Keypad is open without throwing NullReferenceException
+            if (keypadSystem != null && keypadSystem.keypadUI != null && keypadSystem.keypadUI.activeSelf)
+                return;
 
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
@@ -22,7 +23,7 @@ public class ObjectInteractor : MonoBehaviour
             if (Physics.Raycast(ray, out hit, interactDistance))
             {
                 // OPTION A: Keypad Interaction
-                if (hit.collider.CompareTag("Interactable"))
+                if (hit.collider.CompareTag("Interactable") && keypadSystem != null)
                 {
                     keypadSystem.ToggleKeypad(true);
                 }
@@ -35,6 +36,13 @@ public class ObjectInteractor : MonoBehaviour
                     {
                         label.ShowDescription();
                     }
+                }
+
+                // OPTION C: Drawer Interaction
+                DrawerInteraction drawer = hit.collider.GetComponent<DrawerInteraction>();
+                if (drawer != null)
+                {
+                    drawer.InteractWithDrawer();
                 }
             }
         }
