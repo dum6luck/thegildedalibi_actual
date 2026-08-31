@@ -47,6 +47,7 @@ public class Dialogue_Manager : MonoBehaviour
 
     // Cutscene Frame Tracking
     private List<CutsceneFrame> current_cutscene_frames = new List<CutsceneFrame>();
+    private List<DialogueFrame> current_dialogue_frames = new List<DialogueFrame>();
     private bool is_cutscene_mode = false;
 
     // Standard Dialogue Tracking
@@ -63,6 +64,7 @@ public class Dialogue_Manager : MonoBehaviour
     private Vector3 arrow_start_pos;
     private Vector3 left_chr_start_pos;
     private Vector3 right_chr_start_pos;
+    private SpriteRenderer overworld_chr_sprite;
     private Coroutine typing_coroutine;
     private Coroutine leftChrCoroutine;
     private Coroutine rightChrCoroutine;
@@ -135,6 +137,22 @@ public class Dialogue_Manager : MonoBehaviour
                         Hide_Dialogue();
                     }
                 }
+                else if (overworld_chr_sprite != null)
+                {
+                    if (line_index < current_dialogue_frames.Count)
+                    {
+                        Display_Dialogue_Frame(npcs[0], line_index, can_open_case_file);
+                    }
+                    else
+                    {
+                        if (can_open_case_file && case_canvas != null)
+                        {
+                            case_canvas.Open_Case_File(true);
+                            can_open_case_file = false;
+                        }
+                        Hide_Dialogue();
+                    }
+                }
                 else
                 {
                     if (line_index < lines.Count)
@@ -198,6 +216,38 @@ public class Dialogue_Manager : MonoBehaviour
         lines = text_list;
         npcs = characters;
         Show_Dialogue(characters[0].name, lines[0], case_buttons);
+    }
+
+    #endregion
+
+    #region Overworld Dialogue Methods
+
+    public void Display_Dialogue(Character_Data npc, OverworldDialogueData dialogue, SpriteRenderer chr_sprite, bool case_buttons=false)
+    {
+        if (dialogue == null || dialogue.frames == null || dialogue.frames.Count == 0) return;
+
+        overworld_chr_sprite = chr_sprite;
+        current_dialogue_frames = dialogue.frames;
+        line_index = 0;
+
+        Display_Dialogue_Frame(npc, line_index, case_buttons);
+    }
+
+    private void Display_Dialogue_Frame(Character_Data npc, int index, bool case_buttons=false)
+    {
+        DialogueFrame frame = current_dialogue_frames[index];
+
+        string speakerName = "";
+        if (npc != null) {
+            speakerName = npc.name;
+            overworld_chr_sprite.sprite = npc.Get_Overworld_Sprite(frame.emotion);
+            Show_Dialogue(npc, frame.dialogueLine, case_buttons);
+        }
+        else
+        {
+            // Trigger typewriter effect with speaker name and line
+            Show_Dialogue(speakerName, frame.dialogueLine, case_buttons);
+        }
     }
 
     #endregion
@@ -424,6 +474,7 @@ public class Dialogue_Manager : MonoBehaviour
         can_close = false;
         is_cutscene_mode = false;
         npcs = null;
+        overworld_chr_sprite = null;
 
         if (floating_arrow != null) floating_arrow.SetActive(false);
 

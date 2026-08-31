@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /* * SUMMARY:
  * This script handles NPC dialogue and clues.
@@ -10,7 +11,7 @@ using UnityEngine;
 public class NPC_For_Clues : MonoBehaviour
 {
     public Character_Data npc;
-    public string dialogue = "[Placeholder] You found anything yet?";
+    public OverworldDialogueData dialogue;
 
     [Header("Specific Mask Interaction Setup")]
     public string maskClueID = "Mask"; // Matches the 'clue_title' in Case_File_UI
@@ -20,16 +21,18 @@ public class NPC_For_Clues : MonoBehaviour
 
     [Header("Dictionary of Clue Dialogues")]
     public List<string> clue_keys = new List<string>();
-    public List<string> dialogue_values = new List<string>();
+    public List<OverworldDialogueData> dialogue_values = new List<OverworldDialogueData>();
 
     private bool is_player_nearby = false;
     private bool is_dialogue_ongoing = false;
-    Dictionary<string, string> dialogue_dict = new Dictionary<string, string>();
+    private SpriteRenderer sprite;
+    Dictionary<string, OverworldDialogueData> dialogue_dict = new Dictionary<string, OverworldDialogueData>();
 
     private NPCWander wanderScript;
 
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         wanderScript = GetComponent<NPCWander>();
         if (wanderScript == null)
         {
@@ -98,7 +101,14 @@ public class NPC_For_Clues : MonoBehaviour
             else
             {
                 // Defaults directly to "You found anything yet?" if Blacklight or no lens is active
-                dialogue_manager.Show_Dialogue(npc, dialogue, true);
+                if (dialogue != null)
+                {
+                    dialogue_manager.Display_Dialogue(npc, dialogue, sprite, true);
+                }
+                else
+                {
+                    dialogue_manager.Show_Dialogue(npc, "[Placeholder] You found anything yet?", true);
+                }
             }
         }
     }
@@ -133,9 +143,9 @@ public class NPC_For_Clues : MonoBehaviour
 
         if (dialogue_manager != null)
         {
-            if (dialogue_dict.ContainsKey(clue_name))
+            if (dialogue_dict.ContainsKey(clue_name) && dialogue_dict[clue_name].frames.Count > 0)
             {
-                dialogue_manager.Show_Dialogue(npc, dialogue_dict[clue_name], true);
+                dialogue_manager.Display_Dialogue(npc, dialogue_dict[clue_name], sprite, true);
             }
             else
             {

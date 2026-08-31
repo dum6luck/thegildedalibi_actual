@@ -31864,7 +31864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
-  dialogue: You want to talk?
+  dialogue: {fileID: 11400000, guid: 8e1040d4180bc43f4a22fbf01ef0c9a6, type: 2}
   maskClueID: Mask
   maskInvestigatedResponse: You didn't find anything on the mask? I thought there
     was something...
@@ -31875,16 +31875,15 @@ MonoBehaviour:
   - Random Code
   - Glove Fiber
   - Fake Dagger
+  - Mask
   dialogue_values:
-  - The wounds are clustered together. That usually suggests the attacker was focused
-    on one target area rather than striking at random.
-  - People can remain surprisingly active after severe injuries. It's possible he
-    tried to drag himself to get help.
-  - That company has manufactured many wooden objects for our musuem.
-  - It seems to be a cipher. If we decode it, we may learn why it was hidden in the
-    first place.
-  - Interesting. The display piece is a replica. Which means the real dagger was
-    removed before tonight, not during the panic after the lights went out.
+  - {fileID: 11400000, guid: 9cf148b417554403a97c0b1867c1b136, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 49ba9a1f9453b461d879a54c465a794e, type: 2}
+  - {fileID: 11400000, guid: b722e71992df34e00b4099258d6e10de, type: 2}
 --- !u!195 &853506138
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -32222,7 +32221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
-  dialogue: Need something?
+  dialogue: {fileID: 11400000, guid: 50e6d96fb2d40414684ac6ec08390927, type: 2}
   maskClueID: Mask
   maskInvestigatedResponse: You didn't find anything on the mask? I thought there
     was something...
@@ -32233,17 +32232,15 @@ MonoBehaviour:
   - Random Code
   - Glove Fiber
   - Fake Dagger
+  - Mask
   dialogue_values:
-  - "That\u2019s\u2026 a lot of force behind it. It doesn\u2019t look like something
-    that happened quickly."
-  - "So he moved after he was hurt. That\u2019s not normal."
-  - "I don\u2019t recognize the name. It sounds like a supplier or contractor, maybe?"
-  - It looks like gibberish. Just ignore it.
-  - "A cipher\u2026 of course there\u2019s a cipher. Why would it be on there in
-    the first place?"
-  - "\u2026That looks like a thick hair. It could be from a coat collar, or something
-    like that."
-  - It's a replica? How?
+  - {fileID: 11400000, guid: 01f9b41162adf4f1a85e8e781d46c355, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 459abb734bc3a4e85b5c2deee179b007, type: 2}
+  - {fileID: 11400000, guid: 980dd1d6da3494c87a1aee5685f4d5cf, type: 2}
 --- !u!195 &867229025
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -38023,7 +38020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
-  dialogue: Um... You found anything yet?
+  dialogue: {fileID: 11400000, guid: a01e1d0854720480ebc7c0ca4b376867, type: 2}
   maskClueID: Mask
   maskInvestigatedResponse: You didn't find anything on the mask? I thought there
     was something...
@@ -38034,14 +38031,15 @@ MonoBehaviour:
   - Random Code
   - Glove Fiber
   - Fake Dagger
+  - Mask
   dialogue_values:
-  - Ergh... It's making me feel queasy. Who would do something like that?
-  - The trail starts somewhere else. Was he not attacked where we found him?
-  - ...I've seen that name before. I just can't remember where...
-  - Hmm... It looks random at first. But someone took the time to carve that into
-    the wood.
-  - It's small but really bright. It must've fallen off something.
-  - Y-You're saying that the dagger is a fake? So what is the real murder weapon?
+  - {fileID: 11400000, guid: 4743cbf4e942c4d3cabda4bf53ab0edd, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 0f959ab8ae5d745daab446c0538519c4, type: 2}
+  - {fileID: 11400000, guid: f3454ebf4c83146a19167e7b4da0c04f, type: 2}
 --- !u!195 &1082141160
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -163368,7 +163366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
-  dialogue: What's up?
+  dialogue: {fileID: 11400000, guid: edad48797f030431dbc633a50cf6b22a, type: 2}
   maskClueID: Mask
   maskInvestigatedResponse: You didn't find anything on the mask? I thought there
     was something...
@@ -163379,16 +163377,15 @@ MonoBehaviour:
   - Random Code
   - Glove Fiber
   - Fake Dagger
+  - Mask
   dialogue_values:
-  - Those wounds are horrible. I don't know how anyone could do that to another person.
-    One stab would've been enough, wouldn't it?
-  - So he didn't die where we found him? Great. Somehow this keeps getting worse.
-  - Never heard of them. Though Max collected enough weird junk that it could mean
-    absolutely anything.
-  - Even from beyond the grave, he's making everyone solve riddles. Annoying.
-  - It's just a tiny thread. You really think you can really solve crimes with stuff
-    like that?
-  - You're kidding. So we've been staring at a fake knife this entire time?
+  - {fileID: 11400000, guid: 2e2c51b0371ff4e99b10ee57772430f6, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 6f8f1105edcb041baa43cb55b30e574d, type: 2}
+  - {fileID: 11400000, guid: f27a1a4e9dcd74d069d891a0452d3e65, type: 2}
 --- !u!195 &1957190229
 NavMeshAgent:
   m_ObjectHideFlags: 0
