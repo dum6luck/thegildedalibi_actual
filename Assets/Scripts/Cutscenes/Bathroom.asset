@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daceb89978d8e45c4b9afdb4dcc4c1aa, type: 3}
+  m_Name: Bathroom
+  m_EditorClassIdentifier: 
+  frames:
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: One bathroom break. That's all I need. Two minutes to splash some
+      water on my face and figure out what's actually bothering me about tonight.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: I need a cigarette.
+  - emotion: 
+    speaker: {fileID: 0}
+    isItalic: 1
+    dialogueLine: You light a cigarette and inhale the smoke a few times.
+  - emotion: 
+    speaker: {fileID: 0}
+    isItalic: 1
+    dialogueLine: Something bothers you as you smoke, there was just something about
+      the way Max talked tonight.
+  - emotion: 
+    speaker: {fileID: 0}
+    isItalic: 1
+    dialogueLine: It felt off.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: '!?'
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: Ugh, so loud. Probably sensed the smoke.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: "What the\u2026 great."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: First he fires the staff, then he stops paying the electric bill.
+  - emotion: 
+    speaker: {fileID: 0}
+    isItalic: 1
+    dialogueLine: You decide to stay put until the lights turn on.
+  - emotion: 
+    speaker: {fileID: 0}
+    isItalic: 1
+    dialogueLine: But after they do, you hear something.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: Wha?!
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: Wha?!

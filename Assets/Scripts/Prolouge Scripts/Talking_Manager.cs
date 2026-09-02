@@ -12,6 +12,8 @@ public class Talking_Manager : MonoBehaviour
     public TextMeshProUGUI dialogueDisplay;
     public GameObject nextArrow;
     public GameObject dialoguePanel;
+    public AudioSource audioSource;
+    public List<AudioClip> default_voice_samples;
 
     [Header("Danganronpa Transition")]
     public UIFader uiFader;
@@ -41,12 +43,13 @@ public class Talking_Manager : MonoBehaviour
         public bool isItalic;
     }
 
-    public List<DialogueLine> dialogueLines = new List<DialogueLine>();
+    public OverworldCutsceneData dialogueLines;
     private int index = 0;
     private Coroutine typingCoroutine;
     private bool isTyping = false;
     private bool isFirstTimeTalking = false;
-    private string currentInteractingNPC;
+    private Character_Data currentInteractingNPC;
+    private SpriteRenderer currentInteractingSprite;
 
     private float lineStartTime;
     private float lastInputTime;
@@ -73,9 +76,10 @@ public class Talking_Manager : MonoBehaviour
     }
 
     // Call this from NPCData before starting the sequence
-    public void SetCurrentNPC(string name)
+    public void SetCurrentNPC(Character_Data npc, SpriteRenderer sprite)
     {
-        currentInteractingNPC = name;
+        currentInteractingNPC = npc;
+        currentInteractingSprite = sprite;
     }
 
     public void StartDialogueSequence(bool isFirstTime)
@@ -99,12 +103,12 @@ public class Talking_Manager : MonoBehaviour
         {
             if (typingCoroutine != null) StopCoroutine(typingCoroutine);
             isTyping = false;
-            dialogueDisplay.text = FormatText(dialogueLines[index].sentence, dialogueLines[index].isItalic);
+            dialogueDisplay.text = FormatText(dialogueLines.frames[index].dialogueLine, dialogueLines.frames[index].isItalic);
             if (nextArrow != null) nextArrow.SetActive(true);
             return;
         }
 
-        if (index < dialogueLines.Count - 1)
+        if (index < dialogueLines.frames.Count - 1)
         {
             index++;
             DisplayLine();
@@ -120,17 +124,20 @@ public class Talking_Manager : MonoBehaviour
         lineStartTime = Time.time;
         if (nextArrow != null) nextArrow.SetActive(false);
 
-        string speaker = dialogueLines[index].characterName;
+        Character_Data npc = dialogueLines.frames[index].speaker;
+        string speaker = npc == null ? "" : npc.name;
         if (nameDisplay != null) nameDisplay.text = speaker;
 
+        if (currentInteractingSprite != null && currentInteractingNPC != null) currentInteractingSprite.sprite = currentInteractingNPC.Get_Overworld_Sprite(dialogueLines.frames[index].emotion);
+
         // Switches camera based on speaker name
-        SwitchCamera(speaker);
+        SwitchCamera(npc);
 
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-        typingCoroutine = StartCoroutine(TypeText(dialogueLines[index].sentence, dialogueLines[index].isItalic));
+        typingCoroutine = StartCoroutine(TypeText(dialogueLines.frames[index].dialogueLine, dialogueLines.frames[index].isItalic));
     }
 
-    void SwitchCamera(string characterName)
+    void SwitchCamera(Character_Data npc)
     {
         // SAFETY: If you didn't drag the Cameras into the 'Camera Target Group' slot, 
         // this function stops immediately and won't mess up your other scenes.
@@ -139,7 +146,7 @@ public class Talking_Manager : MonoBehaviour
             return;
         }
 
-        string speaker = characterName.ToUpper().Trim();
+        string speaker = npc == null ? "".ToUpper().Trim() : npc.name.ToUpper().Trim();
 
         // Reset to wide shot logic if keyword is used
         if (speaker == "WIDE")
@@ -176,6 +183,11 @@ public class Talking_Manager : MonoBehaviour
             // Match speaker to camera
             if (speaker.Contains(camName.Replace("CAM_", "")) || camName.Contains(speaker))
             {
+                CameraHelper camDetails = cam.GetComponent<CameraHelper>();
+                if (camDetails != null && npc != null)
+                {
+                    camDetails.sprite.sprite = npc.Get_Overworld_Sprite(dialogueLines.frames[index].emotion);
+                }
                 vcam.Priority = 20;
                 foundMatch = true;
             }
@@ -197,11 +209,18 @@ public class Talking_Manager : MonoBehaviour
         isTyping = true;
         dialogueDisplay.text = "";
         string currentText = "";
+        int tick = 0;
 
         foreach (char letter in fullText.ToCharArray())
         {
             currentText += letter;
             dialogueDisplay.text = FormatText(currentText, useItalics);
+
+            // Prevents loud echoing for debug purposes
+            if ((tick % 20) - 1 == 0) audioSource.Stop();
+
+            PlaySound();
+            tick++;
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -211,7 +230,7 @@ public class Talking_Manager : MonoBehaviour
 
     private void HandleDialogueEnd()
     {
-        string lastLine = dialogueLines[index].sentence.Trim();
+        string lastLine = dialogueLines.frames[index].dialogueLine.Trim();
 
         if (!string.IsNullOrEmpty(triggerSentence) && lastLine == triggerSentence.Trim())
         {
@@ -244,7 +263,7 @@ public class Talking_Manager : MonoBehaviour
 
         if (isFirstTimeTalking && mingleTracker != null)
         {
-            mingleTracker.CheckProgression(currentInteractingNPC);
+            mingleTracker.CheckProgression(currentInteractingNPC.name);
         }
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -283,6 +302,39 @@ public class Talking_Manager : MonoBehaviour
             caseFileSceneName = "Case_File_Scene";
 
             SceneManager.LoadScene(caseFileSceneName);
+        }
+    }
+
+    private void PlaySound()
+    {
+        //Play sounds only if the source exists
+        if (audioSource == null) return;
+
+
+        if (dialogueLines != null)
+        {
+            Character_Data npc = dialogueLines.frames[index].speaker;
+
+            if (npc != null)
+            {
+                //Stop the audioSource so that the new sentence does not overlap with the old one
+                //audioSource.Stop();
+
+                //Play sentence sound
+                if (npc.voiceSamples != null)
+                {
+                    audioSource.PlayOneShot(
+                        npc.voiceSamples[UnityEngine.Random.Range(0, npc.voiceSamples.Count)]);
+                }
+
+                return;
+            }
+        }
+
+        if (default_voice_samples != null)
+        {
+            audioSource.PlayOneShot(
+                default_voice_samples[UnityEngine.Random.Range(0, default_voice_samples.Count)]);
         }
     }
 

@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daceb89978d8e45c4b9afdb4dcc4c1aa, type: 3}
+  m_Name: Murder
+  m_EditorClassIdentifier: 
+  frames:
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: I didn't need to be a detective to know someone was dead. I could
+      smell the metallic tang of blood in the air.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "No\u2026"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: "He was\u2014 the lights went out and he just\u2014"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: "How could this happen\u2014 nobody touched anything!"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: I don't understand. I was speaking with him only moments before
+      the lights went out.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: The alarm went off and then... the lights went off...
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: I was gone for maybe five minutes. Five minutes, and Maximilian
+      Midas, the man who just announced he was taking everything and leaving, is
+      dead on the floor of his own museum.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: One of them did it. And I'm the only person in this room who can
+      prove it.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "\u2026Nobody leaves this room."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: Excuse me?
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: Whoever did this is still here. Which means walking out that door
+      is not an option.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: "Okay. We should call someone... Police, ambulance... something\u2014"
+  - emotion: 
+    speaker: {fileID: 0}
+    isItalic: 1
+    dialogueLine: Penny digs into her phone, tapping rapidly.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: ...No signal?
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: "That's not unusual in this building. The reception is\u2026 unreliable
+      at best."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: So what, we just wait here with a dead body?
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: We're locked in with no signal, a dead man, and five people who
+      just found out they were fired.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: We're locked in with five people who all had a reason to hate him.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: You speak as though you've already decided this was murder!
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: I haven't decided anything. I'm a Detective, it's my job.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: '!!'
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: '!!'
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: '!!'
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: '!!'
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: Of course he invited a detective. That's very on brand for Max.
+      Maybe he even wanted this!
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: "If he did\u2026 then we're already inside his game."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: Then I assume you intend to determine what happened here.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: Yes. Please. Just figure it out.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: Here's what's going to happen. No one leaves. No one touches anything.
+      And no one lies to me.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "One of you turned this gala into a crime scene\u2026"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 329b9859f8b23433da699c8ff652b3b2, type: 2}
+    isItalic: 0
+    dialogueLine: "...And I\u2019m going to find out who."

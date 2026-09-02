@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daceb89978d8e45c4b9afdb4dcc4c1aa, type: 3}
+  m_Name: Prologue
+  m_EditorClassIdentifier: 
+  frames:
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: "The invitation promised a \"Gala of the Century.\" The reality
+      is six people in a drafty rotunda that smells like lemon polish and desperation.
+      We were the only ones who actually showed up, and I was starting to suspect
+      the others that were invited just smarter than us.\r"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: Friends. You were chosen tonight because you are the select few,
+      the only few, qualified to witness my brilliance.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: Out of every scholar and socialite I invited, only those with the
+      most... invested interests showed up.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: "Max, please. If I wanted to be insulted in an empty room, I\u2019d
+      go to my own gallery openings. Can we skip to the good part?"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: "Then you\u2019ll be waiting a long time, Julian. As I was saying\u2014"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: "Sir, the guests haven\u2019t, I mean looking at the door, I don't
+      think anyone else is coming. The parking lot is a graveyard."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: "You are paid to stand there and be silent, Penny! If I wanted
+      commentary from the staff, I\u2019d talk to the gargoyles on the roof. Now,
+      the Aurelian Institute represents the height of\u2014"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: "I am here because you insisted this was urgent. You\u2019ve kept
+      your staff working extended hours all week."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: "So I\u2019ll ask plainly. What exactly are you unveiling?"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: I am trying to unveil a masterpiece! Iris, are you getting all
+      of this? I want my brilliance captured from every angle.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: "I\u2019m getting it, Max. Though if you want 'brilliance,' you
+      might want to stop scowling. It ruins the composition."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: "Or you could just tell us what\u2019s under the sheet."
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: Fine! Witness the future of my legacy. I call it...
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: The Midas Grand University.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: "A university. He dragged us all here, on a Tuesday night, in the
+      rain, to look at a blueprint in a hollowed out museum. I've seen more exciting
+      things under police tape.\r"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 563107da4e7244f8a8b338e4baaec6d9, type: 2}
+    isItalic: 0
+    dialogueLine: You're serious. You are actually serious right now?
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 00eecea0f8d2943d3aa995fbef1d985d, type: 2}
+    isItalic: 0
+    dialogueLine: Do you have any idea how long it takes to properly transfer a collection
+      of this size? The documentation alone would take years! You've been clearing
+      the halls because you'd already planned to gut the place!
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: It will be absorbed into the university. Along with the collection.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: You are all being left behind. That's rather your business.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 914e50fe5d95b48cf907723d5aff0248, type: 2}
+    isItalic: 0
+    dialogueLine: Wow. Okay.
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 231320708aa324d678354913ac00d9c0, type: 2}
+    isItalic: 0
+    dialogueLine: "Max, you can't just\u2014"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: e243c8a13f40d4b7fb219339b5a046a5, type: 2}
+    isItalic: 0
+    dialogueLine: The bar is open. Take one last look around while you still can.
+      I have calls to make!
+  - emotion: 
+    speaker: {fileID: 0}
+    isItalic: 0
+    dialogueLine: "And like that, Max walks away.\r"
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: "Everyone in this room just got some kind of bad news. And now
+      we're all supposed to have a nice time together. Great party, Max.\r"

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daceb89978d8e45c4b9afdb4dcc4c1aa, type: 3}
+  m_Name: MingleIntro
+  m_EditorClassIdentifier: 
+  frames:
+  - emotion: 
+    speaker: {fileID: 11400000, guid: 3269b8f6a0f084327957c0e62f37d5b0, type: 2}
+    isItalic: 1
+    dialogueLine: Might as well figure out who these people actually are.

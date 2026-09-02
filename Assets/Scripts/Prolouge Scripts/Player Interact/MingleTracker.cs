@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class MingleTracker : MonoBehaviour
 {
     public int totalNPCsToTalkTo = 5;
+    public Character_Data detective;
     private HashSet<string> npcsTalkedTo = new HashSet<string>();
     private bool finished = false;
 
@@ -25,11 +26,11 @@ public class MingleTracker : MonoBehaviour
 
     void TriggerFinalThought()
     {
-        talkingManager.dialogueLines.Clear();
-        talkingManager.dialogueLines.Add(new Talking_Manager.DialogueLine
+        talkingManager.dialogueLines.frames.Clear();
+        talkingManager.dialogueLines.frames.Add(new OverworldCutsceneFrame
         {
-            characterName = "DETECTIVE",
-            sentence = "Ugh, I need the bathroom. These bright lights are making my head hurt.",
+            speaker = detective,
+            dialogueLine = "Ugh, I need the bathroom. These bright lights are making my head hurt.",
             isItalic = true
         });
         talkingManager.gameObject.SetActive(true);

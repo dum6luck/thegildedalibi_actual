@@ -31,15 +31,17 @@ public class MingleSceneManager : MonoBehaviour
         {
             bool isDialogueActive = talkingManager.gameObject.activeSelf;
 
-            // If UI is open but player is NOT locked, lock them
-            if (isDialogueActive && (playerController.canMove || playerController.canLook))
-            {
-                LockPlayer(true);
-            }
-            // If UI is closed but player IS still locked, unlock them
-            else if (!isDialogueActive && (!playerController.canMove || !playerController.canLook))
-            {
-                LockPlayer(false);
+            if (playerController != null) {
+                // If UI is open but player is NOT locked, lock them
+                if (isDialogueActive && (playerController.canMove || playerController.canLook))
+                {
+                    LockPlayer(true);
+                }
+                // If UI is closed but player IS still locked, unlock them
+                else if (!isDialogueActive && (!playerController.canMove || !playerController.canLook))
+                {
+                    LockPlayer(false);
+                }
             }
         }
     }

@@ -6,13 +6,15 @@ public class NPCData : MonoBehaviour
     [System.Serializable]
     public struct ConversationLine
     {
-        public string characterName;
+        public Character_Data speaker;
+        public string emotion;
         [TextArea(3, 10)] public string sentence;
         public bool isItalic;
     }
 
     [Header("NPC Identity")]
-    public string npcName; // <-- SET THIS TO "JULIAN", "IRIS", ETC. IN THE INSPECTOR
+    public Character_Data npc; // <-- SET THIS TO "JULIAN", "IRIS", ETC. IN THE INSPECTOR
+    public SpriteRenderer sprite;
 
     [Header("First Time Conversation")]
     public List<ConversationLine> conversation;
@@ -24,20 +26,21 @@ public class NPCData : MonoBehaviour
 
     public void Interact(Talking_Manager manager)
     {
-        manager.dialogueLines.Clear();
+        manager.dialogueLines.frames.Clear();
 
         // Pass the NPC's actual name to the manager before starting
-        manager.SetCurrentNPC(npcName);
+        manager.SetCurrentNPC(npc, sprite);
 
         if (!hasTalked)
         {
             foreach (var line in conversation)
             {
-                manager.dialogueLines.Add(new Talking_Manager.DialogueLine
+                manager.dialogueLines.frames.Add(new OverworldCutsceneFrame
                 {
-                    characterName = line.characterName,
-                    sentence = line.sentence,
-                    isItalic = line.isItalic
+                    speaker = line.speaker == null ? npc : line.speaker,
+                    dialogueLine = line.sentence,
+                    isItalic = line.isItalic,
+                    emotion = line.emotion
                 });
             }
             hasTalked = true;
@@ -45,11 +48,12 @@ public class NPCData : MonoBehaviour
         }
         else
         {
-            manager.dialogueLines.Add(new Talking_Manager.DialogueLine
+            manager.dialogueLines.frames.Add(new OverworldCutsceneFrame
             {
-                characterName = repeatLine.characterName,
-                sentence = repeatLine.sentence,
-                isItalic = repeatLine.isItalic
+                speaker = repeatLine.speaker == null ? npc : repeatLine.speaker,
+                dialogueLine = repeatLine.sentence,
+                isItalic = repeatLine.isItalic,
+                emotion = repeatLine.emotion
             });
             manager.StartDialogueSequence(false);
         }
